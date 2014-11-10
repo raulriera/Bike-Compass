@@ -11,7 +11,7 @@ Bike Compass is a full-featured city bicycle finder. Using a bike is enjoyable, 
 - Completely designed for iOS8.
 - Hundreds of cities included.
 - Automatically detects the nearest station that has available bikes and tells you how to get there. Nothing to configure.
-- Real live information thanks to the wonderful http://www.citybike.es
+- Real live information thanks to the wonderful http://www.citybik.es
 - Change the target destination at any time.
 - Multi language support
 
