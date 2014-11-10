@@ -1,0 +1,909 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C032F3B19ABBD6700AECF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F3A19ABBD6700AECF05 /* main.m */; };
+		4C032F3E19ABBD6700AECF05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F3D19ABBD6700AECF05 /* AppDelegate.m */; };
+		4C032F4119ABBD6700AECF05 /* CompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F4019ABBD6700AECF05 /* CompassViewController.m */; };
+		4C032F4419ABBD6700AECF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C032F4219ABBD6700AECF05 /* Main.storyboard */; };
+		4C032F4619ABBD6700AECF05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C032F4519ABBD6700AECF05 /* Images.xcassets */; };
+		4C032F5219ABBD6700AECF05 /* BikeCompassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F5119ABBD6700AECF05 /* BikeCompassTests.m */; };
+		4C032F5D19ABC52600AECF05 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F5C19ABC52600AECF05 /* LocationManager.m */; };
+		4C0C151B19D3535E0053CB8F /* UIAlertController+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C151A19D3535E0053CB8F /* UIAlertController+Extended.m */; };
+		4C10EEC219AC00500082BCEE /* bell.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C10EEC119AC00500082BCEE /* bell.caf */; };
+		4C1B31CA19C7ACB90096E52F /* NetworksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31C919C7ACB90096E52F /* NetworksTableViewController.m */; };
+		4C1B31CE19C7AE250096E52F /* NetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31CD19C7AE250096E52F /* NetworkTableViewCell.m */; };
+		4C3D441119EB1AC5001E45F2 /* LocationDisabledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D441019EB1AC5001E45F2 /* LocationDisabledViewController.m */; };
+		4C3FA96C19BFA29400E33BE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3FA96B19BFA29400E33BE2 /* MapViewController.m */; };
+		4C3FA97019BFA6BE00E33BE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C3FA96E19BFA6BE00E33BE2 /* Localizable.strings */; };
+		4C53611F19B374750007D24E /* StationPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53611E19B374750007D24E /* StationPointAnnotation.m */; };
+		4C5AC2C719B689F000A4E92A /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37319AC083400F6DE5A /* Station.m */; };
+		4C5AC2C919B68A0100A4E92A /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37619AC085D00F6DE5A /* Network.m */; };
+		4C5AC2CA19B68A0700A4E92A /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37919AD1B2B00F6DE5A /* Location.m */; };
+		4C5AC2CB19B68A0A00A4E92A /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41874919AD58CD00549D40 /* Model.m */; };
+		4C5AC2D419B68B7400A4E92A /* NetworksRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37D19AD212400F6DE5A /* NetworksRepository.m */; };
+		4C5AC2D519B68B7B00A4E92A /* StationsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41874419AD525300549D40 /* StationsRepository.m */; };
+		4C5AC2D619B68B7F00A4E92A /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5BC7519AEA0080048EB5E /* Repository.m */; };
+		4CA6B09D19F3068200A178BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6B09F19F3068200A178BC /* InfoPlist.strings */; };
+		4CA6B0A219F3068300A178BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6B0A419F3068300A178BC /* InfoPlist.strings */; };
+		4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */; };
+		4CA9A14719FC755E008F6D74 /* FadeInTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */; };
+		4CB4B8B519CB87B0004E0787 /* MKMapView+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */; };
+		4CBAF97419FB066200BB0FF7 /* BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */; };
+		4CC2485619FD49EA0057B149 /* BlankState.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC2485519FD49EA0057B149 /* BlankState.storyboard */; };
+		4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2485919FDBC180057B149 /* UIViewController+BlankStateViewController.m */; };
+		4CC2485E1A004E060057B149 /* CityDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2485D1A004E060057B149 /* CityDetectionViewController.m */; };
+		4CC248631A02E4030057B149 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC248621A02E4030057B149 /* RoundedButton.m */; };
+		4CDBF3E019CEF6980020E4F7 /* FBAnnotationCluster+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */; };
+		4CE5EA4F19B1337F00FC1A0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */; };
+		5C6C49AF91EE4137AA322C46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3235EAB9714E829FD85FEB /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C032F4C19ABBD6700AECF05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C032F3419ABBD6700AECF05;
+			remoteInfo = BikeCompass;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4C5AC2BC19B6849100A4E92A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C83179A19B3E872006B6940 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		36EA0D22C68C4D32A5F08264 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3D3235EAB9714E829FD85FEB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C032F3519ABBD6700AECF05 /* BikeCompass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeCompass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C032F3919ABBD6700AECF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C032F3A19ABBD6700AECF05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C032F3C19ABBD6700AECF05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C032F3D19ABBD6700AECF05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C032F3F19ABBD6700AECF05 /* CompassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompassViewController.h; sourceTree = "<group>"; };
+		4C032F4019ABBD6700AECF05 /* CompassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompassViewController.m; sourceTree = "<group>"; };
+		4C032F4319ABBD6700AECF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C032F4519ABBD6700AECF05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4C032F4B19ABBD6700AECF05 /* BikeCompassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeCompassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C032F5019ABBD6700AECF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C032F5119ABBD6700AECF05 /* BikeCompassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BikeCompassTests.m; sourceTree = "<group>"; };
+		4C032F5B19ABC52600AECF05 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		4C032F5C19ABC52600AECF05 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		4C0C151919D3535E0053CB8F /* UIAlertController+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extended.h"; sourceTree = "<group>"; };
+		4C0C151A19D3535E0053CB8F /* UIAlertController+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extended.m"; sourceTree = "<group>"; };
+		4C10EEC119AC00500082BCEE /* bell.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bell.caf; sourceTree = "<group>"; };
+		4C1B31C819C7ACB90096E52F /* NetworksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworksTableViewController.h; sourceTree = "<group>"; };
+		4C1B31C919C7ACB90096E52F /* NetworksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworksTableViewController.m; sourceTree = "<group>"; };
+		4C1B31CC19C7AE250096E52F /* NetworkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTableViewCell.h; sourceTree = "<group>"; };
+		4C1B31CD19C7AE250096E52F /* NetworkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTableViewCell.m; sourceTree = "<group>"; };
+		4C2AE6F819B8F75F006CA1EB /* LocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerDelegate.h; sourceTree = "<group>"; };
+		4C2AE6F919B8F7B2006CA1EB /* MapViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewControllerDelegate.h; sourceTree = "<group>"; };
+		4C3D440F19EB1AC5001E45F2 /* LocationDisabledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDisabledViewController.h; sourceTree = "<group>"; };
+		4C3D441019EB1AC5001E45F2 /* LocationDisabledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDisabledViewController.m; sourceTree = "<group>"; };
+		4C3FA96A19BFA29400E33BE2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		4C3FA96B19BFA29400E33BE2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4C3FA96F19BFA6BE00E33BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C3FA97119BFA6C700E33BE2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C41874319AD525300549D40 /* StationsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationsRepository.h; sourceTree = "<group>"; };
+		4C41874419AD525300549D40 /* StationsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationsRepository.m; sourceTree = "<group>"; };
+		4C41874619AD581E00549D40 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		4C41874919AD58CD00549D40 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		4C53611D19B374750007D24E /* StationPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationPointAnnotation.h; sourceTree = "<group>"; };
+		4C53611E19B374750007D24E /* StationPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationPointAnnotation.m; sourceTree = "<group>"; };
+		4C62358919BB47D400807189 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		4C8DC3461A094AD900B696CA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4C8DE37219AC083400F6DE5A /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		4C8DE37319AC083400F6DE5A /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		4C8DE37519AC085D00F6DE5A /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		4C8DE37619AC085D00F6DE5A /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		4C8DE37819AD1B2B00F6DE5A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		4C8DE37919AD1B2B00F6DE5A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		4C8DE37C19AD212400F6DE5A /* NetworksRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworksRepository.h; sourceTree = "<group>"; };
+		4C8DE37D19AD212400F6DE5A /* NetworksRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworksRepository.m; sourceTree = "<group>"; };
+		4C8F20E419C8C8C700E3B04A /* NetworksViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworksViewControllerDelegate.h; sourceTree = "<group>"; };
+		4CA6B09E19F3068200A178BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CA6B0A319F3068300A178BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		4CA9A14519FC755E008F6D74 /* FadeInTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeInTransitioning.h; sourceTree = "<group>"; };
+		4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeInTransitioning.m; sourceTree = "<group>"; };
+		4CB4B8B319CB87B0004E0787 /* MKMapView+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+Extended.h"; sourceTree = "<group>"; };
+		4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+Extended.m"; sourceTree = "<group>"; };
+		4CB5BC7419AEA0080048EB5E /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		4CB5BC7519AEA0080048EB5E /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		4CBAF97219FB066200BB0FF7 /* BlankStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankStateViewController.h; sourceTree = "<group>"; };
+		4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankStateViewController.m; sourceTree = "<group>"; };
+		4CC2485519FD49EA0057B149 /* BlankState.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BlankState.storyboard; sourceTree = "<group>"; };
+		4CC2485819FDBC180057B149 /* UIViewController+BlankStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BlankStateViewController.h"; sourceTree = "<group>"; };
+		4CC2485919FDBC180057B149 /* UIViewController+BlankStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BlankStateViewController.m"; sourceTree = "<group>"; };
+		4CC2485C1A004E060057B149 /* CityDetectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetectionViewController.h; sourceTree = "<group>"; };
+		4CC2485D1A004E060057B149 /* CityDetectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetectionViewController.m; sourceTree = "<group>"; };
+		4CC248611A02E4030057B149 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
+		4CC248621A02E4030057B149 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
+		4CDBF3DE19CEF6980020E4F7 /* FBAnnotationCluster+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBAnnotationCluster+Extended.h"; sourceTree = "<group>"; };
+		4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBAnnotationCluster+Extended.m"; sourceTree = "<group>"; };
+		4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C032F3219ABBD6700AECF05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE5EA4F19B1337F00FC1A0C /* MapKit.framework in Frameworks */,
+				5C6C49AF91EE4137AA322C46 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C032F4819ABBD6700AECF05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C032F2C19ABBD6700AECF05 = {
+			isa = PBXGroup;
+			children = (
+				4C032F3719ABBD6700AECF05 /* BikeCompass */,
+				4C032F4E19ABBD6700AECF05 /* BikeCompassTests */,
+				4C032F3619ABBD6700AECF05 /* Products */,
+				36EA0D22C68C4D32A5F08264 /* Pods.xcconfig */,
+				D7D51EF187C84E6C911CE6AC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4C032F3619ABBD6700AECF05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C032F3519ABBD6700AECF05 /* BikeCompass.app */,
+				4C032F4B19ABBD6700AECF05 /* BikeCompassTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C032F3719ABBD6700AECF05 /* BikeCompass */ = {
+			isa = PBXGroup;
+			children = (
+				4CC2485419FD49BD0057B149 /* Storyboards & XIBs */,
+				4C032F3C19ABBD6700AECF05 /* AppDelegate.h */,
+				4C032F3D19ABBD6700AECF05 /* AppDelegate.m */,
+				4C032F4519ABBD6700AECF05 /* Images.xcassets */,
+				4CB4B8B019CB8730004E0787 /* Categories */,
+				4C2AE6F719B8F729006CA1EB /* Delegates */,
+				4C3FA96E19BFA6BE00E33BE2 /* Localizable.strings */,
+				4C2AE70819B93B42006CA1EB /* LocationManager */,
+				4C8DE37119AC081500F6DE5A /* Models */,
+				4C8DE37B19AD211500F6DE5A /* Repositories */,
+				4C41874219AD51A600549D40 /* Sounds */,
+				4C032F3819ABBD6700AECF05 /* Supporting Files */,
+				4C2AE70719B93B24006CA1EB /* Transitions */,
+				4C53611C19B36F9A0007D24E /* View Controllers */,
+				4CCFCEE419B7C07F00F29AAD /* Views */,
+			);
+			path = BikeCompass;
+			sourceTree = "<group>";
+		};
+		4C032F3819ABBD6700AECF05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CA6B09F19F3068200A178BC /* InfoPlist.strings */,
+				4C032F3919ABBD6700AECF05 /* Info.plist */,
+				4C032F3A19ABBD6700AECF05 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C032F4E19ABBD6700AECF05 /* BikeCompassTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C032F5119ABBD6700AECF05 /* BikeCompassTests.m */,
+				4C032F4F19ABBD6700AECF05 /* Supporting Files */,
+			);
+			path = BikeCompassTests;
+			sourceTree = "<group>";
+		};
+		4C032F4F19ABBD6700AECF05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CA6B0A419F3068300A178BC /* InfoPlist.strings */,
+				4C032F5019ABBD6700AECF05 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C0C151819D353400053CB8F /* UIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				4C0C151919D3535E0053CB8F /* UIAlertController+Extended.h */,
+				4C0C151A19D3535E0053CB8F /* UIAlertController+Extended.m */,
+			);
+			name = UIAlertController;
+			sourceTree = "<group>";
+		};
+		4C1B31C719C7AC920096E52F /* NetworksTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C1B31C819C7ACB90096E52F /* NetworksTableViewController.h */,
+				4C1B31C919C7ACB90096E52F /* NetworksTableViewController.m */,
+			);
+			name = NetworksTableViewController;
+			sourceTree = "<group>";
+		};
+		4C1B31CB19C7AE050096E52F /* NetworkTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4C1B31CC19C7AE250096E52F /* NetworkTableViewCell.h */,
+				4C1B31CD19C7AE250096E52F /* NetworkTableViewCell.m */,
+			);
+			name = NetworkTableViewCell;
+			sourceTree = "<group>";
+		};
+		4C2AE6F719B8F729006CA1EB /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4C2AE6F819B8F75F006CA1EB /* LocationManagerDelegate.h */,
+				4C2AE6F919B8F7B2006CA1EB /* MapViewControllerDelegate.h */,
+				4C8F20E419C8C8C700E3B04A /* NetworksViewControllerDelegate.h */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		4C2AE70719B93B24006CA1EB /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				4CA9A14519FC755E008F6D74 /* FadeInTransitioning.h */,
+				4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		4C2AE70819B93B42006CA1EB /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				4C032F5B19ABC52600AECF05 /* LocationManager.h */,
+				4C032F5C19ABC52600AECF05 /* LocationManager.m */,
+			);
+			name = LocationManager;
+			sourceTree = "<group>";
+		};
+		4C3D440E19EB1AA2001E45F2 /* LocationDisabledViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C3D440F19EB1AC5001E45F2 /* LocationDisabledViewController.h */,
+				4C3D441019EB1AC5001E45F2 /* LocationDisabledViewController.m */,
+			);
+			name = LocationDisabledViewController;
+			sourceTree = "<group>";
+		};
+		4C41874219AD51A600549D40 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4C10EEC119AC00500082BCEE /* bell.caf */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		4C4BE82919B65B2D000AD804 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C3FA96A19BFA29400E33BE2 /* MapViewController.h */,
+				4C3FA96B19BFA29400E33BE2 /* MapViewController.m */,
+			);
+			name = MapViewController;
+			sourceTree = "<group>";
+		};
+		4C4BE82A19B65B62000AD804 /* CompassViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C032F3F19ABBD6700AECF05 /* CompassViewController.h */,
+				4C032F4019ABBD6700AECF05 /* CompassViewController.m */,
+			);
+			name = CompassViewController;
+			sourceTree = "<group>";
+		};
+		4C53611C19B36F9A0007D24E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CC2485B1A004DE50057B149 /* CityDetectionViewController */,
+				4CBAF97119FB05D400BB0FF7 /* BlankStateViewController */,
+				4C3D440E19EB1AA2001E45F2 /* LocationDisabledViewController */,
+				4C1B31C719C7AC920096E52F /* NetworksTableViewController */,
+				4C4BE82A19B65B62000AD804 /* CompassViewController */,
+				4C4BE82919B65B2D000AD804 /* MapViewController */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4C8DE37119AC081500F6DE5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C8DE37219AC083400F6DE5A /* Station.h */,
+				4C8DE37319AC083400F6DE5A /* Station.m */,
+				4C8DE37519AC085D00F6DE5A /* Network.h */,
+				4C8DE37619AC085D00F6DE5A /* Network.m */,
+				4C8DE37819AD1B2B00F6DE5A /* Location.h */,
+				4C8DE37919AD1B2B00F6DE5A /* Location.m */,
+				4C41874619AD581E00549D40 /* Model.h */,
+				4C41874919AD58CD00549D40 /* Model.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C8DE37B19AD211500F6DE5A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4C8DE37C19AD212400F6DE5A /* NetworksRepository.h */,
+				4C8DE37D19AD212400F6DE5A /* NetworksRepository.m */,
+				4C41874319AD525300549D40 /* StationsRepository.h */,
+				4C41874419AD525300549D40 /* StationsRepository.m */,
+				4CB5BC7419AEA0080048EB5E /* Repository.h */,
+				4CB5BC7519AEA0080048EB5E /* Repository.m */,
+			);
+			name = Repositories;
+			sourceTree = "<group>";
+		};
+		4CB4B8AE19CB8043004E0787 /* StationPointAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				4C53611D19B374750007D24E /* StationPointAnnotation.h */,
+				4C53611E19B374750007D24E /* StationPointAnnotation.m */,
+			);
+			name = StationPointAnnotation;
+			sourceTree = "<group>";
+		};
+		4CB4B8B019CB8730004E0787 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4CC2485719FDBBE20057B149 /* BlankStateViewController */,
+				4C0C151819D353400053CB8F /* UIAlertController */,
+				4CDBF3DD19CEF6850020E4F7 /* FBAnnotationCluster */,
+				4CB4B8B119CB8737004E0787 /* MKMapView */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		4CB4B8B119CB8737004E0787 /* MKMapView */ = {
+			isa = PBXGroup;
+			children = (
+				4CB4B8B319CB87B0004E0787 /* MKMapView+Extended.h */,
+				4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */,
+			);
+			name = MKMapView;
+			sourceTree = "<group>";
+		};
+		4CBAF97119FB05D400BB0FF7 /* BlankStateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CBAF97219FB066200BB0FF7 /* BlankStateViewController.h */,
+				4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */,
+			);
+			name = BlankStateViewController;
+			sourceTree = "<group>";
+		};
+		4CC2485419FD49BD0057B149 /* Storyboards & XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				4C032F4219ABBD6700AECF05 /* Main.storyboard */,
+				4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */,
+				4CC2485519FD49EA0057B149 /* BlankState.storyboard */,
+			);
+			name = "Storyboards & XIBs";
+			sourceTree = "<group>";
+		};
+		4CC2485719FDBBE20057B149 /* BlankStateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CC2485819FDBC180057B149 /* UIViewController+BlankStateViewController.h */,
+				4CC2485919FDBC180057B149 /* UIViewController+BlankStateViewController.m */,
+			);
+			name = BlankStateViewController;
+			sourceTree = "<group>";
+		};
+		4CC2485B1A004DE50057B149 /* CityDetectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CC2485C1A004E060057B149 /* CityDetectionViewController.h */,
+				4CC2485D1A004E060057B149 /* CityDetectionViewController.m */,
+			);
+			name = CityDetectionViewController;
+			sourceTree = "<group>";
+		};
+		4CC248601A02E3E80057B149 /* RoundedButton */ = {
+			isa = PBXGroup;
+			children = (
+				4CC248611A02E4030057B149 /* RoundedButton.h */,
+				4CC248621A02E4030057B149 /* RoundedButton.m */,
+			);
+			name = RoundedButton;
+			sourceTree = "<group>";
+		};
+		4CCFCEE419B7C07F00F29AAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CC248601A02E3E80057B149 /* RoundedButton */,
+				4C1B31CB19C7AE050096E52F /* NetworkTableViewCell */,
+				4CB4B8AE19CB8043004E0787 /* StationPointAnnotation */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4CDBF3DD19CEF6850020E4F7 /* FBAnnotationCluster */ = {
+			isa = PBXGroup;
+			children = (
+				4CDBF3DE19CEF6980020E4F7 /* FBAnnotationCluster+Extended.h */,
+				4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */,
+			);
+			name = FBAnnotationCluster;
+			sourceTree = "<group>";
+		};
+		D7D51EF187C84E6C911CE6AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C8DC3461A094AD900B696CA /* AudioToolbox.framework */,
+				4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */,
+				3D3235EAB9714E829FD85FEB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C032F3419ABBD6700AECF05 /* BikeCompass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C032F5519ABBD6700AECF05 /* Build configuration list for PBXNativeTarget "BikeCompass" */;
+			buildPhases = (
+				6E796F46B8DE4ECFA6FC1592 /* Check Pods Manifest.lock */,
+				4C032F3119ABBD6700AECF05 /* Sources */,
+				4C032F3219ABBD6700AECF05 /* Frameworks */,
+				4C032F3319ABBD6700AECF05 /* Resources */,
+				4CC2485F1A005A680057B149 /* ShellScript */,
+				F7BD0ED26FA849728BE772CC /* Copy Pods Resources */,
+				4C83179A19B3E872006B6940 /* Embed App Extensions */,
+				4C5AC2BC19B6849100A4E92A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeCompass;
+			productName = BikeCompass;
+			productReference = 4C032F3519ABBD6700AECF05 /* BikeCompass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C032F4A19ABBD6700AECF05 /* BikeCompassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C032F5819ABBD6700AECF05 /* Build configuration list for PBXNativeTarget "BikeCompassTests" */;
+			buildPhases = (
+				4C032F4719ABBD6700AECF05 /* Sources */,
+				4C032F4819ABBD6700AECF05 /* Frameworks */,
+				4C032F4919ABBD6700AECF05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C032F4D19ABBD6700AECF05 /* PBXTargetDependency */,
+			);
+			name = BikeCompassTests;
+			productName = BikeCompassTests;
+			productReference = 4C032F4B19ABBD6700AECF05 /* BikeCompassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C032F2D19ABBD6700AECF05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Raúl Riera";
+				TargetAttributes = {
+					4C032F3419ABBD6700AECF05 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = R64MTWS872;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					4C032F4A19ABBD6700AECF05 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 4C032F3419ABBD6700AECF05;
+					};
+				};
+			};
+			buildConfigurationList = 4C032F3019ABBD6700AECF05 /* Build configuration list for PBXProject "BikeCompass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+			);
+			mainGroup = 4C032F2C19ABBD6700AECF05;
+			productRefGroup = 4C032F3619ABBD6700AECF05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C032F3419ABBD6700AECF05 /* BikeCompass */,
+				4C032F4A19ABBD6700AECF05 /* BikeCompassTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C032F3319ABBD6700AECF05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C10EEC219AC00500082BCEE /* bell.caf in Resources */,
+				4CC2485619FD49EA0057B149 /* BlankState.storyboard in Resources */,
+				4C3FA97019BFA6BE00E33BE2 /* Localizable.strings in Resources */,
+				4C032F4419ABBD6700AECF05 /* Main.storyboard in Resources */,
+				4C032F4619ABBD6700AECF05 /* Images.xcassets in Resources */,
+				4CA6B09D19F3068200A178BC /* InfoPlist.strings in Resources */,
+				4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C032F4919ABBD6700AECF05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CA6B0A219F3068300A178BC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CC2485F1A005A680057B149 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n#  update_build_number.sh\n#  Usage: `update_build_number.sh [branch]`\n#  Run this script after the 'Copy Bundle Resources' build phase\n#  Ref: http://tgoode.com/2014/06/05/sensible-way-increment-bundle-version-cfbundleversion-xcode/\n\nbranch=${1:-'master'}\nbuildNumber=$(expr $(git rev-list $branch --count) - $(git rev-list HEAD..$branch --count))\necho \"Updating build number to $buildNumber using branch '$branch'.\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+		};
+		6E796F46B8DE4ECFA6FC1592 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7BD0ED26FA849728BE772CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C032F3119ABBD6700AECF05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C032F4119ABBD6700AECF05 /* CompassViewController.m in Sources */,
+				4C032F3E19ABBD6700AECF05 /* AppDelegate.m in Sources */,
+				4CC248631A02E4030057B149 /* RoundedButton.m in Sources */,
+				4C3FA96C19BFA29400E33BE2 /* MapViewController.m in Sources */,
+				4C032F3B19ABBD6700AECF05 /* main.m in Sources */,
+				4CA9A14719FC755E008F6D74 /* FadeInTransitioning.m in Sources */,
+				4C5AC2D519B68B7B00A4E92A /* StationsRepository.m in Sources */,
+				4CB4B8B519CB87B0004E0787 /* MKMapView+Extended.m in Sources */,
+				4C0C151B19D3535E0053CB8F /* UIAlertController+Extended.m in Sources */,
+				4C5AC2CA19B68A0700A4E92A /* Location.m in Sources */,
+				4C032F5D19ABC52600AECF05 /* LocationManager.m in Sources */,
+				4CDBF3E019CEF6980020E4F7 /* FBAnnotationCluster+Extended.m in Sources */,
+				4CC2485E1A004E060057B149 /* CityDetectionViewController.m in Sources */,
+				4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */,
+				4C3D441119EB1AC5001E45F2 /* LocationDisabledViewController.m in Sources */,
+				4C5AC2C719B689F000A4E92A /* Station.m in Sources */,
+				4C5AC2D419B68B7400A4E92A /* NetworksRepository.m in Sources */,
+				4C1B31CA19C7ACB90096E52F /* NetworksTableViewController.m in Sources */,
+				4C5AC2C919B68A0100A4E92A /* Network.m in Sources */,
+				4C53611F19B374750007D24E /* StationPointAnnotation.m in Sources */,
+				4C1B31CE19C7AE250096E52F /* NetworkTableViewCell.m in Sources */,
+				4C5AC2CB19B68A0A00A4E92A /* Model.m in Sources */,
+				4CBAF97419FB066200BB0FF7 /* BlankStateViewController.m in Sources */,
+				4C5AC2D619B68B7F00A4E92A /* Repository.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C032F4719ABBD6700AECF05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C032F5219ABBD6700AECF05 /* BikeCompassTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C032F4D19ABBD6700AECF05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C032F3419ABBD6700AECF05 /* BikeCompass */;
+			targetProxy = 4C032F4C19ABBD6700AECF05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C032F4219ABBD6700AECF05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C032F4319ABBD6700AECF05 /* Base */,
+				4C62358919BB47D400807189 /* es */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C3FA96E19BFA6BE00E33BE2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C3FA96F19BFA6BE00E33BE2 /* Base */,
+				4C3FA97119BFA6C700E33BE2 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4CA6B09F19F3068200A178BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CA6B09E19F3068200A178BC /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CA6B0A419F3068300A178BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CA6B0A319F3068300A178BC /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C032F5319ABBD6700AECF05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C032F5419ABBD6700AECF05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C032F5619ABBD6700AECF05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36EA0D22C68C4D32A5F08264 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BikeCompass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		4C032F5719ABBD6700AECF05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36EA0D22C68C4D32A5F08264 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BikeCompass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		4C032F5919ABBD6700AECF05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeCompassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeCompass.app/BikeCompass";
+			};
+			name = Debug;
+		};
+		4C032F5A19ABBD6700AECF05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeCompassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeCompass.app/BikeCompass";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C032F3019ABBD6700AECF05 /* Build configuration list for PBXProject "BikeCompass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C032F5319ABBD6700AECF05 /* Debug */,
+				4C032F5419ABBD6700AECF05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C032F5519ABBD6700AECF05 /* Build configuration list for PBXNativeTarget "BikeCompass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C032F5619ABBD6700AECF05 /* Debug */,
+				4C032F5719ABBD6700AECF05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C032F5819ABBD6700AECF05 /* Build configuration list for PBXNativeTarget "BikeCompassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C032F5919ABBD6700AECF05 /* Debug */,
+				4C032F5A19ABBD6700AECF05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C032F2D19ABBD6700AECF05 /* Project object */;
+}

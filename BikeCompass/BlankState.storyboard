@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blank State View Controller-->
+        <scene sceneID="wfy-Jw-trL">
+            <objects>
+                <viewController storyboardIdentifier="BlankStateViewControllerDefault" id="xN1-N7-7Ro" customClass="BlankStateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ecK-TJ-C5U"/>
+                        <viewControllerLayoutGuide type="bottom" id="NbK-Lo-H9x"/>
+                    </layoutGuides>
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="7Pf-Dg-j4N">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz5-Ue-wqt">
+                                <rect key="frame" x="36" y="282" width="528" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unq-C6-aUp">
+                                <rect key="frame" x="36" y="332" width="528" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="kz5-Ue-wqt" secondAttribute="trailing" constant="20" id="9QD-JV-Wq8"/>
+                            <constraint firstItem="unq-C6-aUp" firstAttribute="leading" secondItem="kz5-Ue-wqt" secondAttribute="leading" id="AZZ-mT-ZsH"/>
+                            <constraint firstAttribute="centerY" secondItem="kz5-Ue-wqt" secondAttribute="centerY" id="Bdi-a3-hi1"/>
+                            <constraint firstItem="unq-C6-aUp" firstAttribute="top" secondItem="kz5-Ue-wqt" secondAttribute="bottom" constant="14" id="F8m-e6-eW4"/>
+                            <constraint firstItem="kz5-Ue-wqt" firstAttribute="leading" secondItem="7Pf-Dg-j4N" secondAttribute="leadingMargin" constant="20" id="NC8-jp-Wgx"/>
+                            <constraint firstItem="unq-C6-aUp" firstAttribute="trailing" secondItem="kz5-Ue-wqt" secondAttribute="trailing" id="Z7t-9S-CrF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="unq-C6-aUp" id="Avl-8y-ajf"/>
+                        <outlet property="titleLabel" destination="kz5-Ue-wqt" id="gf3-vP-NCQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oex-LA-PY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957" y="1770"/>
+        </scene>
+    </scenes>
+</document>

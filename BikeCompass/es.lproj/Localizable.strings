@@ -1,0 +1,18 @@
+/* Message when the user selects a pin on the map */
+"%ld bikes and %ld spots left" = "%1$ld bicis y %2$ld puestos restantes";
+
+/* Generic network error message */
+"It appears you are experiencing network problems" = "Parece que tienes problemas de conexión";
+
+/* Generic title when the localisation is disabled */
+"Location Services are disabled" = "Servicios de ubicación desactivados";
+
+/* Generic network error message title */
+"Network" = "Proveedor";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* Instructions on how to enable location services */
+"Please enable location services in your device 'Settings' screen" = "Activa los servicios de ubicación en la pantalla de 'Configuración' de tu dispositivo";
+
