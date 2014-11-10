@@ -2,6 +2,10 @@
 
 Bike Compass is a full-featured city bicycle finder. Using a bike is enjoyable, that is why our app is fast, beautiful, and designed exclusively for iOS8. Prepare to fall in love with your city again, on a bicycle.
 
+<p align="center">
+	<img src="https://raw.githubusercontent.com/raulriera/Bike-Compass/master/Screenshots/Screenshot.jpg" />
+</p>
+
 ##Features:
 
 - Completely designed for iOS8.
