@@ -6,18 +6,15 @@
 	<dict>
 		<key>BikeCompass.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>PillLabel.xcscheme</key>
+		<key>CityBikesKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
-		</dict>
-		<key>PillLabelKit.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -38,6 +35,26 @@
 			<true/>
 		</dict>
 		<key>4C0ADC0E19B222060016F68D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C42709B1A1D55BA00D7036C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C4270AB1A1D55BA00D7036C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C54E5F41A1FCE31009FB6C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C54E5FE1A1FCE31009FB6C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

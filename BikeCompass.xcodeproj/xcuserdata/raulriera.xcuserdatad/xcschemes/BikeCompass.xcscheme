@@ -76,6 +76,20 @@
                ReferencedContainer = "container:BikeCompass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4C54E5FE1A1FCE31009FB6C0"
+               BuildableName = "CityBikesKitTests.xctest"
+               BlueprintName = "CityBikesKitTests"
+               ReferencedContainer = "container:BikeCompass.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -121,6 +135,16 @@
                BlueprintIdentifier = "4CA4E56A1A0C336900F09473"
                BuildableName = "PillLabelKitTests.xctest"
                BlueprintName = "PillLabelKitTests"
+               ReferencedContainer = "container:BikeCompass.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4C54E5FE1A1FCE31009FB6C0"
+               BuildableName = "CityBikesKitTests.xctest"
+               BlueprintName = "CityBikesKitTests"
                ReferencedContainer = "container:BikeCompass.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CA4E5601A0C336800F09473"
-               BuildableName = "PillLabelKit.framework"
-               BlueprintName = "PillLabelKit"
+               BlueprintIdentifier = "4C54E5F41A1FCE31009FB6C0"
+               BuildableName = "CityBikesKit.framework"
+               BlueprintName = "CityBikesKit"
                ReferencedContainer = "container:BikeCompass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4CA4E5601A0C336800F09473"
-            BuildableName = "PillLabelKit.framework"
-            BlueprintName = "PillLabelKit"
+            BlueprintIdentifier = "4C54E5F41A1FCE31009FB6C0"
+            BuildableName = "CityBikesKit.framework"
+            BlueprintName = "CityBikesKit"
             ReferencedContainer = "container:BikeCompass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4CA4E5601A0C336800F09473"
-            BuildableName = "PillLabelKit.framework"
-            BlueprintName = "PillLabelKit"
+            BlueprintIdentifier = "4C54E5F41A1FCE31009FB6C0"
+            BuildableName = "CityBikesKit.framework"
+            BlueprintName = "CityBikesKit"
             ReferencedContainer = "container:BikeCompass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
