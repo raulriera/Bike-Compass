@@ -215,6 +215,7 @@
 		4CB962F21A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962F71A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CB962FC1A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CB962FE1A228CFC0047B5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CBAF97219FB066200BB0FF7 /* BlankStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankStateViewController.h; sourceTree = "<group>"; };
 		4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankStateViewController.m; sourceTree = "<group>"; };
 		4CC2485519FD49EA0057B149 /* BlankState.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BlankState.storyboard; sourceTree = "<group>"; };
@@ -1184,6 +1185,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4CB962F71A228BE80047B5DA /* es */,
+				4CB962FE1A228CFC0047B5DA /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
