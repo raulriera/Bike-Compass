@@ -13,5 +13,6 @@
 @interface Repository : NSObject
 
 extern NSString *const RepositoryBaseURL;
+extern NSString *const AppGroupKey;
 
 @end

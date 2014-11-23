@@ -11,5 +11,6 @@
 @implementation Repository
 
 NSString *const RepositoryBaseURL = @"http://api.citybik.es";
+NSString *const AppGroupKey = @"group.raulriera.bikecompass";
 
 @end

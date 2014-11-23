@@ -24,14 +24,16 @@ static NSString * const CurrentStationKey = @"com.raulriera.bikecompass.currentS
 
 - (Station *)currentStation
 {
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:CurrentStationKey];
+    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
+    NSData *data = [sharedUserDefaults objectForKey:CurrentStationKey];
     return [NSKeyedUnarchiver unarchiveObjectWithData:data];
 }
 
 - (void)setCurrentStation:(Station *)currentStation
 {
+    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:currentStation];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:CurrentStationKey];
+    [sharedUserDefaults setObject:data forKey:CurrentStationKey];
 }
 
 - (void)stationsForNetwork:(Network *)network withCompletionBlock:(void (^)(NSArray *stations, NSError *error))block

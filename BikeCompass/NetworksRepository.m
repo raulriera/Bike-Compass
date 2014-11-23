@@ -26,8 +26,16 @@ static NSString * const CurrentNetworkKey = @"com.raulriera.bikecompass.currentN
 
 - (Network *)currentNetwork
 {
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:CurrentNetworkKey];
+    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
+    NSData *data = [sharedUserDefaults objectForKey:CurrentNetworkKey];
     return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+
+- (void)setCurrentNetwork:(Network *)currentNetwork
+{
+    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:currentNetwork];
+    [sharedUserDefaults setObject:data forKey:CurrentNetworkKey];
 }
 
 - (void)closestNetworkToLocation:(CLLocation *)location withBlock:(void (^)(Network *network, NSError *error))block
@@ -36,12 +44,6 @@ static NSString * const CurrentNetworkKey = @"com.raulriera.bikecompass.currentN
         Network *network = [[self sortNetworks:networks closestToLocation:location] firstObject];
         block(network, error);
     }];
-}
-
-- (void)setCurrentNetwork:(Network *)currentNetwork
-{
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:currentNetwork];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:CurrentNetworkKey];
 }
 
 - (void)networksWithBlock:(void (^)(NSArray *networks, NSError *error))block
