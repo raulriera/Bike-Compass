@@ -10,8 +10,16 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label width="1" height="0.59999999999999998" alignment="left" text="Charlemont Street" textAlignment="center" numberOfLines="3" id="Sfw-Fc-N56" userLabel="Station name"/>
-                        <label width="1" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" text="5 bikes left" textAlignment="center" id="m9I-l5-NBc" userLabel="Number of bikes left">
+                        <group width="1" height="0.5" alignment="left" hasDetent="YES" id="oN0-va-Tc9">
+                            <items>
+                                <map width="0.94999999999999996" widthAdjustment="1" height="0.94999999999999996" alignment="center" verticalAlignment="center" id="PPt-qr-i2x"/>
+                            </items>
+                        </group>
+                        <label width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" text="Charlemont Street" textAlignment="center" numberOfLines="2" id="Sfw-Fc-N56" userLabel="Station name">
+                            <color key="textColor" red="0.1333333333" green="0.47843137250000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label width="1" height="0.20000000000000001" alignment="center" verticalAlignment="bottom" text="5 bikes left" textAlignment="center" id="m9I-l5-NBc" userLabel="Number of bikes left">
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </label>
                     </items>
@@ -24,7 +32,9 @@
                             </menuItem>
                         </items>
                     </menu>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.94901960780000005" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
+                        <outlet property="mapView" destination="PPt-qr-i2x" id="NzW-8D-Ji7"/>
                         <outlet property="numberOfBikesLabel" destination="m9I-l5-NBc" id="WNg-7u-Y6q"/>
                         <outlet property="stationNameLabel" destination="Sfw-Fc-N56" id="M9A-UR-G9c"/>
                     </connections>

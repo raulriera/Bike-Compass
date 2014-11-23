@@ -12,6 +12,7 @@
 
 @interface InterfaceController()
 
+@property (weak, nonatomic) IBOutlet WKInterfaceMap *mapView;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *stationNameLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *numberOfBikesLabel;
 
@@ -50,6 +51,19 @@
     Station *station = [StationsRepository sharedRepository].currentStation;
     self.stationNameLabel.text = station.name;
     self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
+    
+    [self.mapView removeAllAnnotations];
+    
+    WKInterfaceMapPinColor pinColor;
+    
+    if (station.numberOfBikes > 0) {
+        pinColor = WKInterfaceMapPinColorGreen;
+    } else {
+        pinColor = WKInterfaceMapPinColorRed;
+    }
+    
+    [self.mapView addAnnotation:CLLocationCoordinate2DMake(station.latitude, station.longitude) withPinColor:pinColor];
+    [self.mapView setCoordinateRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(station.latitude, station.longitude), MKCoordinateSpanMake(0.001, 0.001))];
 }
 
 @end
