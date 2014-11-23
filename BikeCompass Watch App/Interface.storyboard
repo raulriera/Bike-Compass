@@ -17,7 +17,11 @@
                     </items>
                     <menu key="menu" id="zyb-gS-cT8">
                         <items>
-                            <menuItem title="Refresh" icon="repeat" id="Z8n-4d-sob"/>
+                            <menuItem title="Refresh" icon="repeat" id="Z8n-4d-sob">
+                                <connections>
+                                    <action selector="didTapRefresh" destination="AgC-eL-Hgc" id="uYS-ms-fBX"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>

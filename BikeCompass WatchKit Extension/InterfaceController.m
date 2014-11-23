@@ -7,6 +7,7 @@
 //
 
 #import "InterfaceController.h"
+#import "NetworksRepository.h"
 #import "StationsRepository.h"
 
 @interface InterfaceController()
@@ -22,25 +23,33 @@
 - (instancetype)initWithContext:(id)context {
     self = [super initWithContext:context];
     if (self){
-        // Initialize variables here.
-        // Configure interface objects here.
-        NSLog(@"%@ initWithContext", self);
-        
-        Station *station = [StationsRepository sharedRepository].currentStation;
-        self.stationNameLabel.text = station.name;
-        self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
+        [self updateInterface];
     }
     return self;
 }
 
-- (void)willActivate {
-    // This method is called when watch view controller is about to be visible to user
-    NSLog(@"%@ will activate", self);
+- (IBAction)didTapRefresh {
+    
+    [[StationsRepository sharedRepository] stationsForNetwork:[NetworksRepository sharedRepository].currentNetwork withCompletionBlock:^(NSArray *stations, NSError *error) {
+        
+        if (!error) {
+            Station *station = [StationsRepository sharedRepository].currentStation;
+            // Find the most recent information about this station
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%@", station.id];
+            NSArray *stationsFiltered = [stations filteredArrayUsingPredicate:predicate];
+            [StationsRepository sharedRepository].currentStation = [stationsFiltered firstObject];
+            
+            [self updateInterface];
+        }
+    }];
+    
 }
 
-- (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
-    NSLog(@"%@ did deactivate", self);
+- (void)updateInterface
+{
+    Station *station = [StationsRepository sharedRepository].currentStation;
+    self.stationNameLabel.text = station.name;
+    self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
 }
 
 @end
