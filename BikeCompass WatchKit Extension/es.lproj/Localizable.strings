@@ -1,0 +1,3 @@
+/* Number of bikes left in this station */
+"%ld bikes left" = "%ld bicis";
+

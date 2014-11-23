@@ -47,6 +47,11 @@
 		4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */; };
 		4CA9A14719FC755E008F6D74 /* FadeInTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */; };
 		4CB4B8B519CB87B0004E0787 /* MKMapView+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */; };
+		4CB962E71A228BE70047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962E91A228BE70047B5DA /* InfoPlist.strings */; };
+		4CB962EC1A228BE70047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962EE1A228BE70047B5DA /* InfoPlist.strings */; };
+		4CB962F11A228BE80047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962F31A228BE80047B5DA /* InfoPlist.strings */; };
+		4CB962F61A228BE80047B5DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962F81A228BE80047B5DA /* Localizable.strings */; };
+		4CB962FB1A228BE80047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962FD1A228BE80047B5DA /* InfoPlist.strings */; };
 		4CBAF97419FB066200BB0FF7 /* BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */; };
 		4CC2485619FD49EA0057B149 /* BlankState.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC2485519FD49EA0057B149 /* BlankState.storyboard */; };
 		4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2485919FDBC180057B149 /* UIViewController+BlankStateViewController.m */; };
@@ -205,6 +210,11 @@
 		4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+Extended.m"; sourceTree = "<group>"; };
 		4CB5BC7419AEA0080048EB5E /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		4CB5BC7519AEA0080048EB5E /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		4CB962E81A228BE70047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CB962ED1A228BE70047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CB962F21A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CB962F71A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4CB962FC1A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CBAF97219FB066200BB0FF7 /* BlankStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankStateViewController.h; sourceTree = "<group>"; };
 		4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankStateViewController.m; sourceTree = "<group>"; };
 		4CC2485519FD49EA0057B149 /* BlankState.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BlankState.storyboard; sourceTree = "<group>"; };
@@ -370,6 +380,8 @@
 		4C19DB941A214431009EFC12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CB962F81A228BE80047B5DA /* Localizable.strings */,
+				4CB962E91A228BE70047B5DA /* InfoPlist.strings */,
 				4C19DB951A214431009EFC12 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -388,6 +400,7 @@
 		4C19DBA21A214431009EFC12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CB962FD1A228BE80047B5DA /* InfoPlist.strings */,
 				4C19DBA31A214431009EFC12 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -501,6 +514,7 @@
 		4C54E5F71A1FCE31009FB6C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CB962EE1A228BE70047B5DA /* InfoPlist.strings */,
 				4C54E5F81A1FCE31009FB6C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -518,6 +532,7 @@
 		4C54E6061A1FCE31009FB6C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CB962F31A228BE80047B5DA /* InfoPlist.strings */,
 				4C54E6071A1FCE31009FB6C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -898,6 +913,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C19DB9A1A214431009EFC12 /* Images.xcassets in Resources */,
+				4CB962F61A228BE80047B5DA /* Localizable.strings in Resources */,
+				4CB962E71A228BE70047B5DA /* InfoPlist.strings in Resources */,
 				4C19DB9E1A214431009EFC12 /* BikeCompass Watch App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,6 +924,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C19DBA51A214431009EFC12 /* Interface.storyboard in Resources */,
+				4CB962FB1A228BE80047B5DA /* InfoPlist.strings in Resources */,
 				4C19DBA71A214431009EFC12 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +933,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB962EC1A228BE70047B5DA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,6 +941,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB962F11A228BE80047B5DA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,6 +1152,46 @@
 			isa = PBXVariantGroup;
 			children = (
 				4CA6B0A319F3068300A178BC /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CB962E91A228BE70047B5DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB962E81A228BE70047B5DA /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CB962EE1A228BE70047B5DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB962ED1A228BE70047B5DA /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CB962F31A228BE80047B5DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB962F21A228BE80047B5DA /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CB962F81A228BE80047B5DA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB962F71A228BE80047B5DA /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4CB962FD1A228BE80047B5DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB962FC1A228BE80047B5DA /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1494,6 +1554,7 @@
 				4C19DBAE1A214431009EFC12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C19DBB01A214431009EFC12 /* Build configuration list for PBXNativeTarget "BikeCompass WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -1502,6 +1563,7 @@
 				4C19DBAC1A214431009EFC12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C54E60E1A1FCE31009FB6C0 /* Build configuration list for PBXNativeTarget "CityBikesKit" */ = {
 			isa = XCConfigurationList;

@@ -8,7 +8,7 @@
 "6BT-ON-md7.text" = "Bienvenido";
 
 /* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "7wp-Bz-U40"; */
-"7wp-Bz-U40.text" = "Subtitulo";
+"7wp-Bz-U40.text" = "Sub título";
 
 /* Class = "IBUIButton"; normalTitle = "NETWORK"; ObjectID = "BLt-Kl-paO"; */
 "BLt-Kl-paO.normalTitle" = "PROVEEDOR";
