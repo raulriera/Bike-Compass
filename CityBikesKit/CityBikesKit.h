@@ -15,6 +15,4 @@ FOUNDATION_EXPORT double CityBikesKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CityBikesKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <CityBikesKit/PublicHeader.h>
-#import <CityBikesKit/NetworksRepository.h>
-#import <CityBikesKit/StationsRepository.h>
 
