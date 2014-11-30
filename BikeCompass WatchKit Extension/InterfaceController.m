@@ -18,7 +18,6 @@
 
 @end
 
-
 @implementation InterfaceController
 
 - (instancetype)initWithContext:(id)context {
@@ -31,27 +30,46 @@
 
 - (IBAction)didTapRefresh {
     
-    [[StationsRepository sharedRepository] stationsForNetwork:[NetworksRepository sharedRepository].currentNetwork withCompletionBlock:^(NSArray *stations, NSError *error) {
-        
-        if (!error) {
-            Station *station = [StationsRepository sharedRepository].currentStation;
-            // Find the most recent information about this station
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%@", station.id];
-            NSArray *stationsFiltered = [stations filteredArrayUsingPredicate:predicate];
-            [StationsRepository sharedRepository].currentStation = [stationsFiltered firstObject];
-            
-            [self updateInterface];
-        }
-    }];
+    Network *currentNetwork = [NetworksRepository sharedRepository].currentNetwork;
     
+    if (currentNetwork) {
+        [[StationsRepository sharedRepository] stationsForNetwork:currentNetwork withCompletionBlock:^(NSArray *stations, NSError *error) {
+            
+            if (!error) {
+                Station *station = [StationsRepository sharedRepository].currentStation;
+                // Find the most recent information about this station
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%@", station.id];
+                NSArray *stationsFiltered = [stations filteredArrayUsingPredicate:predicate];
+                [StationsRepository sharedRepository].currentStation = [stationsFiltered firstObject];
+                
+                [self updateInterface];
+            }
+        }];
+    }
 }
 
 - (void)updateInterface
 {
     Station *station = [StationsRepository sharedRepository].currentStation;
+    
+    if (station) {
+        [self updateInformationWithStation:station];
+        [self updateMapWithStation:station];
+    } else {
+        self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
+        self.numberOfBikesLabel.text = nil;
+    }
+    
+}
+
+- (void)updateInformationWithStation:(Station *)station
+{
     self.stationNameLabel.text = station.name;
     self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
-    
+}
+
+- (void)updateMapWithStation:(Station *)station
+{
     [self.mapView removeAllAnnotations];
     
     WKInterfaceMapPinColor pinColor;

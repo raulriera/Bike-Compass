@@ -1,3 +1,5 @@
 /* Number of bikes left in this station */
 "%ld bikes left" = "%ld bikes left";
 
+/* Error instruction */
+"Open the iPhone app first" = "Open the iPhone app first";
