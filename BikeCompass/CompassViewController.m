@@ -10,14 +10,13 @@
 #import "NetworksTableViewController.h"
 #import "CityDetectionViewController.h"
 #import "LocationManager.h"
-#import "NetworksRepository.h"
-#import "StationsRepository.h"
 #import <POP/POP.h>
-#import "Station.h"
 #import "MapViewController.h"
 #import <SAMSoundEffect.h>
 #import "UIViewController+BlankStateViewController.h"
 #import "FadeInTransitioning.h"
+#import "NetworksRepository.h"
+#import "StationsRepository.h"
 
 NSString *const kMapSegue = @"ShowMapSegue";
 NSString *const kNetworksSegue = @"ShowNetworksSegue";

@@ -12,7 +12,6 @@
 		4C032F4119ABBD6700AECF05 /* CompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F4019ABBD6700AECF05 /* CompassViewController.m */; };
 		4C032F4419ABBD6700AECF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C032F4219ABBD6700AECF05 /* Main.storyboard */; };
 		4C032F4619ABBD6700AECF05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C032F4519ABBD6700AECF05 /* Images.xcassets */; };
-		4C032F5219ABBD6700AECF05 /* BikeCompassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F5119ABBD6700AECF05 /* BikeCompassTests.m */; };
 		4C032F5D19ABC52600AECF05 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C032F5C19ABC52600AECF05 /* LocationManager.m */; };
 		4C0C151B19D3535E0053CB8F /* UIAlertController+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C151A19D3535E0053CB8F /* UIAlertController+Extended.m */; };
 		4C10EEC219AC00500082BCEE /* bell.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C10EEC119AC00500082BCEE /* bell.caf */; };
@@ -26,30 +25,33 @@
 		4C19DBB31A2160CC009EFC12 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
 		4C1B31CA19C7ACB90096E52F /* NetworksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31C919C7ACB90096E52F /* NetworksTableViewController.m */; };
 		4C1B31CE19C7AE250096E52F /* NetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31CD19C7AE250096E52F /* NetworkTableViewCell.m */; };
+		4C2B675B1A2B9CE700E7BED8 /* CityBikesKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C2B675A1A2B9CE700E7BED8 /* CityBikesKit.h */; };
 		4C3D441119EB1AC5001E45F2 /* LocationDisabledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D441019EB1AC5001E45F2 /* LocationDisabledViewController.m */; };
 		4C3FA96C19BFA29400E33BE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3FA96B19BFA29400E33BE2 /* MapViewController.m */; };
 		4C3FA97019BFA6BE00E33BE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C3FA96E19BFA6BE00E33BE2 /* Localizable.strings */; };
 		4C53611F19B374750007D24E /* StationPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53611E19B374750007D24E /* StationPointAnnotation.m */; };
-		4C54E5FA1A1FCE31009FB6C0 /* CityBikesKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C54E5F91A1FCE31009FB6C0 /* CityBikesKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C54E6001A1FCE31009FB6C0 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
-		4C54E6091A1FCE31009FB6C0 /* CityBikesKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54E6081A1FCE31009FB6C0 /* CityBikesKitTests.m */; };
-		4C54E60C1A1FCE31009FB6C0 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
-		4C54E60D1A1FCE31009FB6C0 /* CityBikesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C54E6141A1FCE56009FB6C0 /* NetworksRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37D19AD212400F6DE5A /* NetworksRepository.m */; };
-		4C54E6151A1FCE59009FB6C0 /* StationsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41874419AD525300549D40 /* StationsRepository.m */; };
-		4C54E6161A1FCE5D009FB6C0 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5BC7519AEA0080048EB5E /* Repository.m */; };
-		4C54E6171A1FCE67009FB6C0 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37319AC083400F6DE5A /* Station.m */; };
-		4C54E6181A1FCE6A009FB6C0 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37619AC085D00F6DE5A /* Network.m */; };
-		4C54E6191A1FCE6F009FB6C0 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DE37919AD1B2B00F6DE5A /* Location.m */; };
-		4C54E61A1A1FCE72009FB6C0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41874919AD58CD00549D40 /* Model.m */; };
 		4CA6B09D19F3068200A178BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6B09F19F3068200A178BC /* InfoPlist.strings */; };
-		4CA6B0A219F3068300A178BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6B0A419F3068300A178BC /* InfoPlist.strings */; };
+		4CA6B48F1A2B969300E3A647 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
+		4CA6B4901A2B969300E3A647 /* CityBikesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CA6B4AC1A2B97EE00E3A647 /* Location.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4A41A2B97EE00E3A647 /* Location.h */; };
+		4CA6B4AD1A2B97EE00E3A647 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4A51A2B97EE00E3A647 /* Location.m */; };
+		4CA6B4AE1A2B97EE00E3A647 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4A61A2B97EE00E3A647 /* Model.h */; };
+		4CA6B4AF1A2B97EE00E3A647 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4A71A2B97EE00E3A647 /* Model.m */; };
+		4CA6B4B01A2B97EE00E3A647 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4A81A2B97EE00E3A647 /* Network.h */; };
+		4CA6B4B11A2B97EE00E3A647 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4A91A2B97EE00E3A647 /* Network.m */; };
+		4CA6B4B21A2B97EE00E3A647 /* Station.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4AA1A2B97EE00E3A647 /* Station.h */; };
+		4CA6B4B31A2B97EE00E3A647 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4AB1A2B97EE00E3A647 /* Station.m */; };
+		4CA6B4BA1A2B97FE00E3A647 /* NetworksRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4B41A2B97FE00E3A647 /* NetworksRepository.h */; };
+		4CA6B4BB1A2B97FE00E3A647 /* NetworksRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B51A2B97FE00E3A647 /* NetworksRepository.m */; };
+		4CA6B4BC1A2B97FE00E3A647 /* Repository.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4B61A2B97FE00E3A647 /* Repository.h */; };
+		4CA6B4BD1A2B97FE00E3A647 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B71A2B97FE00E3A647 /* Repository.m */; };
+		4CA6B4BE1A2B97FE00E3A647 /* StationsRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4B81A2B97FE00E3A647 /* StationsRepository.h */; };
+		4CA6B4BF1A2B97FE00E3A647 /* StationsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */; };
 		4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */; };
 		4CA9A14719FC755E008F6D74 /* FadeInTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */; };
 		4CB4B8B519CB87B0004E0787 /* MKMapView+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */; };
 		4CB962E71A228BE70047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962E91A228BE70047B5DA /* InfoPlist.strings */; };
 		4CB962EC1A228BE70047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962EE1A228BE70047B5DA /* InfoPlist.strings */; };
-		4CB962F11A228BE80047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962F31A228BE80047B5DA /* InfoPlist.strings */; };
 		4CB962F61A228BE80047B5DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962F81A228BE80047B5DA /* Localizable.strings */; };
 		4CB962FB1A228BE80047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962FD1A228BE80047B5DA /* InfoPlist.strings */; };
 		4CBAF97419FB066200BB0FF7 /* BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */; };
@@ -64,13 +66,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4C032F4C19ABBD6700AECF05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C032F3419ABBD6700AECF05;
-			remoteInfo = BikeCompass;
-		};
 		4C19DB9F1A214431009EFC12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
@@ -85,21 +80,7 @@
 			remoteGlobalIDString = 4C19DB8F1A214431009EFC12;
 			remoteInfo = "BikeCompass WatchKit Extension";
 		};
-		4C54E6011A1FCE31009FB6C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C54E5F41A1FCE31009FB6C0;
-			remoteInfo = CityBikesKit;
-		};
-		4C54E6031A1FCE31009FB6C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C032F3419ABBD6700AECF05;
-			remoteInfo = BikeCompass;
-		};
-		4C54E60A1A1FCE31009FB6C0 /* PBXContainerItemProxy */ = {
+		4CA6B4911A2B969300E3A647 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
 			proxyType = 1;
@@ -109,17 +90,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4C5AC2BC19B6849100A4E92A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4C54E60D1A1FCE31009FB6C0 /* CityBikesKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C83179A19B3E872006B6940 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +99,17 @@
 				4C19DBAA1A214431009EFC12 /* BikeCompass WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CA6B4931A2B969300E3A647 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4CA6B4901A2B969300E3A647 /* CityBikesKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -145,9 +126,6 @@
 		4C032F4019ABBD6700AECF05 /* CompassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompassViewController.m; sourceTree = "<group>"; };
 		4C032F4319ABBD6700AECF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C032F4519ABBD6700AECF05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4C032F4B19ABBD6700AECF05 /* BikeCompassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeCompassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C032F5019ABBD6700AECF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C032F5119ABBD6700AECF05 /* BikeCompassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BikeCompassTests.m; sourceTree = "<group>"; };
 		4C032F5B19ABC52600AECF05 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		4C032F5C19ABC52600AECF05 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		4C0C151919D3535E0053CB8F /* UIAlertController+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extended.h"; sourceTree = "<group>"; };
@@ -172,47 +150,42 @@
 		4C1B31CD19C7AE250096E52F /* NetworkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTableViewCell.m; sourceTree = "<group>"; };
 		4C2AE6F819B8F75F006CA1EB /* LocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerDelegate.h; sourceTree = "<group>"; };
 		4C2AE6F919B8F7B2006CA1EB /* MapViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewControllerDelegate.h; sourceTree = "<group>"; };
+		4C2B675A1A2B9CE700E7BED8 /* CityBikesKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityBikesKit.h; sourceTree = "<group>"; };
 		4C3D440F19EB1AC5001E45F2 /* LocationDisabledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDisabledViewController.h; sourceTree = "<group>"; };
 		4C3D441019EB1AC5001E45F2 /* LocationDisabledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDisabledViewController.m; sourceTree = "<group>"; };
 		4C3FA96A19BFA29400E33BE2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		4C3FA96B19BFA29400E33BE2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		4C3FA96F19BFA6BE00E33BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C3FA97119BFA6C700E33BE2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4C41874319AD525300549D40 /* StationsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationsRepository.h; sourceTree = "<group>"; };
-		4C41874419AD525300549D40 /* StationsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationsRepository.m; sourceTree = "<group>"; };
-		4C41874619AD581E00549D40 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		4C41874919AD58CD00549D40 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		4C53611D19B374750007D24E /* StationPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationPointAnnotation.h; sourceTree = "<group>"; };
 		4C53611E19B374750007D24E /* StationPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationPointAnnotation.m; sourceTree = "<group>"; };
 		4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CityBikesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C54E5F81A1FCE31009FB6C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C54E5F91A1FCE31009FB6C0 /* CityBikesKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityBikesKit.h; sourceTree = "<group>"; };
-		4C54E5FF1A1FCE31009FB6C0 /* CityBikesKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityBikesKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C54E6071A1FCE31009FB6C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C54E6081A1FCE31009FB6C0 /* CityBikesKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityBikesKitTests.m; sourceTree = "<group>"; };
 		4C62358919BB47D400807189 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		4C8DC3461A094AD900B696CA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		4C8DE37219AC083400F6DE5A /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
-		4C8DE37319AC083400F6DE5A /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
-		4C8DE37519AC085D00F6DE5A /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
-		4C8DE37619AC085D00F6DE5A /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
-		4C8DE37819AD1B2B00F6DE5A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		4C8DE37919AD1B2B00F6DE5A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		4C8DE37C19AD212400F6DE5A /* NetworksRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworksRepository.h; sourceTree = "<group>"; };
-		4C8DE37D19AD212400F6DE5A /* NetworksRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworksRepository.m; sourceTree = "<group>"; };
 		4C8F20E419C8C8C700E3B04A /* NetworksViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworksViewControllerDelegate.h; sourceTree = "<group>"; };
 		4CA6B09E19F3068200A178BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4CA6B0A319F3068300A178BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CA6B4A41A2B97EE00E3A647 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = CityBikesKit/Location.h; sourceTree = SOURCE_ROOT; };
+		4CA6B4A51A2B97EE00E3A647 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = CityBikesKit/Location.m; sourceTree = SOURCE_ROOT; };
+		4CA6B4A61A2B97EE00E3A647 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = CityBikesKit/Model.h; sourceTree = SOURCE_ROOT; };
+		4CA6B4A71A2B97EE00E3A647 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = CityBikesKit/Model.m; sourceTree = SOURCE_ROOT; };
+		4CA6B4A81A2B97EE00E3A647 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Network.h; path = CityBikesKit/Network.h; sourceTree = SOURCE_ROOT; };
+		4CA6B4A91A2B97EE00E3A647 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Network.m; path = CityBikesKit/Network.m; sourceTree = SOURCE_ROOT; };
+		4CA6B4AA1A2B97EE00E3A647 /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Station.h; path = CityBikesKit/Station.h; sourceTree = SOURCE_ROOT; };
+		4CA6B4AB1A2B97EE00E3A647 /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Station.m; path = CityBikesKit/Station.m; sourceTree = SOURCE_ROOT; };
+		4CA6B4B41A2B97FE00E3A647 /* NetworksRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworksRepository.h; path = CityBikesKit/NetworksRepository.h; sourceTree = SOURCE_ROOT; };
+		4CA6B4B51A2B97FE00E3A647 /* NetworksRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworksRepository.m; path = CityBikesKit/NetworksRepository.m; sourceTree = SOURCE_ROOT; };
+		4CA6B4B61A2B97FE00E3A647 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repository.h; path = CityBikesKit/Repository.h; sourceTree = SOURCE_ROOT; };
+		4CA6B4B71A2B97FE00E3A647 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Repository.m; path = CityBikesKit/Repository.m; sourceTree = SOURCE_ROOT; };
+		4CA6B4B81A2B97FE00E3A647 /* StationsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationsRepository.h; path = CityBikesKit/StationsRepository.h; sourceTree = SOURCE_ROOT; };
+		4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationsRepository.m; path = CityBikesKit/StationsRepository.m; sourceTree = SOURCE_ROOT; };
 		4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		4CA9A14519FC755E008F6D74 /* FadeInTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeInTransitioning.h; sourceTree = "<group>"; };
 		4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeInTransitioning.m; sourceTree = "<group>"; };
 		4CB4B8B319CB87B0004E0787 /* MKMapView+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+Extended.h"; sourceTree = "<group>"; };
 		4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+Extended.m"; sourceTree = "<group>"; };
-		4CB5BC7419AEA0080048EB5E /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
-		4CB5BC7519AEA0080048EB5E /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		4CB962E81A228BE70047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962ED1A228BE70047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4CB962F21A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962F71A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CB962FC1A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962FE1A228CFC0047B5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -240,15 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE5EA4F19B1337F00FC1A0C /* MapKit.framework in Frameworks */,
-				4C54E60C1A1FCE31009FB6C0 /* CityBikesKit.framework in Frameworks */,
+				4CA6B48F1A2B969300E3A647 /* CityBikesKit.framework in Frameworks */,
 				5C6C49AF91EE4137AA322C46 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C032F4819ABBD6700AECF05 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,14 +235,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4C54E5FC1A1FCE31009FB6C0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C54E6001A1FCE31009FB6C0 /* CityBikesKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -284,9 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				4C032F3719ABBD6700AECF05 /* BikeCompass */,
-				4C032F4E19ABBD6700AECF05 /* BikeCompassTests */,
 				4C54E5F61A1FCE31009FB6C0 /* CityBikesKit */,
-				4C54E6051A1FCE31009FB6C0 /* CityBikesKitTests */,
 				4C19DB931A214431009EFC12 /* BikeCompass WatchKit Extension */,
 				4C19DBA11A214431009EFC12 /* BikeCompass Watch App */,
 				4C032F3619ABBD6700AECF05 /* Products */,
@@ -299,9 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				4C032F3519ABBD6700AECF05 /* BikeCompass.app */,
-				4C032F4B19ABBD6700AECF05 /* BikeCompassTests.xctest */,
 				4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */,
-				4C54E5FF1A1FCE31009FB6C0 /* CityBikesKitTests.xctest */,
 				4C19DB901A214431009EFC12 /* BikeCompass WatchKit Extension.appex */,
 				4C19DB9D1A214431009EFC12 /* BikeCompass Watch App.app */,
 			);
@@ -335,24 +289,6 @@
 				4CA6B09F19F3068200A178BC /* InfoPlist.strings */,
 				4C032F3919ABBD6700AECF05 /* Info.plist */,
 				4C032F3A19ABBD6700AECF05 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4C032F4E19ABBD6700AECF05 /* BikeCompassTests */ = {
-			isa = PBXGroup;
-			children = (
-				4C032F5119ABBD6700AECF05 /* BikeCompassTests.m */,
-				4C032F4F19ABBD6700AECF05 /* Supporting Files */,
-			);
-			path = BikeCompassTests;
-			sourceTree = "<group>";
-		};
-		4C032F4F19ABBD6700AECF05 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CA6B0A419F3068300A178BC /* InfoPlist.strings */,
-				4C032F5019ABBD6700AECF05 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -504,9 +440,9 @@
 		4C54E5F61A1FCE31009FB6C0 /* CityBikesKit */ = {
 			isa = PBXGroup;
 			children = (
+				4C2B675A1A2B9CE700E7BED8 /* CityBikesKit.h */,
 				4C8DE37119AC081500F6DE5A /* Models */,
 				4C8DE37B19AD211500F6DE5A /* Repositories */,
-				4C54E5F91A1FCE31009FB6C0 /* CityBikesKit.h */,
 				4C54E5F71A1FCE31009FB6C0 /* Supporting Files */,
 			);
 			path = CityBikesKit;
@@ -521,35 +457,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4C54E6051A1FCE31009FB6C0 /* CityBikesKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				4C54E6081A1FCE31009FB6C0 /* CityBikesKitTests.m */,
-				4C54E6061A1FCE31009FB6C0 /* Supporting Files */,
-			);
-			path = CityBikesKitTests;
-			sourceTree = "<group>";
-		};
-		4C54E6061A1FCE31009FB6C0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CB962F31A228BE80047B5DA /* InfoPlist.strings */,
-				4C54E6071A1FCE31009FB6C0 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		4C8DE37119AC081500F6DE5A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4C8DE37219AC083400F6DE5A /* Station.h */,
-				4C8DE37319AC083400F6DE5A /* Station.m */,
-				4C8DE37519AC085D00F6DE5A /* Network.h */,
-				4C8DE37619AC085D00F6DE5A /* Network.m */,
-				4C8DE37819AD1B2B00F6DE5A /* Location.h */,
-				4C8DE37919AD1B2B00F6DE5A /* Location.m */,
-				4C41874619AD581E00549D40 /* Model.h */,
-				4C41874919AD58CD00549D40 /* Model.m */,
+				4CA6B4A41A2B97EE00E3A647 /* Location.h */,
+				4CA6B4A51A2B97EE00E3A647 /* Location.m */,
+				4CA6B4A61A2B97EE00E3A647 /* Model.h */,
+				4CA6B4A71A2B97EE00E3A647 /* Model.m */,
+				4CA6B4A81A2B97EE00E3A647 /* Network.h */,
+				4CA6B4A91A2B97EE00E3A647 /* Network.m */,
+				4CA6B4AA1A2B97EE00E3A647 /* Station.h */,
+				4CA6B4AB1A2B97EE00E3A647 /* Station.m */,
 			);
 			name = Models;
 			path = ../BikeCompass;
@@ -558,12 +476,12 @@
 		4C8DE37B19AD211500F6DE5A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				4C8DE37C19AD212400F6DE5A /* NetworksRepository.h */,
-				4C8DE37D19AD212400F6DE5A /* NetworksRepository.m */,
-				4C41874319AD525300549D40 /* StationsRepository.h */,
-				4C41874419AD525300549D40 /* StationsRepository.m */,
-				4CB5BC7419AEA0080048EB5E /* Repository.h */,
-				4CB5BC7519AEA0080048EB5E /* Repository.m */,
+				4CA6B4B41A2B97FE00E3A647 /* NetworksRepository.h */,
+				4CA6B4B51A2B97FE00E3A647 /* NetworksRepository.m */,
+				4CA6B4B61A2B97FE00E3A647 /* Repository.h */,
+				4CA6B4B71A2B97FE00E3A647 /* Repository.m */,
+				4CA6B4B81A2B97FE00E3A647 /* StationsRepository.h */,
+				4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */,
 			);
 			name = Repositories;
 			path = ../BikeCompass;
@@ -694,7 +612,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C54E5FA1A1FCE31009FB6C0 /* CityBikesKit.h in Headers */,
+				4CA6B4AE1A2B97EE00E3A647 /* Model.h in Headers */,
+				4CA6B4B21A2B97EE00E3A647 /* Station.h in Headers */,
+				4CA6B4B01A2B97EE00E3A647 /* Network.h in Headers */,
+				4C2B675B1A2B9CE700E7BED8 /* CityBikesKit.h in Headers */,
+				4CA6B4BC1A2B97FE00E3A647 /* Repository.h in Headers */,
+				4CA6B4AC1A2B97EE00E3A647 /* Location.h in Headers */,
+				4CA6B4BA1A2B97FE00E3A647 /* NetworksRepository.h in Headers */,
+				4CA6B4BE1A2B97FE00E3A647 /* StationsRepository.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,36 +637,18 @@
 				4CC2485F1A005A680057B149 /* ShellScript */,
 				F7BD0ED26FA849728BE772CC /* Copy Pods Resources */,
 				4C83179A19B3E872006B6940 /* Embed App Extensions */,
-				4C5AC2BC19B6849100A4E92A /* Embed Frameworks */,
+				4CA6B4931A2B969300E3A647 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4C54E60B1A1FCE31009FB6C0 /* PBXTargetDependency */,
 				4C19DBA91A214431009EFC12 /* PBXTargetDependency */,
+				4CA6B4921A2B969300E3A647 /* PBXTargetDependency */,
 			);
 			name = BikeCompass;
 			productName = BikeCompass;
 			productReference = 4C032F3519ABBD6700AECF05 /* BikeCompass.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4C032F4A19ABBD6700AECF05 /* BikeCompassTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4C032F5819ABBD6700AECF05 /* Build configuration list for PBXNativeTarget "BikeCompassTests" */;
-			buildPhases = (
-				4C032F4719ABBD6700AECF05 /* Sources */,
-				4C032F4819ABBD6700AECF05 /* Frameworks */,
-				4C032F4919ABBD6700AECF05 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4C032F4D19ABBD6700AECF05 /* PBXTargetDependency */,
-			);
-			name = BikeCompassTests;
-			productName = BikeCompassTests;
-			productReference = 4C032F4B19ABBD6700AECF05 /* BikeCompassTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		4C19DB8F1A214431009EFC12 /* BikeCompass WatchKit Extension */ = {
 			isa = PBXNativeTarget;
@@ -796,25 +703,6 @@
 			productReference = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4C54E5FE1A1FCE31009FB6C0 /* CityBikesKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4C54E6111A1FCE31009FB6C0 /* Build configuration list for PBXNativeTarget "CityBikesKitTests" */;
-			buildPhases = (
-				4C54E5FB1A1FCE31009FB6C0 /* Sources */,
-				4C54E5FC1A1FCE31009FB6C0 /* Frameworks */,
-				4C54E5FD1A1FCE31009FB6C0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4C54E6021A1FCE31009FB6C0 /* PBXTargetDependency */,
-				4C54E6041A1FCE31009FB6C0 /* PBXTargetDependency */,
-			);
-			name = CityBikesKitTests;
-			productName = CityBikesKitTests;
-			productReference = 4C54E5FF1A1FCE31009FB6C0 /* CityBikesKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -836,10 +724,6 @@
 							};
 						};
 					};
-					4C032F4A19ABBD6700AECF05 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 4C032F3419ABBD6700AECF05;
-					};
 					4C19DB8F1A214431009EFC12 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = R64MTWS872;
@@ -855,10 +739,6 @@
 					4C54E5F41A1FCE31009FB6C0 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = R64MTWS872;
-					};
-					4C54E5FE1A1FCE31009FB6C0 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 4C032F3419ABBD6700AECF05;
 					};
 				};
 			};
@@ -877,9 +757,7 @@
 			projectRoot = "";
 			targets = (
 				4C032F3419ABBD6700AECF05 /* BikeCompass */,
-				4C032F4A19ABBD6700AECF05 /* BikeCompassTests */,
 				4C54E5F41A1FCE31009FB6C0 /* CityBikesKit */,
-				4C54E5FE1A1FCE31009FB6C0 /* CityBikesKitTests */,
 				4C19DB8F1A214431009EFC12 /* BikeCompass WatchKit Extension */,
 				4C19DB9C1A214431009EFC12 /* BikeCompass Watch App */,
 			);
@@ -898,14 +776,6 @@
 				4C032F4619ABBD6700AECF05 /* Images.xcassets in Resources */,
 				4CA6B09D19F3068200A178BC /* InfoPlist.strings in Resources */,
 				4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C032F4919ABBD6700AECF05 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CA6B0A219F3068300A178BC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,14 +805,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CB962EC1A228BE70047B5DA /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C54E5FD1A1FCE31009FB6C0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CB962F11A228BE80047B5DA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1049,14 +911,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4C032F4719ABBD6700AECF05 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C032F5219ABBD6700AECF05 /* BikeCompassTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C19DB8C1A214431009EFC12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1069,32 +923,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C54E6151A1FCE59009FB6C0 /* StationsRepository.m in Sources */,
-				4C54E6181A1FCE6A009FB6C0 /* Network.m in Sources */,
-				4C54E6161A1FCE5D009FB6C0 /* Repository.m in Sources */,
-				4C54E6171A1FCE67009FB6C0 /* Station.m in Sources */,
-				4C54E61A1A1FCE72009FB6C0 /* Model.m in Sources */,
-				4C54E6191A1FCE6F009FB6C0 /* Location.m in Sources */,
-				4C54E6141A1FCE56009FB6C0 /* NetworksRepository.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C54E5FB1A1FCE31009FB6C0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C54E6091A1FCE31009FB6C0 /* CityBikesKitTests.m in Sources */,
+				4CA6B4AD1A2B97EE00E3A647 /* Location.m in Sources */,
+				4CA6B4BD1A2B97FE00E3A647 /* Repository.m in Sources */,
+				4CA6B4B11A2B97EE00E3A647 /* Network.m in Sources */,
+				4CA6B4BF1A2B97FE00E3A647 /* StationsRepository.m in Sources */,
+				4CA6B4B31A2B97EE00E3A647 /* Station.m in Sources */,
+				4CA6B4BB1A2B97FE00E3A647 /* NetworksRepository.m in Sources */,
+				4CA6B4AF1A2B97EE00E3A647 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4C032F4D19ABBD6700AECF05 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4C032F3419ABBD6700AECF05 /* BikeCompass */;
-			targetProxy = 4C032F4C19ABBD6700AECF05 /* PBXContainerItemProxy */;
-		};
 		4C19DBA01A214431009EFC12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C19DB9C1A214431009EFC12 /* BikeCompass Watch App */;
@@ -1105,20 +946,10 @@
 			target = 4C19DB8F1A214431009EFC12 /* BikeCompass WatchKit Extension */;
 			targetProxy = 4C19DBA81A214431009EFC12 /* PBXContainerItemProxy */;
 		};
-		4C54E6021A1FCE31009FB6C0 /* PBXTargetDependency */ = {
+		4CA6B4921A2B969300E3A647 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C54E5F41A1FCE31009FB6C0 /* CityBikesKit */;
-			targetProxy = 4C54E6011A1FCE31009FB6C0 /* PBXContainerItemProxy */;
-		};
-		4C54E6041A1FCE31009FB6C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4C032F3419ABBD6700AECF05 /* BikeCompass */;
-			targetProxy = 4C54E6031A1FCE31009FB6C0 /* PBXContainerItemProxy */;
-		};
-		4C54E60B1A1FCE31009FB6C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4C54E5F41A1FCE31009FB6C0 /* CityBikesKit */;
-			targetProxy = 4C54E60A1A1FCE31009FB6C0 /* PBXContainerItemProxy */;
+			targetProxy = 4CA6B4911A2B969300E3A647 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1149,14 +980,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4CA6B0A419F3068300A178BC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CA6B0A319F3068300A178BC /* es */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		4CB962E91A228BE70047B5DA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1169,14 +992,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				4CB962ED1A228BE70047B5DA /* es */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4CB962F31A228BE80047B5DA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CB962F21A228BE80047B5DA /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1319,40 +1134,6 @@
 			};
 			name = Release;
 		};
-		4C032F5919ABBD6700AECF05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BikeCompassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeCompass.app/BikeCompass";
-			};
-			name = Debug;
-		};
-		4C032F5A19ABBD6700AECF05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BikeCompassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeCompass.app/BikeCompass";
-			};
-			name = Release;
-		};
 		4C19DBAB1A214431009EFC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA3E555E689DD6B68963F366 /* Pods-CityBikesKit.debug.xcconfig */;
@@ -1435,6 +1216,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA3E555E689DD6B68963F366 /* Pods-CityBikesKit.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1465,6 +1247,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17885F15D2CBC6501E34BB97 /* Pods-CityBikesKit.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1487,38 +1270,6 @@
 			};
 			name = Release;
 		};
-		4C54E6121A1FCE31009FB6C0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CityBikesKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeCompass.app/BikeCompass";
-			};
-			name = Debug;
-		};
-		4C54E6131A1FCE31009FB6C0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CityBikesKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeCompass.app/BikeCompass";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1536,15 +1287,6 @@
 			buildConfigurations = (
 				4C032F5619ABBD6700AECF05 /* Debug */,
 				4C032F5719ABBD6700AECF05 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4C032F5819ABBD6700AECF05 /* Build configuration list for PBXNativeTarget "BikeCompassTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4C032F5919ABBD6700AECF05 /* Debug */,
-				4C032F5A19ABBD6700AECF05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1572,15 +1314,6 @@
 			buildConfigurations = (
 				4C54E60F1A1FCE31009FB6C0 /* Debug */,
 				4C54E6101A1FCE31009FB6C0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4C54E6111A1FCE31009FB6C0 /* Build configuration list for PBXNativeTarget "CityBikesKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4C54E6121A1FCE31009FB6C0 /* Debug */,
-				4C54E6131A1FCE31009FB6C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
