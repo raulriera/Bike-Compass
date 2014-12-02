@@ -17,6 +17,7 @@ Bike Compass is a full-featured city bicycle finder app for iOS and  Watch. U
 
 - Completely designed for iOS8.
 - Apple Watch Support!.
+- Today Widget support!.
 - Hundreds of cities included.
 - Automatically detects the nearest station that has available bikes and tells you how to get there. Nothing to configure.
 - Real live information thanks to the wonderful http://www.citybik.es
