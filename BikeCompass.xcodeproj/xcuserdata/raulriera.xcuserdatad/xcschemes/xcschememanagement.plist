@@ -19,6 +19,11 @@
 		<key>CityBikesKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Todays Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 	</dict>
@@ -55,6 +60,11 @@
 			<true/>
 		</dict>
 		<key>4C4270AB1A1D55BA00D7036C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C53DC741A2E77E800099662</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -30,6 +30,11 @@
 		4C3FA96C19BFA29400E33BE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3FA96B19BFA29400E33BE2 /* MapViewController.m */; };
 		4C3FA97019BFA6BE00E33BE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C3FA96E19BFA6BE00E33BE2 /* Localizable.strings */; };
 		4C53611F19B374750007D24E /* StationPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53611E19B374750007D24E /* StationPointAnnotation.m */; };
+		4C53DC771A2E77E800099662 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C53DC761A2E77E800099662 /* NotificationCenter.framework */; };
+		4C53DC7D1A2E77E800099662 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53DC7C1A2E77E800099662 /* TodayViewController.m */; };
+		4C53DC7F1A2E77E800099662 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C53DC7E1A2E77E800099662 /* MainInterface.storyboard */; };
+		4C53DC821A2E77E800099662 /* Todays Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C53DC751A2E77E800099662 /* Todays Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4C53DC861A2E77FF00099662 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
 		4CA6B09D19F3068200A178BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6B09F19F3068200A178BC /* InfoPlist.strings */; };
 		4CA6B48F1A2B969300E3A647 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
 		4CA6B4901A2B969300E3A647 /* CityBikesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,6 +85,13 @@
 			remoteGlobalIDString = 4C19DB8F1A214431009EFC12;
 			remoteInfo = "BikeCompass WatchKit Extension";
 		};
+		4C53DC801A2E77E800099662 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C53DC741A2E77E800099662;
+			remoteInfo = "Todays Widget";
+		};
 		4CA6B4911A2B969300E3A647 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C032F2D19ABBD6700AECF05 /* Project object */;
@@ -97,6 +109,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				4C19DBAA1A214431009EFC12 /* BikeCompass WatchKit Extension.appex in Embed App Extensions */,
+				4C53DC821A2E77E800099662 /* Todays Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,11 +172,18 @@
 		4C3FA97119BFA6C700E33BE2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C53611D19B374750007D24E /* StationPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationPointAnnotation.h; sourceTree = "<group>"; };
 		4C53611E19B374750007D24E /* StationPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationPointAnnotation.m; sourceTree = "<group>"; };
+		4C53DC751A2E77E800099662 /* Todays Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Todays Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C53DC761A2E77E800099662 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4C53DC7A1A2E77E800099662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C53DC7B1A2E77E800099662 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		4C53DC7C1A2E77E800099662 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		4C53DC7E1A2E77E800099662 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CityBikesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C54E5F81A1FCE31009FB6C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C62358919BB47D400807189 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		4C8DC3461A094AD900B696CA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4C8F20E419C8C8C700E3B04A /* NetworksViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworksViewControllerDelegate.h; sourceTree = "<group>"; };
+		4C9C744C1A2E7B4000C662C6 /* Todays Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Todays Widget.entitlements"; sourceTree = "<group>"; };
 		4CA6B09E19F3068200A178BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CA6B4A41A2B97EE00E3A647 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = CityBikesKit/Location.h; sourceTree = SOURCE_ROOT; };
 		4CA6B4A51A2B97EE00E3A647 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = CityBikesKit/Location.m; sourceTree = SOURCE_ROOT; };
@@ -227,6 +247,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C53DC721A2E77E800099662 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C53DC861A2E77FF00099662 /* CityBikesKit.framework in Frameworks */,
+				4C53DC771A2E77E800099662 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C54E5F11A1FCE31009FB6C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,9 +271,10 @@
 			isa = PBXGroup;
 			children = (
 				4C032F3719ABBD6700AECF05 /* BikeCompass */,
-				4C54E5F61A1FCE31009FB6C0 /* CityBikesKit */,
 				4C19DB931A214431009EFC12 /* BikeCompass WatchKit Extension */,
 				4C19DBA11A214431009EFC12 /* BikeCompass Watch App */,
+				4C53DC781A2E77E800099662 /* Todays Widget */,
+				4C54E5F61A1FCE31009FB6C0 /* CityBikesKit */,
 				4C032F3619ABBD6700AECF05 /* Products */,
 				D7D51EF187C84E6C911CE6AC /* Frameworks */,
 				CC40FCD70A34FED984E2E0CE /* Pods */,
@@ -258,6 +288,7 @@
 				4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */,
 				4C19DB901A214431009EFC12 /* BikeCompass WatchKit Extension.appex */,
 				4C19DB9D1A214431009EFC12 /* BikeCompass Watch App.app */,
+				4C53DC751A2E77E800099662 /* Todays Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -437,6 +468,26 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		4C53DC781A2E77E800099662 /* Todays Widget */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C744C1A2E7B4000C662C6 /* Todays Widget.entitlements */,
+				4C53DC7B1A2E77E800099662 /* TodayViewController.h */,
+				4C53DC7C1A2E77E800099662 /* TodayViewController.m */,
+				4C53DC7E1A2E77E800099662 /* MainInterface.storyboard */,
+				4C53DC791A2E77E800099662 /* Supporting Files */,
+			);
+			path = "Todays Widget";
+			sourceTree = "<group>";
+		};
+		4C53DC791A2E77E800099662 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C53DC7A1A2E77E800099662 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4C54E5F61A1FCE31009FB6C0 /* CityBikesKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +652,7 @@
 				3D3235EAB9714E829FD85FEB /* libPods.a */,
 				7B737F6702C0E2402F2BA091 /* libPods-CityBikesKit.a */,
 				4C19DB911A214431009EFC12 /* WatchKit.framework */,
+				4C53DC761A2E77E800099662 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -644,6 +696,7 @@
 			dependencies = (
 				4C19DBA91A214431009EFC12 /* PBXTargetDependency */,
 				4CA6B4921A2B969300E3A647 /* PBXTargetDependency */,
+				4C53DC811A2E77E800099662 /* PBXTargetDependency */,
 			);
 			name = BikeCompass;
 			productName = BikeCompass;
@@ -682,6 +735,23 @@
 			productName = "BikeCompass Watch App";
 			productReference = 4C19DB9D1A214431009EFC12 /* BikeCompass Watch App.app */;
 			productType = "com.apple.product-type.application.watchapp";
+		};
+		4C53DC741A2E77E800099662 /* Todays Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C53DC851A2E77E800099662 /* Build configuration list for PBXNativeTarget "Todays Widget" */;
+			buildPhases = (
+				4C53DC711A2E77E800099662 /* Sources */,
+				4C53DC721A2E77E800099662 /* Frameworks */,
+				4C53DC731A2E77E800099662 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Todays Widget";
+			productName = "Todays Widget";
+			productReference = 4C53DC751A2E77E800099662 /* Todays Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		4C54E5F41A1FCE31009FB6C0 /* CityBikesKit */ = {
 			isa = PBXNativeTarget;
@@ -736,6 +806,15 @@
 					4C19DB9C1A214431009EFC12 = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					4C53DC741A2E77E800099662 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = R64MTWS872;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					4C54E5F41A1FCE31009FB6C0 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = R64MTWS872;
@@ -760,6 +839,7 @@
 				4C54E5F41A1FCE31009FB6C0 /* CityBikesKit */,
 				4C19DB8F1A214431009EFC12 /* BikeCompass WatchKit Extension */,
 				4C19DB9C1A214431009EFC12 /* BikeCompass Watch App */,
+				4C53DC741A2E77E800099662 /* Todays Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -797,6 +877,14 @@
 				4C19DBA51A214431009EFC12 /* Interface.storyboard in Resources */,
 				4CB962FB1A228BE80047B5DA /* InfoPlist.strings in Resources */,
 				4C19DBA71A214431009EFC12 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C53DC731A2E77E800099662 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C53DC7F1A2E77E800099662 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,6 +1007,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C53DC711A2E77E800099662 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C53DC7D1A2E77E800099662 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C54E5F01A1FCE31009FB6C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -945,6 +1041,11 @@
 			isa = PBXTargetDependency;
 			target = 4C19DB8F1A214431009EFC12 /* BikeCompass WatchKit Extension */;
 			targetProxy = 4C19DBA81A214431009EFC12 /* PBXContainerItemProxy */;
+		};
+		4C53DC811A2E77E800099662 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C53DC741A2E77E800099662 /* Todays Widget */;
+			targetProxy = 4C53DC801A2E77E800099662 /* PBXContainerItemProxy */;
 		};
 		4CA6B4921A2B969300E3A647 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1212,6 +1313,40 @@
 			};
 			name = Release;
 		};
+		4C53DC831A2E77E800099662 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA3E555E689DD6B68963F366 /* Pods-CityBikesKit.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Todays Widget/Todays Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Todays Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C53DC841A2E77E800099662 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17885F15D2CBC6501E34BB97 /* Pods-CityBikesKit.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Todays Widget/Todays Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Todays Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		4C54E60F1A1FCE31009FB6C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA3E555E689DD6B68963F366 /* Pods-CityBikesKit.debug.xcconfig */;
@@ -1305,6 +1440,15 @@
 			buildConfigurations = (
 				4C19DBAB1A214431009EFC12 /* Debug */,
 				4C19DBAC1A214431009EFC12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C53DC851A2E77E800099662 /* Build configuration list for PBXNativeTarget "Todays Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C53DC831A2E77E800099662 /* Debug */,
+				4C53DC841A2E77E800099662 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
