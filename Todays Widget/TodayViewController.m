@@ -51,7 +51,7 @@
 {
     self.stationNameLabel.text = station.name;
     self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", (long)station.numberOfBikes];
-    self.numberOfBikesLabel.layer.cornerRadius = 8;
+    self.numberOfBikesLabel.layer.cornerRadius = 6;
     
     if (station.numberOfBikes > 0) {
         self.numberOfBikesLabel.backgroundColor = [UIColor colorWithRed:34.0f/255.0f green:122.0f/255.0f blue:66.0f/255.0f alpha:1];
@@ -60,5 +60,12 @@
     }
     
 }
+
+- (IBAction)handleTap:(UITapGestureRecognizer *)sender
+{
+    NSURL *url = [NSURL URLWithString:@"bikecompass://"];
+    [self.extensionContext openURL:url completionHandler:nil];
+}
+
 
 @end

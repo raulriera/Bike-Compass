@@ -27,6 +27,10 @@
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>com.raulriera.bikecompass</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>bikecompass</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
