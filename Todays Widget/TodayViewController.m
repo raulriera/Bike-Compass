@@ -29,23 +29,36 @@
             
             if (!error) {
                 Station *station = [StationsRepository sharedRepository].currentStation;
-                // Find the most recent information about this station
                 NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%@", station.id];
                 NSArray *stationsFiltered = [stations filteredArrayUsingPredicate:predicate];
                 
                 station = [stationsFiltered firstObject];
                 [StationsRepository sharedRepository].currentStation = station;
                 
-                self.stationNameLabel.text = station.name;
-                self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", (long)station.numberOfBikes];
+                [self updateWidgetWithStation:station];
                 
                 completionHandler(NCUpdateResultNewData);
             } else {
                 completionHandler(NCUpdateResultFailed);
             }
         }];
+    } else {
+        completionHandler(NCUpdateResultFailed);
     }
+}
 
+- (void)updateWidgetWithStation:(Station *)station
+{
+    self.stationNameLabel.text = station.name;
+    self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", (long)station.numberOfBikes];
+    self.numberOfBikesLabel.layer.cornerRadius = 8;
+    
+    if (station.numberOfBikes > 0) {
+        self.numberOfBikesLabel.backgroundColor = [UIColor colorWithRed:34.0f/255.0f green:122.0f/255.0f blue:66.0f/255.0f alpha:1];
+    } else {
+        self.numberOfBikesLabel.backgroundColor = [UIColor colorWithRed:241.0f/255.0f green:23.0f/255.0f blue:23.0f/255.0f alpha:1];
+    }
+    
 }
 
 @end
