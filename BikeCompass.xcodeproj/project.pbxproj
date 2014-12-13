@@ -1237,7 +1237,7 @@
 		};
 		4C19DBAB1A214431009EFC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA3E555E689DD6B68963F366 /* Pods-CityBikesKit.debug.xcconfig */;
+			baseConfigurationReference = 52E09E23B5BC109BFB5941B1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "BikeCompass WatchKit Extension/BikeCompass WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1261,7 +1261,7 @@
 		};
 		4C19DBAC1A214431009EFC12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17885F15D2CBC6501E34BB97 /* Pods-CityBikesKit.release.xcconfig */;
+			baseConfigurationReference = C950FA958128F5E9606F508C /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "BikeCompass WatchKit Extension/BikeCompass WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1315,7 +1315,7 @@
 		};
 		4C53DC831A2E77E800099662 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA3E555E689DD6B68963F366 /* Pods-CityBikesKit.debug.xcconfig */;
+			baseConfigurationReference = 52E09E23B5BC109BFB5941B1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Todays Widget/Todays Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1334,7 +1334,7 @@
 		};
 		4C53DC841A2E77E800099662 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17885F15D2CBC6501E34BB97 /* Pods-CityBikesKit.release.xcconfig */;
+			baseConfigurationReference = C950FA958128F5E9606F508C /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Todays Widget/Todays Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
