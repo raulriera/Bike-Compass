@@ -81,7 +81,7 @@
     }
     
     [self.mapView addAnnotation:CLLocationCoordinate2DMake(station.latitude, station.longitude) withPinColor:pinColor];
-    [self.mapView setCoordinateRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(station.latitude, station.longitude), MKCoordinateSpanMake(0.001, 0.001))];
+    [self.mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(station.latitude, station.longitude), MKCoordinateSpanMake(0.001, 0.001))];
 }
 
 @end
