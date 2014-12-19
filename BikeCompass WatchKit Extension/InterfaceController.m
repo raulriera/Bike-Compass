@@ -20,8 +20,8 @@
 
 @implementation InterfaceController
 
-- (instancetype)initWithContext:(id)context {
-    self = [super initWithContext:context];
+- (instancetype)init {
+    self = [super init];
     if (self){
         [self updateInterface];
     }
