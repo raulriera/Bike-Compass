@@ -1,30 +1,30 @@
-/* Class = "IBUILabel"; text = "Bike Compass uses your location to check and select the closest bike station near you."; ObjectID = "4f3-xE-wtY"; */
+/* Class = "UILabel"; text = "Bike Compass uses your location to check and select the closest bike station near you."; ObjectID = "4f3-xE-wtY"; */
 "4f3-xE-wtY.text" = "Bici Compás usa tu ubicación para encontrar la estación de bicicletas más cercana.";
 
-/* Class = "IBUILabel"; text = "Title"; ObjectID = "5zV-Lr-gW1"; */
+/* Class = "UILabel"; text = "Title"; ObjectID = "5zV-Lr-gW1"; */
 "5zV-Lr-gW1.text" = "Título";
 
-/* Class = "IBUILabel"; text = "Welcome"; ObjectID = "6BT-ON-md7"; */
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "6BT-ON-md7"; */
 "6BT-ON-md7.text" = "Bienvenido";
 
-/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "7wp-Bz-U40"; */
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "7wp-Bz-U40"; */
 "7wp-Bz-U40.text" = "Sub título";
 
-/* Class = "IBUIButton"; normalTitle = "NETWORK"; ObjectID = "BLt-Kl-paO"; */
+/* Class = "UIButton"; normalTitle = "NETWORK"; ObjectID = "BLt-Kl-paO"; */
 "BLt-Kl-paO.normalTitle" = "PROVEEDOR";
 
-/* Class = "IBUINavigationItem"; title = "Networks"; ObjectID = "Iln-YZ-I5q"; */
+/* Class = "UINavigationItem"; title = "Networks"; ObjectID = "Iln-YZ-I5q"; */
 "Iln-YZ-I5q.title" = "Proveedores";
 
-/* Class = "IBUIButton"; normalTitle = "Use my location"; ObjectID = "UJD-Mv-aem"; */
+/* Class = "UIButton"; normalTitle = "Use my location"; ObjectID = "UJD-Mv-aem"; */
 "UJD-Mv-aem.normalTitle" = "Usar mi ubicación";
 
-/* Class = "IBUILabel"; text = "..."; ObjectID = "ccV-PD-pc5"; */
+/* Class = "UILabel"; text = "..."; ObjectID = "ccV-PD-pc5"; */
 "ccV-PD-pc5.text" = "...";
 
-/* Class = "IBUIButton"; normalTitle = "..."; ObjectID = "igm-yV-HXy"; */
+/* Class = "UIButton"; normalTitle = "..."; ObjectID = "igm-yV-HXy"; */
 "igm-yV-HXy.normalTitle" = "...";
 
-/* Class = "IBUINavigationItem"; title = "Bike Compass"; ObjectID = "qLZ-9s-tzn"; */
+/* Class = "UINavigationItem"; title = "Bike Compass"; ObjectID = "qLZ-9s-tzn"; */
 "qLZ-9s-tzn.title" = "Bici Compás";
 

@@ -43,6 +43,7 @@
             }
         }];
     } else {
+        self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
         completionHandler(NCUpdateResultFailed);
     }
 }

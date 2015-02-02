@@ -64,6 +64,8 @@
 		4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2485919FDBC180057B149 /* UIViewController+BlankStateViewController.m */; };
 		4CC2485E1A004E060057B149 /* CityDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2485D1A004E060057B149 /* CityDetectionViewController.m */; };
 		4CC248631A02E4030057B149 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC248621A02E4030057B149 /* RoundedButton.m */; };
+		4CC8A6EA1A80021900281BAB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8A6EC1A80021900281BAB /* Localizable.strings */; };
+		4CC8A6EF1A80021900281BAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8A6F11A80021900281BAB /* InfoPlist.strings */; };
 		4CDBF3E019CEF6980020E4F7 /* FBAnnotationCluster+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */; };
 		4CE5EA4F19B1337F00FC1A0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */; };
 		5B5AAF3023FF283A04BBE220 /* libPods-CityBikesKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B737F6702C0E2402F2BA091 /* libPods-CityBikesKit.a */; };
@@ -218,6 +220,9 @@
 		4CC2485D1A004E060057B149 /* CityDetectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetectionViewController.m; sourceTree = "<group>"; };
 		4CC248611A02E4030057B149 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
 		4CC248621A02E4030057B149 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
+		4CC8A6EB1A80021900281BAB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4CC8A6F01A80021900281BAB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CC8A6F31A80024400281BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CDBF3DE19CEF6980020E4F7 /* FBAnnotationCluster+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBAnnotationCluster+Extended.h"; sourceTree = "<group>"; };
 		4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBAnnotationCluster+Extended.m"; sourceTree = "<group>"; };
 		4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -483,6 +488,8 @@
 		4C53DC791A2E77E800099662 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CC8A6F11A80021900281BAB /* InfoPlist.strings */,
+				4CC8A6EC1A80021900281BAB /* Localizable.strings */,
 				4C53DC7A1A2E77E800099662 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -885,6 +892,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C53DC7F1A2E77E800099662 /* MainInterface.storyboard in Resources */,
+				4CC8A6EF1A80021900281BAB /* InfoPlist.strings in Resources */,
+				4CC8A6EA1A80021900281BAB /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,6 +1123,23 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		4CC8A6EC1A80021900281BAB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC8A6EB1A80021900281BAB /* es */,
+				4CC8A6F31A80024400281BAB /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4CC8A6F11A80021900281BAB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC8A6F01A80021900281BAB /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1325,6 +1351,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Todays Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1340,6 +1367,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Todays Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
