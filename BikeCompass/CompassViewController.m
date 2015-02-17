@@ -42,14 +42,19 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 @end
 
 @implementation CompassViewController
-            
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-        
+    
     // Set the to be animated views to their initial animation
     // position. We do this so the final animated state is
     // the final position of the view
     [self setupViewsForAnimation];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     // Setup the click handler for the station name label
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(stationNameTapped)];
