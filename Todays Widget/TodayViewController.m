@@ -67,8 +67,7 @@
         self.numberOfBikesLabel.backgroundColor = [UIColor colorWithRed:34.0f/255.0f green:122.0f/255.0f blue:66.0f/255.0f alpha:1];
     } else {
         self.numberOfBikesLabel.backgroundColor = [UIColor colorWithRed:241.0f/255.0f green:23.0f/255.0f blue:23.0f/255.0f alpha:1];
-    }
-    
+    }    
 }
 
 - (IBAction)handleTap:(UITapGestureRecognizer *)sender

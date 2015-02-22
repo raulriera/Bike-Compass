@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,33 +14,34 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" placeholderIntrinsicWidth="183.5" placeholderIntrinsicHeight="39" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="232" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="0.0" y="8" width="236" height="54"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="20" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42" userLabel="Station name">
+                                <rect key="frame" x="0.0" y="10" width="246" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="88.5" placeholderIntrinsicHeight="20.5" text="" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="YTH-3v-RQj">
-                                <rect key="frame" x="244" y="25" width="40" height="20.5"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" text="" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTH-3v-RQj" userLabel="Bike count">
+                                <rect key="frame" x="258" y="10" width="30" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="5kI-33-DwM"/>
+                                    <constraint firstAttribute="width" constant="30" id="qoD-ZB-INt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="YTH-3v-RQj" secondAttribute="trailing" constant="20" id="1fx-H7-wgO"/>
-                            <constraint firstAttribute="bottom" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" id="4PK-3p-jvs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YTH-3v-RQj" secondAttribute="trailing" constant="16" id="1fx-H7-wgO"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="6Vq-gs-PHe"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="centerY" secondItem="YTH-3v-RQj" secondAttribute="centerY" id="9VL-pl-zWq"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="8" id="I6V-RD-8q3"/>
-                            <constraint firstItem="YTH-3v-RQj" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="8" id="ysv-rK-E0b"/>
+                            <constraint firstAttribute="centerY" secondItem="GcN-lo-r42" secondAttribute="centerY" id="bp2-Ww-zfa"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" priority="500" constant="10" id="kQY-N3-ssN"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" priority="500" constant="10" id="s8w-Cj-4au"/>
+                            <constraint firstItem="YTH-3v-RQj" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="12" id="ysv-rK-E0b"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="RD5-Iv-vee" appends="YES" id="5Dv-64-3Xb"/>
@@ -51,7 +52,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="70"/>
+                    <size key="freeformSize" width="320" height="40"/>
                     <connections>
                         <outlet property="numberOfBikesLabel" destination="YTH-3v-RQj" id="GxO-UQ-NYE"/>
                         <outlet property="stationNameLabel" destination="GcN-lo-r42" id="5QE-Un-QLf"/>
