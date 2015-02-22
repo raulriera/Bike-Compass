@@ -17,7 +17,6 @@
 		4C10EEC219AC00500082BCEE /* bell.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C10EEC119AC00500082BCEE /* bell.caf */; };
 		4C19DB921A214431009EFC12 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C19DB911A214431009EFC12 /* WatchKit.framework */; };
 		4C19DB981A214431009EFC12 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19DB971A214431009EFC12 /* InterfaceController.m */; };
-		4C19DB9A1A214431009EFC12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C19DB991A214431009EFC12 /* Images.xcassets */; };
 		4C19DB9E1A214431009EFC12 /* BikeCompass Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = 4C19DB9D1A214431009EFC12 /* BikeCompass Watch App.app */; };
 		4C19DBA51A214431009EFC12 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C19DBA41A214431009EFC12 /* Interface.storyboard */; };
 		4C19DBA71A214431009EFC12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C19DBA61A214431009EFC12 /* Images.xcassets */; };
@@ -153,7 +152,6 @@
 		4C19DB951A214431009EFC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C19DB961A214431009EFC12 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
 		4C19DB971A214431009EFC12 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		4C19DB991A214431009EFC12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4C19DB9D1A214431009EFC12 /* BikeCompass Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeCompass Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C19DBA31A214431009EFC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C19DBA41A214431009EFC12 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 				4C19DBB51A216880009EFC12 /* BikeCompass WatchKit Extension.entitlements */,
 				4C19DB961A214431009EFC12 /* InterfaceController.h */,
 				4C19DB971A214431009EFC12 /* InterfaceController.m */,
-				4C19DB991A214431009EFC12 /* Images.xcassets */,
 				4C19DB941A214431009EFC12 /* Supporting Files */,
 			);
 			path = "BikeCompass WatchKit Extension";
@@ -879,7 +876,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C19DB9A1A214431009EFC12 /* Images.xcassets in Resources */,
 				4CB962F61A228BE80047B5DA /* Localizable.strings in Resources */,
 				4CB962E71A228BE70047B5DA /* InfoPlist.strings in Resources */,
 				4C19DB9E1A214431009EFC12 /* BikeCompass Watch App.app in Resources */,
