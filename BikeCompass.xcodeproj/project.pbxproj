@@ -307,20 +307,20 @@
 		4C032F3719ABBD6700AECF05 /* BikeCompass */ = {
 			isa = PBXGroup;
 			children = (
-				4C19DBB41A216376009EFC12 /* BikeCompass.entitlements */,
-				4CC2485419FD49BD0057B149 /* Storyboards & XIBs */,
 				4C032F3C19ABBD6700AECF05 /* AppDelegate.h */,
 				4C032F3D19ABBD6700AECF05 /* AppDelegate.m */,
+				4C19DBB41A216376009EFC12 /* BikeCompass.entitlements */,
 				4C032F4519ABBD6700AECF05 /* Images.xcassets */,
 				4CB4B8B019CB8730004E0787 /* Categories */,
 				4C2AE6F719B8F729006CA1EB /* Delegates */,
 				4C3FA96E19BFA6BE00E33BE2 /* Localizable.strings */,
 				4C2AE70819B93B42006CA1EB /* LocationManager */,
 				4C41874219AD51A600549D40 /* Sounds */,
-				4C032F3819ABBD6700AECF05 /* Supporting Files */,
 				4C2AE70719B93B24006CA1EB /* Transitions */,
 				4C53611C19B36F9A0007D24E /* View Controllers */,
 				4CCFCEE419B7C07F00F29AAD /* Views */,
+				4CC2485419FD49BD0057B149 /* Storyboards & XIBs */,
+				4C032F3819ABBD6700AECF05 /* Supporting Files */,
 			);
 			path = BikeCompass;
 			sourceTree = "<group>";
@@ -1256,7 +1256,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BikeCompass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1276,7 +1276,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BikeCompass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
