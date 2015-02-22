@@ -20,6 +20,15 @@
 
 @implementation TodayViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    Station *cachedStation = [StationsRepository sharedRepository].currentStation;
+    
+    if (cachedStation) {
+        [self updateWidgetWithStation:cachedStation];
+    }
+}
+
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     
     Network *currentNetwork = [NetworksRepository sharedRepository].currentNetwork;
