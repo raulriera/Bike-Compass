@@ -46,16 +46,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="301" placeholderIntrinsicHeight="56" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BLt-Kl-paO">
-                                <rect key="frame" x="16" y="75" width="568" height="56"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="34"/>
-                                <state key="normal" title="NETWORK">
-                                    <color key="titleColor" red="0.1333333333" green="0.47843137250000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="networkNameTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Zb-p7-dxy"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccV-PD-pc5" userLabel="Station">
                                 <rect key="frame" x="16" y="496" width="568" height="46.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="34"/>
@@ -73,6 +63,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="301" placeholderIntrinsicHeight="56" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BLt-Kl-paO">
+                                <rect key="frame" x="16" y="75" width="568" height="56"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="34"/>
+                                <state key="normal" title="NETWORK">
+                                    <color key="titleColor" red="0.1333333333" green="0.47843137250000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="networkNameTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Zb-p7-dxy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.94117647058823528" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -80,12 +80,12 @@
                             <constraint firstItem="igm-yV-HXy" firstAttribute="top" secondItem="oaP-Hp-sbx" secondAttribute="bottom" constant="18" id="5zf-Jd-6zN"/>
                             <constraint firstItem="BLt-Kl-paO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="CPu-XE-ncT"/>
                             <constraint firstItem="XBm-QB-HfB" firstAttribute="top" secondItem="ccV-PD-pc5" secondAttribute="bottom" constant="2" id="Ciz-ZU-Wzb"/>
+                            <constraint firstItem="igm-yV-HXy" firstAttribute="centerY" secondItem="cWe-bo-S77" secondAttribute="centerY" constant="16.5" id="FMd-yX-Seq">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="BLt-Kl-paO" secondAttribute="centerX" id="Fea-34-S4n"/>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="leading" secondItem="cWe-bo-S77" secondAttribute="trailing" constant="8" id="Fj3-hY-ccM"/>
                             <constraint firstAttribute="centerY" secondItem="cWe-bo-S77" secondAttribute="centerY" id="ITk-UI-puV"/>
-                            <constraint firstItem="cWe-bo-S77" firstAttribute="top" secondItem="BLt-Kl-paO" secondAttribute="top" id="JnQ-OV-LvA">
-                                <variation key="heightClass=compact-widthClass=compact" constant="-30"/>
-                            </constraint>
                             <constraint firstItem="XBm-QB-HfB" firstAttribute="top" secondItem="ccV-PD-pc5" secondAttribute="bottom" constant="8.5" id="KR8-v3-Een">
                                 <variation key="heightClass=compact-widthClass=compact" constant="8"/>
                             </constraint>
@@ -93,9 +93,14 @@
                             <constraint firstItem="BLt-Kl-paO" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="LYT-P7-lFI"/>
                             <constraint firstItem="BLt-Kl-paO" firstAttribute="leading" secondItem="cWe-bo-S77" secondAttribute="trailing" constant="8" id="NQu-g3-Z6S"/>
                             <constraint firstItem="igm-yV-HXy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="OyK-wC-uGs"/>
-                            <constraint firstItem="ccV-PD-pc5" firstAttribute="top" secondItem="igm-yV-HXy" secondAttribute="bottom" constant="6" id="P4V-qb-to8"/>
+                            <constraint firstItem="ccV-PD-pc5" firstAttribute="top" secondItem="igm-yV-HXy" secondAttribute="bottom" constant="6" id="P4V-qb-to8">
+                                <variation key="heightClass=compact-widthClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="igm-yV-HXy" firstAttribute="leading" secondItem="ccV-PD-pc5" secondAttribute="leading" id="VG7-JT-Uah"/>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Vkr-N3-JwC"/>
+                            <constraint firstItem="BLt-Kl-paO" firstAttribute="centerY" secondItem="cWe-bo-S77" secondAttribute="centerY" constant="0.5" id="Yyr-oS-VhY">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-40"/>
+                            </constraint>
                             <constraint firstItem="cWe-bo-S77" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="aoO-0u-4aN">
                                 <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -107,6 +112,7 @@
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="oQe-a7-lyp"/>
                             <constraint firstAttribute="centerX" secondItem="cWe-bo-S77" secondAttribute="centerX" id="oj2-6S-ojS"/>
                             <constraint firstItem="cWe-bo-S77" firstAttribute="bottom" secondItem="XBm-QB-HfB" secondAttribute="bottom" id="pXQ-gq-aqV"/>
+                            <constraint firstItem="igm-yV-HXy" firstAttribute="top" secondItem="BLt-Kl-paO" secondAttribute="bottom" constant="8" id="rZy-Ix-Zha"/>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="bottom" secondItem="cWe-bo-S77" secondAttribute="bottom" constant="-29.5" id="vlg-iT-H3W">
                                 <variation key="heightClass=compact-widthClass=compact" constant="-30"/>
                             </constraint>
@@ -114,14 +120,16 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="aoO-0u-4aN"/>
+                                <exclude reference="pXQ-gq-aqV"/>
                                 <exclude reference="Fea-34-S4n"/>
                                 <exclude reference="LYT-P7-lFI"/>
                                 <exclude reference="NQu-g3-Z6S"/>
-                                <exclude reference="JnQ-OV-LvA"/>
-                                <exclude reference="aoO-0u-4aN"/>
-                                <exclude reference="pXQ-gq-aqV"/>
+                                <exclude reference="Yyr-oS-VhY"/>
+                                <exclude reference="FMd-yX-Seq"/>
                                 <exclude reference="VG7-JT-Uah"/>
                                 <exclude reference="eFC-9k-SuB"/>
+                                <exclude reference="rZy-Ix-Zha"/>
                                 <exclude reference="Fj3-hY-ccM"/>
                                 <exclude reference="LP7-7g-FNm"/>
                                 <exclude reference="P4V-qb-to8"/>
@@ -132,20 +140,22 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
-                                <exclude reference="CPu-XE-ncT"/>
-                                <include reference="LYT-P7-lFI"/>
-                                <include reference="NQu-g3-Z6S"/>
-                                <exclude reference="kcH-Dh-heD"/>
-                                <include reference="JnQ-OV-LvA"/>
                                 <include reference="aoO-0u-4aN"/>
                                 <exclude reference="oj2-6S-ojS"/>
                                 <exclude reference="pXQ-gq-aqV"/>
                                 <exclude reference="jMY-q8-kEx"/>
+                                <exclude reference="CPu-XE-ncT"/>
+                                <include reference="LYT-P7-lFI"/>
+                                <include reference="NQu-g3-Z6S"/>
+                                <exclude reference="Yyr-oS-VhY"/>
+                                <exclude reference="kcH-Dh-heD"/>
                                 <exclude reference="5zf-Jd-6zN"/>
+                                <include reference="FMd-yX-Seq"/>
                                 <exclude reference="OyK-wC-uGs"/>
                                 <include reference="VG7-JT-Uah"/>
                                 <include reference="eFC-9k-SuB"/>
                                 <exclude reference="kX6-8r-LgG"/>
+                                <include reference="rZy-Ix-Zha"/>
                                 <exclude reference="3we-5i-X3N"/>
                                 <include reference="Fj3-hY-ccM"/>
                                 <include reference="LP7-7g-FNm"/>
@@ -153,7 +163,7 @@
                                 <include reference="Vkr-N3-JwC"/>
                                 <exclude reference="dVo-41-mac"/>
                                 <exclude reference="oQe-a7-lyp"/>
-                                <include reference="vlg-iT-H3W"/>
+                                <exclude reference="vlg-iT-H3W"/>
                                 <exclude reference="Ciz-ZU-Wzb"/>
                                 <include reference="KR8-v3-Een"/>
                                 <exclude reference="yyK-Iu-h3t"/>
