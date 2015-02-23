@@ -81,28 +81,28 @@
                             <constraint firstItem="BLt-Kl-paO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="CPu-XE-ncT"/>
                             <constraint firstItem="XBm-QB-HfB" firstAttribute="top" secondItem="ccV-PD-pc5" secondAttribute="bottom" constant="2" id="Ciz-ZU-Wzb"/>
                             <constraint firstItem="igm-yV-HXy" firstAttribute="centerY" secondItem="cWe-bo-S77" secondAttribute="centerY" constant="16.5" id="FMd-yX-Seq">
-                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="BLt-Kl-paO" secondAttribute="centerX" id="Fea-34-S4n"/>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="leading" secondItem="cWe-bo-S77" secondAttribute="trailing" constant="8" id="Fj3-hY-ccM"/>
                             <constraint firstAttribute="centerY" secondItem="cWe-bo-S77" secondAttribute="centerY" id="ITk-UI-puV"/>
                             <constraint firstItem="XBm-QB-HfB" firstAttribute="top" secondItem="ccV-PD-pc5" secondAttribute="bottom" constant="8.5" id="KR8-v3-Een">
-                                <variation key="heightClass=compact-widthClass=compact" constant="8"/>
+                                <variation key="heightClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="centerX" secondItem="XBm-QB-HfB" secondAttribute="centerX" id="LP7-7g-FNm"/>
                             <constraint firstItem="BLt-Kl-paO" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="LYT-P7-lFI"/>
                             <constraint firstItem="BLt-Kl-paO" firstAttribute="leading" secondItem="cWe-bo-S77" secondAttribute="trailing" constant="8" id="NQu-g3-Z6S"/>
                             <constraint firstItem="igm-yV-HXy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="OyK-wC-uGs"/>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="top" secondItem="igm-yV-HXy" secondAttribute="bottom" constant="6" id="P4V-qb-to8">
-                                <variation key="heightClass=compact-widthClass=compact" constant="8"/>
+                                <variation key="heightClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="igm-yV-HXy" firstAttribute="leading" secondItem="ccV-PD-pc5" secondAttribute="leading" id="VG7-JT-Uah"/>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Vkr-N3-JwC"/>
                             <constraint firstItem="BLt-Kl-paO" firstAttribute="centerY" secondItem="cWe-bo-S77" secondAttribute="centerY" constant="0.5" id="Yyr-oS-VhY">
-                                <variation key="heightClass=compact-widthClass=compact" constant="-40"/>
+                                <variation key="heightClass=compact" constant="-40"/>
                             </constraint>
                             <constraint firstItem="cWe-bo-S77" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="aoO-0u-4aN">
-                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="top" secondItem="igm-yV-HXy" secondAttribute="bottom" constant="6" id="dVo-41-mac"/>
                             <constraint firstItem="igm-yV-HXy" firstAttribute="trailing" secondItem="ccV-PD-pc5" secondAttribute="trailing" id="eFC-9k-SuB"/>
@@ -114,18 +114,18 @@
                             <constraint firstItem="cWe-bo-S77" firstAttribute="bottom" secondItem="XBm-QB-HfB" secondAttribute="bottom" id="pXQ-gq-aqV"/>
                             <constraint firstItem="igm-yV-HXy" firstAttribute="top" secondItem="BLt-Kl-paO" secondAttribute="bottom" constant="8" id="rZy-Ix-Zha"/>
                             <constraint firstItem="ccV-PD-pc5" firstAttribute="bottom" secondItem="cWe-bo-S77" secondAttribute="bottom" constant="-29.5" id="vlg-iT-H3W">
-                                <variation key="heightClass=compact-widthClass=compact" constant="-30"/>
+                                <variation key="heightClass=compact" constant="-30"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="XBm-QB-HfB" secondAttribute="centerX" constant="1" id="yyK-Iu-h3t"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="aoO-0u-4aN"/>
-                                <exclude reference="pXQ-gq-aqV"/>
                                 <exclude reference="Fea-34-S4n"/>
                                 <exclude reference="LYT-P7-lFI"/>
                                 <exclude reference="NQu-g3-Z6S"/>
                                 <exclude reference="Yyr-oS-VhY"/>
+                                <exclude reference="aoO-0u-4aN"/>
+                                <exclude reference="pXQ-gq-aqV"/>
                                 <exclude reference="FMd-yX-Seq"/>
                                 <exclude reference="VG7-JT-Uah"/>
                                 <exclude reference="eFC-9k-SuB"/>
@@ -138,17 +138,17 @@
                                 <exclude reference="KR8-v3-Een"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=compact-widthClass=compact">
+                        <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="aoO-0u-4aN"/>
-                                <exclude reference="oj2-6S-ojS"/>
-                                <exclude reference="pXQ-gq-aqV"/>
-                                <exclude reference="jMY-q8-kEx"/>
                                 <exclude reference="CPu-XE-ncT"/>
                                 <include reference="LYT-P7-lFI"/>
                                 <include reference="NQu-g3-Z6S"/>
                                 <exclude reference="Yyr-oS-VhY"/>
                                 <exclude reference="kcH-Dh-heD"/>
+                                <include reference="aoO-0u-4aN"/>
+                                <exclude reference="oj2-6S-ojS"/>
+                                <exclude reference="pXQ-gq-aqV"/>
+                                <exclude reference="jMY-q8-kEx"/>
                                 <exclude reference="5zf-Jd-6zN"/>
                                 <include reference="FMd-yX-Seq"/>
                                 <exclude reference="OyK-wC-uGs"/>
