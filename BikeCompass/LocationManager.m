@@ -85,7 +85,9 @@
     
     // Rotate the arrow image
     if (self.arrowImageView) {
-        self.arrowImageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(direction) + self.angle + self.rotationCorrection);
+        [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.arrowImageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(direction) + self.angle + self.rotationCorrection);
+        } completion:nil];
     }
 }
 
