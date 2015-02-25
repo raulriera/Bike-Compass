@@ -11,7 +11,11 @@
 #define RadiansToDegrees(radians)(radians * 180.0/M_PI)
 #define DegreesToRadians(degrees)(degrees * M_PI / 180.0)
 
-CGFloat angle;
+@interface LocationManager ()
+
+@property (nonatomic) CGFloat angle;
+
+@end
 
 @implementation LocationManager
 
@@ -22,6 +26,8 @@ CGFloat angle;
         self.locationManager = [[CLLocationManager alloc] init];
         if ([CLLocationManager locationServicesEnabled])
         {
+            self.angle = 0;
+            
             // Configure and start the LocationManager instance
             self.locationManager.delegate = self;
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -55,7 +61,7 @@ CGFloat angle;
     if (radiansValue < 0.0) {
         radiansValue += 2*M_PI;
     }
-    
+        
     return radiansValue;
 }
 
@@ -76,10 +82,10 @@ CGFloat angle;
     } else {
         direction = 0 - direction;
     }
-        
+    
     // Rotate the arrow image
     if (self.arrowImageView) {
-        self.arrowImageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(direction) + angle);
+        self.arrowImageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(direction) + self.angle + self.rotationCorrection);
     }
 }
 
@@ -94,12 +100,15 @@ CGFloat angle;
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    angle = [self calculateAngle:newLocation];
+    self.angle = [self calculateAngle:newLocation];
     self.currentLocation = newLocation;
     
     if ([self.delegate conformsToProtocol:@protocol(LocationManagerDelegate)] && [self.delegate respondsToSelector:@selector(locationManager:didUpdateLocation:)]) {
         [self.delegate locationManager:manager didUpdateLocation:newLocation];
     }
 }
+
+#pragma mark - UIRotation
+
 
 @end

@@ -293,4 +293,26 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     }
 }
 
+# pragma mark - Rotation
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context)
+     {
+         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+         if (orientation == UIInterfaceOrientationLandscapeLeft) {
+             self.locationManager.rotationCorrection = 90;
+         } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+             self.locationManager.rotationCorrection = -90;
+         } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+             self.locationManager.rotationCorrection = 180;
+         } else {
+             self.locationManager.rotationCorrection = 0;
+         }
+         
+     } completion:nil];
+    
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+}
+
 @end

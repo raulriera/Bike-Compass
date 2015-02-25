@@ -18,6 +18,7 @@
 @property (nonatomic) CLLocationDegrees latitudeOfTargetedPoint;
 @property (nonatomic) CLLocationDegrees longitudeOfTargetedPoint;
 @property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic) CGFloat rotationCorrection;
 
 @property (nonatomic, assign) id <LocationManagerDelegate> delegate;
 
