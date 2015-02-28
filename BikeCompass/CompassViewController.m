@@ -105,6 +105,11 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 - (void)updateInformationWithStation:(Station *)station
 {
+    if ((station.numberOfBikes != [StationsRepository sharedRepository].currentStation.numberOfBikes) ||
+        (![station.name isEqualToString:[StationsRepository sharedRepository].currentStation.name])) {
+        [SAMSoundEffect playSoundEffectNamed:@"bell"];
+    }
+    
     [StationsRepository sharedRepository].currentStation = station;
     
     // Update the station name
@@ -129,8 +134,6 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     // Set the coordinates of the location to be used for calculating the angle
     self.locationManager.latitudeOfTargetedPoint = station.latitude;
     self.locationManager.longitudeOfTargetedPoint = station.longitude;
-    
-    [SAMSoundEffect playSoundEffectNamed:@"bell"];
 }
 
 # pragma mark - Animation
@@ -202,6 +205,8 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             // this is very important because we can only animate it
             // once Facebook POP has finished with it
             self.locationManager.arrowImageView = self.pointer;
+            
+            [SAMSoundEffect playSoundEffectNamed:@"bell"];
         }
     }];
 }
