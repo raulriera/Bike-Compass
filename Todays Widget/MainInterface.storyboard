@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="20" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42" userLabel="Station name">
-                                <rect key="frame" x="0.0" y="10" width="246" height="20"/>
+                                <rect key="frame" x="0.0" y="10" width="250" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" text="" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTH-3v-RQj" userLabel="Bike count">
-                                <rect key="frame" x="258" y="10" width="30" height="20"/>
+                                <rect key="frame" x="262" y="10" width="30" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="qoD-ZB-INt"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="YTH-3v-RQj" secondAttribute="trailing" constant="16" id="1fx-H7-wgO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YTH-3v-RQj" secondAttribute="trailing" constant="12" id="1fx-H7-wgO"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="6Vq-gs-PHe"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="centerY" secondItem="YTH-3v-RQj" secondAttribute="centerY" id="9VL-pl-zWq"/>
                             <constraint firstAttribute="centerY" secondItem="GcN-lo-r42" secondAttribute="centerY" id="bp2-Ww-zfa"/>
