@@ -1,4 +1,4 @@
-/* Class = "UILabel"; text = "Bike Compass uses your location to check and select the closest bike station near you."; ObjectID = "4f3-xE-wtY"; */
+/* Class = "UILabel"; text = "Bike Compass uses your location to check and select the bike station closest to you."; ObjectID = "4f3-xE-wtY"; */
 "4f3-xE-wtY.text" = "Bici Compás usa tu ubicación para encontrar la estación de bicicletas más cercana.";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "5zV-Lr-gW1"; */
