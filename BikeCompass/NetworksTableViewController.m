@@ -38,6 +38,8 @@
     
     // Include the search controller's search bar within the table's header view.
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.tableView.estimatedRowHeight = 86;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     self.definesPresentationContext = YES;
     
@@ -102,11 +104,6 @@
     cell.networkSubtitle.text = network.name;
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 66;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
