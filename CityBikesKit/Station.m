@@ -29,4 +29,16 @@
     return self.numberOfBikes > 0;
 }
 
+- (BOOL)isEqual:(id)object
+{
+    if (self == object) {
+        return YES;
+    } else if (![object isKindOfClass:[Station class]]) {
+        return NO;
+    } else {
+        Station *station = object;
+        return [self.id isEqualToString:station.id];
+    }
+}
+
 @end

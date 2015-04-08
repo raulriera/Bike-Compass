@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceMap *mapView;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *stationNameLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *numberOfBikesLabel;
+@property (strong, nonatomic) Station *lastKnownStation;
 
 @end
 
@@ -22,14 +23,26 @@
 
 - (instancetype)init {
     self = [super init];
-    if (self){
-        [self updateInterface];
+    if (self) {
+        [self updateCurrentStation];
     }
     return self;
 }
 
-- (IBAction)didTapRefresh {
-    
+- (void)willActivate
+{
+    [self updateInterfaceIfNeeded];
+}
+
+- (IBAction)didTapRefresh
+{
+    [self updateInterfaceIfNeeded];
+}
+
+#pragma mark - Data updates
+
+- (void)updateCurrentStation
+{
     Network *currentNetwork = [NetworksRepository sharedRepository].currentNetwork;
     
     if (currentNetwork) {
@@ -41,11 +54,31 @@
                 NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%@", station.id];
                 NSArray *stationsFiltered = [stations filteredArrayUsingPredicate:predicate];
                 [StationsRepository sharedRepository].currentStation = [stationsFiltered firstObject];
+                self.lastKnownStation = station;
                 
                 [self updateInterface];
             }
         }];
     }
+
+}
+
+#pragma mark - UI updates
+
+- (void)updateInterfaceIfNeeded
+{
+    if (self.lastKnownStation) {
+        Station *currentStation = [StationsRepository sharedRepository].currentStation;
+        
+        if ([currentStation isEqual:self.lastKnownStation]) {
+            if (currentStation.numberOfBikes != self.lastKnownStation.numberOfBikes) {
+                [self updateInterface];
+            }
+        } else {
+            [self updateInterface];
+        }
+    }
+    
 }
 
 - (void)updateInterface
