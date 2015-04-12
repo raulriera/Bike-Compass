@@ -24,7 +24,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self updateCurrentStation];
+        [self updateInterface];
     }
     return self;
 }
@@ -77,6 +77,8 @@
         } else {
             [self updateInterface];
         }
+    } else {
+        [self updateCurrentStation];
     }
     
 }
@@ -84,21 +86,21 @@
 - (void)updateInterface
 {
     Station *station = [StationsRepository sharedRepository].currentStation;
-    
-    if (station) {
-        [self updateInformationWithStation:station];
-        [self updateMapWithStation:station];
-    } else {
-        self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
-        self.numberOfBikesLabel.text = nil;
-    }
-    
+    [self updateInformationWithStation:station]; 
 }
 
 - (void)updateInformationWithStation:(Station *)station
 {
-    self.stationNameLabel.text = station.name;
-    self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
+    if (station) {
+        [self.mapView setHidden:NO];
+        self.stationNameLabel.text = station.name;
+        self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
+        [self updateMapWithStation:station];
+    } else {
+        [self.mapView setHidden:YES];
+        self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
+        self.numberOfBikesLabel.text = nil;
+    }
 }
 
 - (void)updateMapWithStation:(Station *)station
