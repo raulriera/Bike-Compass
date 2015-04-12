@@ -695,11 +695,11 @@
 			buildConfigurationList = 4C032F5519ABBD6700AECF05 /* Build configuration list for PBXNativeTarget "BikeCompass" */;
 			buildPhases = (
 				6E796F46B8DE4ECFA6FC1592 /* Check Pods Manifest.lock */,
-				4CC2485F1A005A680057B149 /* Update Build Version */,
 				4C032F3119ABBD6700AECF05 /* Sources */,
 				4C032F3219ABBD6700AECF05 /* Frameworks */,
 				4C032F3319ABBD6700AECF05 /* Resources */,
 				F7BD0ED26FA849728BE772CC /* Copy Pods Resources */,
+				4CC2485F1A005A680057B149 /* Update Build Version */,
 				4C83179A19B3E872006B6940 /* Embed App Extensions */,
 				4CA6B4931A2B969300E3A647 /* Embed Frameworks */,
 				4CF8C1C91A93E4D300117933 /* ShellScript */,
