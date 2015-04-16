@@ -2,5 +2,5 @@
 "%ld bikes left" = "Quedan %ld bicis";
 
 /* Error instruction */
-"Open the iPhone app first" = "Abre el app del iPhone primero";
+"Please allow Location Services on the iPhone app" = "Por favor, activa los servicios de localización en el app del iPhone";
 

@@ -104,7 +104,7 @@
     } else {
         [self.mapView setHidden:YES];
         [self.numberOfBikesTextGroup setHidden:YES];
-        self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
+        self.stationNameLabel.text = NSLocalizedString(@"Please allow Location Services on the iPhone app", @"Error instruction");
         self.numberOfBikesLabel.text = nil;
     }
 }

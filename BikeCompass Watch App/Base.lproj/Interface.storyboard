@@ -25,11 +25,11 @@
                                 </group>
                             </items>
                         </group>
-                        <label width="1" alignment="left" text="Charlemont Street" textAlignment="center" numberOfLines="2" id="rfP-71-OIw" userLabel="Station name">
+                        <label width="1" alignment="left" text="Charlemont Street" textAlignment="center" numberOfLines="0" id="rfP-71-OIw" userLabel="Station name">
                             <color key="textColor" red="0.89582824709999997" green="0.89021056890000005" blue="0.81076347829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <group width="1" alignment="left" id="Fj9-Y0-ndn">
+                        <group width="1" height="0.75" alignment="left" id="Fj9-Y0-ndn">
                             <items>
                                 <map width="1" alignment="center" verticalAlignment="center" id="I63-iw-Mat"/>
                             </items>
