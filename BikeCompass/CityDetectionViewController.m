@@ -19,7 +19,19 @@
 
 @implementation CityDetectionViewController
 
-# pragma mark - LocationManagerDelegate
+#pragma mark - View Controller Lifecycle
+
+- (void)viewDidLoad
+{
+    [self registerForHandoffObserving];
+}
+
+- (void)dealloc
+{
+    [self unregisterForHandoffObserving];
+}
+
+#pragma mark - LocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)locationManager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
@@ -50,12 +62,40 @@
 
 #pragma mark - Actions
 
-- (IBAction)useLocationTapped:(UIButton *)sender {
+- (IBAction)useLocationTapped:(UIButton *)sender
+{
+    [self requestLocationServices];
+}
+
+#pragma mark -
+
+- (void)requestLocationServices
+{
     // Prepare to init the compass
     self.locationManager = [[LocationManager alloc] init];
     
     // Makes us the delegate
     self.locationManager.delegate = self;
+}
+
+- (void)didHandoffFromWatch:(NSNotification *)notification
+{
+    [self requestLocationServices];
+}
+
+#pragma mark - Observing
+
+- (void)registerForHandoffObserving
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didHandoffFromWatch:)
+                                                 name:@"didHandoffFromWatch"
+                                               object:nil];
+}
+
+- (void)unregisterForHandoffObserving
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

@@ -52,4 +52,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler
+{
+    if ([userActivity.activityType isEqualToString:@"com.raulriera.dublinbikes.handoff"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName: @"didHandoffFromWatch" object:nil userInfo:userActivity.userInfo];
+
+    }
+    
+    return NO;
+}
+
 @end
