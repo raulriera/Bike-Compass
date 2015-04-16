@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *stationNameLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *numberOfBikesLabel;
 @property (strong, nonatomic) Station *lastKnownStation;
+@property (weak, nonatomic) IBOutlet WKInterfaceGroup *numberOfBikesTextGroup;
 
 @end
 
@@ -93,13 +94,15 @@
 {
     if (station) {
         [self.mapView setHidden:NO];
+        [self.numberOfBikesTextGroup setHidden:NO];
         self.stationNameLabel.text = station.name;
-        self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
+        self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", station.numberOfBikes];
+
         [self updateMapWithStation:station];
-        
         [self invalidateUserActivity];
     } else {
         [self.mapView setHidden:YES];
+        [self.numberOfBikesTextGroup setHidden:YES];
         self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
         self.numberOfBikesLabel.text = nil;
         
