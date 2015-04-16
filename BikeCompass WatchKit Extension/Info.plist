@@ -32,6 +32,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.raulriera.dublinbikes.handoff</string>
+	</array>
 	<key>RemoteInterfacePrincipalClass</key>
 	<string>InterfaceController</string>
 </dict>

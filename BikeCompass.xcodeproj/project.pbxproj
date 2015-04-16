@@ -18,7 +18,6 @@
 		4C19DB921A214431009EFC12 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C19DB911A214431009EFC12 /* WatchKit.framework */; };
 		4C19DB981A214431009EFC12 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19DB971A214431009EFC12 /* InterfaceController.m */; };
 		4C19DB9E1A214431009EFC12 /* BikeCompass Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = 4C19DB9D1A214431009EFC12 /* BikeCompass Watch App.app */; };
-		4C19DBA51A214431009EFC12 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C19DBA41A214431009EFC12 /* Interface.storyboard */; };
 		4C19DBA71A214431009EFC12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C19DBA61A214431009EFC12 /* Images.xcassets */; };
 		4C19DBAA1A214431009EFC12 /* BikeCompass WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C19DB901A214431009EFC12 /* BikeCompass WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C19DBB31A2160CC009EFC12 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
@@ -34,7 +33,7 @@
 		4C53DC7F1A2E77E800099662 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C53DC7E1A2E77E800099662 /* MainInterface.storyboard */; };
 		4C53DC821A2E77E800099662 /* Todays Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C53DC751A2E77E800099662 /* Todays Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C53DC861A2E77FF00099662 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
-		4CA6B09D19F3068200A178BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6B09F19F3068200A178BC /* InfoPlist.strings */; };
+		4C9A807F1ADFBAC9006E8993 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9A80811ADFBAC9006E8993 /* Interface.storyboard */; };
 		4CA6B48F1A2B969300E3A647 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
 		4CA6B4901A2B969300E3A647 /* CityBikesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4CA6B4AC1A2B97EE00E3A647 /* Location.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4A41A2B97EE00E3A647 /* Location.h */; };
@@ -154,7 +153,6 @@
 		4C19DB971A214431009EFC12 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		4C19DB9D1A214431009EFC12 /* BikeCompass Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeCompass Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C19DBA31A214431009EFC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C19DBA41A214431009EFC12 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		4C19DBA61A214431009EFC12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4C19DBB11A215FE9009EFC12 /* libPods-CityBikesKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CityBikesKit.a"; path = "Pods/build/Debug-iphoneos/libPods-CityBikesKit.a"; sourceTree = "<group>"; };
 		4C19DBB41A216376009EFC12 /* BikeCompass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BikeCompass.entitlements; sourceTree = "<group>"; };
@@ -185,8 +183,11 @@
 		4C62358919BB47D400807189 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		4C8DC3461A094AD900B696CA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4C8F20E419C8C8C700E3B04A /* NetworksViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworksViewControllerDelegate.h; sourceTree = "<group>"; };
+		4C9A807D1ADFB727006E8993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C9A807E1ADFB789006E8993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C9A80801ADFBAC9006E8993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		4C9A80831ADFBACB006E8993 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
 		4C9C744C1A2E7B4000C662C6 /* Todays Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Todays Widget.entitlements"; sourceTree = "<group>"; };
-		4CA6B09E19F3068200A178BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CA6B4A41A2B97EE00E3A647 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = CityBikesKit/Location.h; sourceTree = SOURCE_ROOT; };
 		4CA6B4A51A2B97EE00E3A647 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = CityBikesKit/Location.m; sourceTree = SOURCE_ROOT; };
 		4CA6B4A61A2B97EE00E3A647 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = CityBikesKit/Model.h; sourceTree = SOURCE_ROOT; };
@@ -206,10 +207,8 @@
 		4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeInTransitioning.m; sourceTree = "<group>"; };
 		4CB4B8B319CB87B0004E0787 /* MKMapView+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+Extended.h"; sourceTree = "<group>"; };
 		4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+Extended.m"; sourceTree = "<group>"; };
-		4CB962E81A228BE70047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962ED1A228BE70047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962F71A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4CB962FC1A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962FE1A228CFC0047B5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CBAF97219FB066200BB0FF7 /* BlankStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankStateViewController.h; sourceTree = "<group>"; };
 		4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankStateViewController.m; sourceTree = "<group>"; };
@@ -326,7 +325,6 @@
 		4C032F3819ABBD6700AECF05 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4CA6B09F19F3068200A178BC /* InfoPlist.strings */,
 				4C032F3919ABBD6700AECF05 /* Info.plist */,
 				4C032F3A19ABBD6700AECF05 /* main.m */,
 			);
@@ -366,7 +364,7 @@
 		4C19DBA11A214431009EFC12 /* BikeCompass Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				4C19DBA41A214431009EFC12 /* Interface.storyboard */,
+				4C9A80811ADFBAC9006E8993 /* Interface.storyboard */,
 				4C19DBA61A214431009EFC12 /* Images.xcassets */,
 				4C19DBA21A214431009EFC12 /* Supporting Files */,
 			);
@@ -867,7 +865,6 @@
 				4C3FA97019BFA6BE00E33BE2 /* Localizable.strings in Resources */,
 				4C032F4419ABBD6700AECF05 /* Main.storyboard in Resources */,
 				4C032F4619ABBD6700AECF05 /* Images.xcassets in Resources */,
-				4CA6B09D19F3068200A178BC /* InfoPlist.strings in Resources */,
 				4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -886,7 +883,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C19DBA51A214431009EFC12 /* Interface.storyboard in Resources */,
+				4C9A807F1ADFBAC9006E8993 /* Interface.storyboard in Resources */,
 				4CB962FB1A228BE80047B5DA /* InfoPlist.strings in Resources */,
 				4C19DBA71A214431009EFC12 /* Images.xcassets in Resources */,
 			);
@@ -1101,18 +1098,19 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		4CA6B09F19F3068200A178BC /* InfoPlist.strings */ = {
+		4C9A80811ADFBAC9006E8993 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4CA6B09E19F3068200A178BC /* es */,
+				4C9A80801ADFBAC9006E8993 /* Base */,
+				4C9A80831ADFBACB006E8993 /* es */,
 			);
-			name = InfoPlist.strings;
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		4CB962E91A228BE70047B5DA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4CB962E81A228BE70047B5DA /* es */,
+				4C9A807E1ADFB789006E8993 /* Base */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1137,7 +1135,7 @@
 		4CB962FD1A228BE80047B5DA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4CB962FC1A228BE80047B5DA /* es */,
+				4C9A807D1ADFB727006E8993 /* Base */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

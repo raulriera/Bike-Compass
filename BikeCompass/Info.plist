@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>53</string>
+	<string>56</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -55,6 +55,10 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To locate the nearest bike station</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.raulriera.dublinbikes.handoff</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIMainStoryboardFile</key>

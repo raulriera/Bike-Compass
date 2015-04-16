@@ -96,10 +96,14 @@
         self.stationNameLabel.text = station.name;
         self.numberOfBikesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes left", @"Number of bikes left in this station"), station.numberOfBikes];
         [self updateMapWithStation:station];
+        
+        [self invalidateUserActivity];
     } else {
         [self.mapView setHidden:YES];
         self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
         self.numberOfBikesLabel.text = nil;
+        
+        [self updateUserActivity:@"com.raulriera.dublinbikes.handoff" userInfo:@{} webpageURL:nil];
     }
 }
 

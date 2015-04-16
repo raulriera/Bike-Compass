@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Bike Compass-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller title="Bike Compass" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <group width="1" height="0.59999999999999998" alignment="left" id="oN0-va-Tc9">
                             <items>
