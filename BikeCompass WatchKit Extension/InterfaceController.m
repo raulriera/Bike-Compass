@@ -87,7 +87,9 @@
 - (void)updateInterface
 {
     Station *station = [StationsRepository sharedRepository].currentStation;
-    [self updateInformationWithStation:station]; 
+    [self updateInformationWithStation:station];
+    
+    [self updateUserActivity:@"com.raulriera.dublinbikes.handoff" userInfo:@{@"screen": @"initial"} webpageURL:nil];
 }
 
 - (void)updateInformationWithStation:(Station *)station
@@ -99,14 +101,11 @@
         self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", station.numberOfBikes];
 
         [self updateMapWithStation:station];
-        [self invalidateUserActivity];
     } else {
         [self.mapView setHidden:YES];
         [self.numberOfBikesTextGroup setHidden:YES];
         self.stationNameLabel.text = NSLocalizedString(@"Open the iPhone app first", @"Error instruction");
         self.numberOfBikesLabel.text = nil;
-        
-        [self updateUserActivity:@"com.raulriera.dublinbikes.handoff" userInfo:@{} webpageURL:nil];
     }
 }
 

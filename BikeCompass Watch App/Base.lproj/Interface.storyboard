@@ -18,7 +18,7 @@
                                 </label>
                                 <group width="0.29999999999999999" alignment="right" verticalAlignment="center" layout="vertical" id="eMa-VZ-wQY">
                                     <items>
-                                        <imageView alignment="center" verticalAlignment="center" image="bicycle" contentMode="center" id="CkU-By-puB">
+                                        <imageView alignment="center" verticalAlignment="center" alpha="0.74999999999999978" image="bicycle" contentMode="center" id="CkU-By-puB">
                                             <color key="tintColor" red="0.89582824709999997" green="0.89021056890000005" blue="0.81076347829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                     </items>
@@ -56,4 +56,5 @@
             <point key="canvasLocation" x="467" y="152"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.1333333333" green="0.47843137250000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
 </document>
