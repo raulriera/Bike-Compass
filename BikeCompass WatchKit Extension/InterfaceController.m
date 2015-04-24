@@ -100,7 +100,7 @@
     if (station) {
         [self.mapView setHidden:NO];
         self.stationNameLabel.text = station.name;
-        self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", station.numberOfBikes];
+        self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", (long)station.numberOfBikes];
         [self updateRingForStation:station];
         [self updateMapWithStation:station];
     } else {
