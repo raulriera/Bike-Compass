@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TodayExtension/TodayViewController.m"
-            timestampString = "431722983.914839"
+            filePath = "BikeCompass WatchKit Extension/InterfaceController.m"
+            timestampString = "451256798.894418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-updateCurrentStation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BikeCompass/PillLabel.m"
-            timestampString = "437008085.795078"
+            filePath = "BikeCompass WatchKit Extension/InterfaceController.m"
+            timestampString = "451256798.894418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-initWithCoder:"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-updateInterfaceIfNeeded"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BikeCompass/PillLabel.m"
-            timestampString = "437008087.145102"
+            filePath = "BikeCompass WatchKit Extension/InterfaceController.m"
+            timestampString = "451256798.894418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "-drawLayer:inContext:"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-updateInterfaceIfNeeded"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BikeCompass/PillLabel.m"
-            timestampString = "437008089.814645"
+            filePath = "BikeCompass WatchKit Extension/InterfaceController.m"
+            timestampString = "451256798.894418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-prepareForInterfaceBuilder"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-updateInterfaceIfNeeded"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

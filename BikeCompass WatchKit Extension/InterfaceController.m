@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *stationNameLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *numberOfBikesLabel;
 @property (strong, nonatomic) Station *lastKnownStation;
-@property (weak, nonatomic) IBOutlet WKInterfaceGroup *numberOfBikesTextGroup;
+@property (weak, nonatomic) IBOutlet WKInterfaceGroup *numberOfBikesGroup;
 
 @end
 
@@ -55,7 +55,6 @@
                 NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%@", station.id];
                 NSArray *stationsFiltered = [stations filteredArrayUsingPredicate:predicate];
                 [StationsRepository sharedRepository].currentStation = [stationsFiltered firstObject];
-                self.lastKnownStation = station;
                 
                 [self updateInterface];
             }
@@ -89,24 +88,48 @@
     Station *station = [StationsRepository sharedRepository].currentStation;
     [self updateInformationWithStation:station];
     
+    // Update the Handoff user activity
     [self updateUserActivity:@"com.raulriera.dublinbikes.handoff" userInfo:@{@"screen": @"initial"} webpageURL:nil];
+    
+    // Update the last known station
+    self.lastKnownStation = station;
 }
 
 - (void)updateInformationWithStation:(Station *)station
 {
     if (station) {
         [self.mapView setHidden:NO];
-        [self.numberOfBikesTextGroup setHidden:NO];
         self.stationNameLabel.text = station.name;
         self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", station.numberOfBikes];
-
+        [self updateRingForStation:station];
         [self updateMapWithStation:station];
     } else {
         [self.mapView setHidden:YES];
-        [self.numberOfBikesTextGroup setHidden:YES];
         self.stationNameLabel.text = NSLocalizedString(@"Please allow Location Services on the iPhone app", @"Error instruction");
         self.numberOfBikesLabel.text = nil;
     }
+}
+
+- (void)updateRingForStation:(Station *)station
+{
+    NSTimeInterval duration = 0.7;
+    NSInteger fromValue = 1;
+    NSInteger toValue = 22;
+    
+    float calculatedToValue = (float)station.numberOfBikes / ((float)station.numberOfBikes + (float)station.emptySlots);
+    calculatedToValue = ceil(calculatedToValue * toValue);
+    
+    if (calculatedToValue == 0) {
+        calculatedToValue = 1;
+    }
+    
+    // Reverse the animation if the number of bikes decreased
+    if (station.numberOfBikes < self.lastKnownStation.numberOfBikes) {
+        duration *= -1;
+    }
+    
+    [self.numberOfBikesGroup setBackgroundImageNamed:@"Ring-"];
+    [self.numberOfBikesGroup startAnimatingWithImagesInRange:NSMakeRange(fromValue, calculatedToValue) duration:duration repeatCount:1];
 }
 
 - (void)updateMapWithStation:(Station *)station
