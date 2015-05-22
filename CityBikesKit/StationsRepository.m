@@ -101,7 +101,7 @@ static NSString * const CurrentStationKey = @"com.raulriera.bikecompass.currentS
 {
     stations = [stations sortedArrayUsingComparator: ^(Station *a, Station *b) {
         
-        if (a.numberOfBikes > bikes) {
+        if (a.numberOfBikes.integerValue > bikes) {
             return (NSComparisonResult)NSOrderedAscending;
         } else {
             return (NSComparisonResult)NSOrderedDescending;

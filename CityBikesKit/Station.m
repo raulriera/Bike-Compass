@@ -26,7 +26,7 @@
 
 - (BOOL)hasBikes
 {
-    return self.numberOfBikes > 0;
+    return self.numberOfBikes.integerValue > 0;
 }
 
 - (BOOL)isEqual:(id)object

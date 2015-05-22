@@ -105,7 +105,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 - (void)updateInformationWithStation:(Station *)station
 {
-    if ((station.numberOfBikes != [StationsRepository sharedRepository].currentStation.numberOfBikes) ||
+    if ((station.numberOfBikes.integerValue != [StationsRepository sharedRepository].currentStation.numberOfBikes.integerValue) ||
         (![station.name isEqualToString:[StationsRepository sharedRepository].currentStation.name])) {
         [SAMSoundEffect playSoundEffectNamed:@"bell"];
     }
@@ -115,7 +115,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     // Update the station name
     self.stationLabel.text = [station.name uppercaseString];
     // Update the station bicycle count
-    [self.bicyclesRemainingButton setTitle:[NSString stringWithFormat:@"%ld", (long)station.numberOfBikes] forState:UIControlStateNormal];
+    [self.bicyclesRemainingButton setTitle:[NSString stringWithFormat:@"%ld", station.numberOfBikes.longValue] forState:UIControlStateNormal];
     
     [self pointCompassToStation:station];
     [self updateDistanceToStation:[StationsRepository sharedRepository].currentStation];

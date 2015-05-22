@@ -17,7 +17,7 @@
 
         self.coordinate = CLLocationCoordinate2DMake(station.latitude, station.longitude);
         self.title = station.name;
-        self.subtitle = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes and %ld spots left", @"Message when the user selects a pin on the map"), (long)station.numberOfBikes, (long)station.emptySlots];
+        self.subtitle = [NSString stringWithFormat:NSLocalizedString(@"%ld bikes and %ld spots left", @"Message when the user selects a pin on the map"), station.numberOfBikes.longValue, station.emptySlots.longValue];
         self.station = station;
         
     };

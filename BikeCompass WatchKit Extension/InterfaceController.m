@@ -71,7 +71,7 @@
         Station *currentStation = [StationsRepository sharedRepository].currentStation;
         
         if ([currentStation isEqual:self.lastKnownStation]) {
-            if (currentStation.numberOfBikes != self.lastKnownStation.numberOfBikes) {
+            if (currentStation.numberOfBikes.integerValue != self.lastKnownStation.numberOfBikes.integerValue) {
                 [self updateInterface];
             }
         } else {
@@ -100,7 +100,7 @@
     if (station) {
         [self.mapView setHidden:NO];
         self.stationNameLabel.text = station.name;
-        self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", (long)station.numberOfBikes];
+        self.numberOfBikesLabel.text = [NSString stringWithFormat:@"%ld", station.numberOfBikes.longValue];
         [self updateRingForStation:station];
         [self updateMapWithStation:station];
     } else {
@@ -116,7 +116,7 @@
     NSInteger fromValue = 1;
     NSInteger toValue = 22;
     
-    float calculatedToValue = (float)station.numberOfBikes / ((float)station.numberOfBikes + (float)station.emptySlots);
+    float calculatedToValue = station.numberOfBikes.floatValue / (station.numberOfBikes.floatValue + station.emptySlots.floatValue);
     calculatedToValue = ceil(calculatedToValue * toValue);
     
     if (calculatedToValue == 0) {
@@ -124,7 +124,7 @@
     }
     
     // Reverse the animation if the number of bikes decreased
-    if (station.numberOfBikes < self.lastKnownStation.numberOfBikes) {
+    if (station.numberOfBikes.integerValue < self.lastKnownStation.numberOfBikes.integerValue) {
         duration *= -1;
     }
     
@@ -138,7 +138,7 @@
     
     WKInterfaceMapPinColor pinColor;
     
-    if (station.numberOfBikes > 0) {
+    if (station.numberOfBikes.integerValue > 0) {
         pinColor = WKInterfaceMapPinColorGreen;
     } else {
         pinColor = WKInterfaceMapPinColorRed;
