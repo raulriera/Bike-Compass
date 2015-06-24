@@ -123,9 +123,9 @@
         StationPointAnnotation *point = (StationPointAnnotation *)annotation;
         
         if (point.station.hasBikes) {
-            annView.pinColor = MKPinAnnotationColorGreen;
+            annView.pinTintColor = [MKPinAnnotationView greenPinColor];
         } else {
-            annView.pinColor = MKPinAnnotationColorRed;
+            annView.pinTintColor = [MKPinAnnotationView redPinColor];
         }
         
         annView.canShowCallout = YES;

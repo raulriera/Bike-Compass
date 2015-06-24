@@ -1,4 +1,4 @@
-platform :ios, '8.3'
+platform :ios, '8.1'
 
 pod 'pop', '~> 1.0'
 pod 'SAMSoundEffect', '~> 0.1'
