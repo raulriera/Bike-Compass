@@ -66,8 +66,6 @@
 		4CC8A6EF1A80021900281BAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8A6F11A80021900281BAB /* InfoPlist.strings */; };
 		4CDBF3E019CEF6980020E4F7 /* FBAnnotationCluster+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */; };
 		4CE5EA4F19B1337F00FC1A0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */; };
-		4CF8C1CC1A93E51200117933 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF8C1CA1A93E51200117933 /* Crashlytics.framework */; };
-		4CF8C1CD1A93E51200117933 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF8C1CB1A93E51200117933 /* Fabric.framework */; };
 		5B5AAF3023FF283A04BBE220 /* libPods-CityBikesKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B737F6702C0E2402F2BA091 /* libPods-CityBikesKit.a */; };
 		5C6C49AF91EE4137AA322C46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3235EAB9714E829FD85FEB /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -225,8 +223,6 @@
 		4CDBF3DE19CEF6980020E4F7 /* FBAnnotationCluster+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBAnnotationCluster+Extended.h"; sourceTree = "<group>"; };
 		4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBAnnotationCluster+Extended.m"; sourceTree = "<group>"; };
 		4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		4CF8C1CA1A93E51200117933 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		4CF8C1CB1A93E51200117933 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		52E09E23B5BC109BFB5941B1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7B737F6702C0E2402F2BA091 /* libPods-CityBikesKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CityBikesKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3E555E689DD6B68963F366 /* Pods-CityBikesKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityBikesKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CityBikesKit/Pods-CityBikesKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,9 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE5EA4F19B1337F00FC1A0C /* MapKit.framework in Frameworks */,
-				4CF8C1CD1A93E51200117933 /* Fabric.framework in Frameworks */,
 				4CA6B48F1A2B969300E3A647 /* CityBikesKit.framework in Frameworks */,
-				4CF8C1CC1A93E51200117933 /* Crashlytics.framework in Frameworks */,
 				5C6C49AF91EE4137AA322C46 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,8 +648,6 @@
 		D7D51EF187C84E6C911CE6AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4CF8C1CA1A93E51200117933 /* Crashlytics.framework */,
-				4CF8C1CB1A93E51200117933 /* Fabric.framework */,
 				4C19DBB11A215FE9009EFC12 /* libPods-CityBikesKit.a */,
 				4C8DC3461A094AD900B696CA /* AudioToolbox.framework */,
 				4CE5EA4E19B1337F00FC1A0C /* MapKit.framework */,
@@ -700,7 +692,6 @@
 				4CC2485F1A005A680057B149 /* Update Build Version */,
 				4C83179A19B3E872006B6940 /* Embed App Extensions */,
 				4CA6B4931A2B969300E3A647 /* Embed Frameworks */,
-				4CF8C1C91A93E4D300117933 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -939,19 +930,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\n\n#  update_build_number.sh\n#  Usage: `update_build_number.sh [branch]`\n#  Run this script after the 'Copy Bundle Resources' build phase\n#  Ref: http://tgoode.com/2014/06/05/sensible-way-increment-bundle-version-cfbundleversion-xcode/\n\nbranch=${1:-'master'}\nbuildNumber=$(expr $(git rev-list $branch --count) - $(git rev-list HEAD..$branch --count))\necho \"Updating build number to $buildNumber using branch '$branch'.\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/BikeCompass/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/BikeCompass Watch App/Info.plist\"\n#/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/BikeCompass Watch App Extension/Info.plist\"\n\n";
-		};
-		4CF8C1C91A93E4D300117933 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 1073eb1e8cec026a80d40480430b18268416e824 79a85a42a3a28b241d6e2d707afdedd6296eada6cc6abb9c57412ec76e72ef2c";
 		};
 		6E796F46B8DE4ECFA6FC1592 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

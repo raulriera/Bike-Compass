@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -23,9 +21,6 @@
     
     // Prevent the music to be interrupted
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
-    
-    // Enable Crashlytics
-    [Fabric with:@[CrashlyticsKit]];
     
     return YES;
 }
