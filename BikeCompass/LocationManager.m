@@ -34,10 +34,9 @@
             
             [self.locationManager requestWhenInUseAuthorization];
             
-            [self.locationManager stopUpdatingLocation];
-            [self.locationManager stopUpdatingHeading];
+            [self.locationManager requestLocation];
             
-            [self.locationManager startUpdatingLocation];
+            [self.locationManager stopUpdatingHeading];
             [self.locationManager startUpdatingHeading];
         }
     }
@@ -98,10 +97,9 @@
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(nonnull CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
 {
+    CLLocation *newLocation = [locations lastObject];
     self.angle = [self calculateAngle:newLocation];
     self.currentLocation = newLocation;
     
@@ -109,8 +107,5 @@
         [self.delegate locationManager:manager didUpdateLocation:newLocation];
     }
 }
-
-#pragma mark - UIRotation
-
 
 @end
