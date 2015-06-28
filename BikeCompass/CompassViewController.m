@@ -342,8 +342,11 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     [[NetworksRepository sharedRepository] networkById:networkQueryItem.value withBlock:^(Network *network, NSError *error) {
         
         [[StationsRepository sharedRepository] stationById:stationQueryItem.value forNetwork:network withBlock:^(Station *station, NSError *error) {
+            
+            // Update the UI to match the new network and station
+            [NetworksRepository sharedRepository].currentNetwork = network;
+            [self updateCurrentNetwork];
             [self updateInformationWithStation:station];
-            NSLog(@"Restored the activity");
         }];
         
     }];
