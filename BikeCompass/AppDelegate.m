@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
-@import CoreSpotlight;
 
 @interface AppDelegate ()
 
@@ -29,14 +28,7 @@
     
     [self.window.rootViewController restoreUserActivityState:userActivity];
     
-//    if ([userActivity.activityType isEqualToString:@"com.raulriera.dublinbikes.handoff"]) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName: @"didContinueFromWatch" object:nil userInfo:userActivity.userInfo];
-//
-//    } else if ([[userActivity activityType] isEqualToString:CSSearchableItemActionType]) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName: @"didContinueFromSearch" object:nil userInfo:userActivity.userInfo];
-//    }
-    
-    return NO;
+    return YES;
 }
 
 @end
