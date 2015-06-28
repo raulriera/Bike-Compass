@@ -339,16 +339,21 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     NSURLQueryItem *networkQueryItem = [components.queryItems lastObject];
     NSURLQueryItem *stationQueryItem = [components.queryItems firstObject];
     
+    __weak typeof(self) weakSelf = self;
+    
     [[NetworksRepository sharedRepository] networkById:networkQueryItem.value withBlock:^(Network *network, NSError *error) {
         
-        [[StationsRepository sharedRepository] stationById:stationQueryItem.value forNetwork:network withBlock:^(Station *station, NSError *error) {
+        [[StationsRepository sharedRepository] stationsForNetwork:network withCompletionBlock:^(NSArray *stations, NSError *error) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", stationQueryItem.value];
+            Station *station = [[stations filteredArrayUsingPredicate:predicate] firstObject];
             
             // Update the UI to match the new network and station
+            weakSelf.stations = stations;
             [NetworksRepository sharedRepository].currentNetwork = network;
-            [self updateCurrentNetwork];
-            [self updateInformationWithStation:station];
+            [weakSelf updateCurrentNetwork];
+            [weakSelf updateInformationWithStation:station];
         }];
-        
+                
     }];
 }
 

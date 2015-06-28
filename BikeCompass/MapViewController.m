@@ -58,14 +58,14 @@
 }
 
 - (void)zoomToStation:(Station *)station
-{
+{    
     [self.mapView zoomToFitAnnotations:@[[self annotationForStation:station]]];
     [self.mapView selectAnnotation:[self annotationForStation:station] animated:YES];
 }
 
 - (StationPointAnnotation *)annotationForStation:(Station *)station
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"station.id==%@", station.id];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"station.id = %@", station.id];
     NSArray *results = [self.annotations filteredArrayUsingPredicate:predicate];
     
     return [results firstObject];

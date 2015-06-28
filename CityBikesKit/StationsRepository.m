@@ -60,16 +60,6 @@ static NSString * const CurrentStationKey = @"com.raulriera.bikecompass.currentS
     }];
 }
 
-- (void)stationById:(NSString *)stationId forNetwork:(Network *)network withBlock:(void (^)(Station *station, NSError *))block;
-{
-    [self stationsForNetwork:network withCompletionBlock:^(NSArray *stations, NSError *error) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", stationId];
-        Station *station = [[stations filteredArrayUsingPredicate:predicate] firstObject];
-        
-        block(station, error);
-    }];
-}
-
 - (void)closestStationForNetwork:(Network *)network toLocation:(CLLocation *)location withCompletionBlock:(void (^)(Station *, NSError *))completionBlock
 {
     // Get all the stations of the first network
