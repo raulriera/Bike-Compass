@@ -52,7 +52,7 @@
             if (!error) {
                 Station *station = [StationsRepository sharedRepository].currentStation;
                 // Find the most recent information about this station
-                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%@", station.id];
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", station.id];
                 NSArray *stationsFiltered = [stations filteredArrayUsingPredicate:predicate];
                 [StationsRepository sharedRepository].currentStation = [stationsFiltered firstObject];
                 
@@ -121,11 +121,6 @@
     
     if (calculatedToValue == 0) {
         calculatedToValue = 1;
-    }
-    
-    // Reverse the animation if the number of bikes decreased
-    if (station.numberOfBikes < self.lastKnownStation.numberOfBikes) {
-        duration *= -1;
     }
     
     [self.numberOfBikesGroup setBackgroundImageNamed:@"Ring-"];
