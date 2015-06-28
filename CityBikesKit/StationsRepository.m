@@ -7,6 +7,7 @@
 //
 
 #import "StationsRepository.h"
+#import "SpotlightRespository.h"
 
 @implementation StationsRepository
 
@@ -49,10 +50,23 @@ static NSString * const CurrentStationKey = @"com.raulriera.bikecompass.currentS
             block(nil, error);
         }
         
+        // Index the stations with Spotlight
+        [SpotlightRespository indexStations:data andNetwork:network];
+        
         block(data, error);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         block(nil, error);
+    }];
+}
+
+- (void)stationById:(NSString *)stationId forNetwork:(Network *)network withBlock:(void (^)(Station *station, NSError *))block;
+{
+    [self stationsForNetwork:network withCompletionBlock:^(NSArray *stations, NSError *error) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", stationId];
+        Station *station = [[stations filteredArrayUsingPredicate:predicate] firstObject];
+        
+        block(station, error);
     }];
 }
 

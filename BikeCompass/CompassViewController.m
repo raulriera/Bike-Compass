@@ -17,6 +17,7 @@
 #import "FadeInTransitioning.h"
 #import "NetworksRepository.h"
 #import "StationsRepository.h"
+@import CoreSpotlight;
 
 NSString *const kMapSegue = @"ShowMapSegue";
 NSString *const kNetworksSegue = @"ShowNetworksSegue";
@@ -42,6 +43,8 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 @end
 
 @implementation CompassViewController
+
+#pragma mark - View Controller Lifecycle
 
 - (void)viewDidLoad
 {
@@ -78,6 +81,8 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     }
 }
 
+#pragma mark -
+
 - (void)displayStationInformation
 {
     // Get the previously selected network
@@ -107,7 +112,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 {
     if ((station.numberOfBikes != [StationsRepository sharedRepository].currentStation.numberOfBikes) ||
         (![station.name isEqualToString:[StationsRepository sharedRepository].currentStation.name])) {
-        [SAMSoundEffect playSoundEffectNamed:@"bell"];
+        //[SAMSoundEffect playSoundEffectNamed:@"bell"];
     }
     
     [StationsRepository sharedRepository].currentStation = station;
@@ -206,7 +211,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             // once Facebook POP has finished with it
             self.locationManager.arrowImageView = self.pointer;
             
-            [SAMSoundEffect playSoundEffectNamed:@"bell"];
+            //[SAMSoundEffect playSoundEffectNamed:@"bell"];
         }
     }];
 }
@@ -318,6 +323,30 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
      } completion:nil];
     
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+}
+
+
+#pragma mark - NSUserActivity
+
+- (void)restoreUserActivityState:(nonnull NSUserActivity *)activity
+{
+    NSString *uniqueIdentifier = [activity.userInfo objectForKey:CSSearchableItemActivityIdentifier];
+    
+    // Create a NSURLComponents so we can easily parse the query string format
+    NSURLComponents *components = [[NSURLComponents alloc] init];
+    components.query = uniqueIdentifier;
+    
+    NSURLQueryItem *networkQueryItem = [components.queryItems lastObject];
+    NSURLQueryItem *stationQueryItem = [components.queryItems firstObject];
+    
+    [[NetworksRepository sharedRepository] networkById:networkQueryItem.value withBlock:^(Network *network, NSError *error) {
+        
+        [[StationsRepository sharedRepository] stationById:stationQueryItem.value forNetwork:network withBlock:^(Station *station, NSError *error) {
+            [self updateInformationWithStation:station];
+            NSLog(@"Restored the activity");
+        }];
+        
+    }];
 }
 
 @end

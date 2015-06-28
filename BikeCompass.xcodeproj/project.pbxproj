@@ -23,7 +23,6 @@
 		4C19DBB31A2160CC009EFC12 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
 		4C1B31CA19C7ACB90096E52F /* NetworksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31C919C7ACB90096E52F /* NetworksTableViewController.m */; };
 		4C1B31CE19C7AE250096E52F /* NetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31CD19C7AE250096E52F /* NetworkTableViewCell.m */; };
-		4C2B675B1A2B9CE700E7BED8 /* CityBikesKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C2B675A1A2B9CE700E7BED8 /* CityBikesKit.h */; };
 		4C3D441119EB1AC5001E45F2 /* LocationDisabledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D441019EB1AC5001E45F2 /* LocationDisabledViewController.m */; };
 		4C3FA96C19BFA29400E33BE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3FA96B19BFA29400E33BE2 /* MapViewController.m */; };
 		4C3FA97019BFA6BE00E33BE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C3FA96E19BFA6BE00E33BE2 /* Localizable.strings */; };
@@ -36,19 +35,12 @@
 		4C9A807F1ADFBAC9006E8993 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9A80811ADFBAC9006E8993 /* Interface.storyboard */; };
 		4CA6B48F1A2B969300E3A647 /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; };
 		4CA6B4901A2B969300E3A647 /* CityBikesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C54E5F51A1FCE31009FB6C0 /* CityBikesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4CA6B4AC1A2B97EE00E3A647 /* Location.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4A41A2B97EE00E3A647 /* Location.h */; };
 		4CA6B4AD1A2B97EE00E3A647 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4A51A2B97EE00E3A647 /* Location.m */; };
-		4CA6B4AE1A2B97EE00E3A647 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4A61A2B97EE00E3A647 /* Model.h */; };
 		4CA6B4AF1A2B97EE00E3A647 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4A71A2B97EE00E3A647 /* Model.m */; };
-		4CA6B4B01A2B97EE00E3A647 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4A81A2B97EE00E3A647 /* Network.h */; };
 		4CA6B4B11A2B97EE00E3A647 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4A91A2B97EE00E3A647 /* Network.m */; };
-		4CA6B4B21A2B97EE00E3A647 /* Station.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4AA1A2B97EE00E3A647 /* Station.h */; };
 		4CA6B4B31A2B97EE00E3A647 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4AB1A2B97EE00E3A647 /* Station.m */; };
-		4CA6B4BA1A2B97FE00E3A647 /* NetworksRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4B41A2B97FE00E3A647 /* NetworksRepository.h */; };
 		4CA6B4BB1A2B97FE00E3A647 /* NetworksRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B51A2B97FE00E3A647 /* NetworksRepository.m */; };
-		4CA6B4BC1A2B97FE00E3A647 /* Repository.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4B61A2B97FE00E3A647 /* Repository.h */; };
 		4CA6B4BD1A2B97FE00E3A647 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B71A2B97FE00E3A647 /* Repository.m */; };
-		4CA6B4BE1A2B97FE00E3A647 /* StationsRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6B4B81A2B97FE00E3A647 /* StationsRepository.h */; };
 		4CA6B4BF1A2B97FE00E3A647 /* StationsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */; };
 		4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */; };
 		4CA9A14719FC755E008F6D74 /* FadeInTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */; };
@@ -57,6 +49,8 @@
 		4CB962EC1A228BE70047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962EE1A228BE70047B5DA /* InfoPlist.strings */; };
 		4CB962F61A228BE80047B5DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962F81A228BE80047B5DA /* Localizable.strings */; };
 		4CB962FB1A228BE80047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962FD1A228BE80047B5DA /* InfoPlist.strings */; };
+		4CBADAFE1B3F1E2E0079086F /* SpotlightRespository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBADAFC1B3F1E2E0079086F /* SpotlightRespository.m */; };
+		4CBADB011B402B2F0079086F /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBADB001B402B2F0079086F /* RootNavigationController.m */; };
 		4CBAF97419FB066200BB0FF7 /* BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */; };
 		4CC2485619FD49EA0057B149 /* BlankState.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC2485519FD49EA0057B149 /* BlankState.storyboard */; };
 		4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2485919FDBC180057B149 /* UIViewController+BlankStateViewController.m */; };
@@ -208,6 +202,10 @@
 		4CB962ED1A228BE70047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CB962F71A228BE80047B5DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CB962FE1A228CFC0047B5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4CBADAFB1B3F1E2E0079086F /* SpotlightRespository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightRespository.h; sourceTree = "<group>"; };
+		4CBADAFC1B3F1E2E0079086F /* SpotlightRespository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightRespository.m; sourceTree = "<group>"; };
+		4CBADAFF1B402B2F0079086F /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		4CBADB001B402B2F0079086F /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
 		4CBAF97219FB066200BB0FF7 /* BlankStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankStateViewController.h; sourceTree = "<group>"; };
 		4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankStateViewController.m; sourceTree = "<group>"; };
 		4CC2485519FD49EA0057B149 /* BlankState.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BlankState.storyboard; sourceTree = "<group>"; };
@@ -464,6 +462,8 @@
 				4C1B31C719C7AC920096E52F /* NetworksTableViewController */,
 				4C4BE82A19B65B62000AD804 /* CompassViewController */,
 				4C4BE82919B65B2D000AD804 /* MapViewController */,
+				4CBADAFF1B402B2F0079086F /* RootNavigationController.h */,
+				4CBADB001B402B2F0079086F /* RootNavigationController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -535,6 +535,8 @@
 				4CA6B4B71A2B97FE00E3A647 /* Repository.m */,
 				4CA6B4B81A2B97FE00E3A647 /* StationsRepository.h */,
 				4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */,
+				4CBADAFB1B3F1E2E0079086F /* SpotlightRespository.h */,
+				4CBADAFC1B3F1E2E0079086F /* SpotlightRespository.m */,
 			);
 			name = Repositories;
 			path = ../BikeCompass;
@@ -666,14 +668,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CA6B4AE1A2B97EE00E3A647 /* Model.h in Headers */,
-				4CA6B4B21A2B97EE00E3A647 /* Station.h in Headers */,
-				4CA6B4B01A2B97EE00E3A647 /* Network.h in Headers */,
-				4C2B675B1A2B9CE700E7BED8 /* CityBikesKit.h in Headers */,
-				4CA6B4BC1A2B97FE00E3A647 /* Repository.h in Headers */,
-				4CA6B4AC1A2B97EE00E3A647 /* Location.h in Headers */,
-				4CA6B4BA1A2B97FE00E3A647 /* NetworksRepository.h in Headers */,
-				4CA6B4BE1A2B97FE00E3A647 /* StationsRepository.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +990,7 @@
 				4CC2485E1A004E060057B149 /* CityDetectionViewController.m in Sources */,
 				4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */,
 				4C3D441119EB1AC5001E45F2 /* LocationDisabledViewController.m in Sources */,
+				4CBADB011B402B2F0079086F /* RootNavigationController.m in Sources */,
 				4C1B31CA19C7ACB90096E52F /* NetworksTableViewController.m in Sources */,
 				4C53611F19B374750007D24E /* StationPointAnnotation.m in Sources */,
 				4C1B31CE19C7AE250096E52F /* NetworkTableViewCell.m in Sources */,
@@ -1025,6 +1020,7 @@
 			files = (
 				4CA6B4AD1A2B97EE00E3A647 /* Location.m in Sources */,
 				4CA6B4BD1A2B97FE00E3A647 /* Repository.m in Sources */,
+				4CBADAFE1B3F1E2E0079086F /* SpotlightRespository.m in Sources */,
 				4CA6B4B11A2B97EE00E3A647 /* Network.m in Sources */,
 				4CA6B4BF1A2B97FE00E3A647 /* StationsRepository.m in Sources */,
 				4CA6B4B31A2B97EE00E3A647 /* Station.m in Sources */,

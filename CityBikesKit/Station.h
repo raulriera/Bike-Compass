@@ -16,7 +16,9 @@
 @property (strong, nonatomic) NSString *name;
 @property (assign, nonatomic) NSInteger emptySlots;
 @property (assign, nonatomic) NSInteger numberOfBikes;
+@property (assign, nonatomic, readonly) NSInteger totalSlots;
 @property (assign, nonatomic) CLLocationDegrees latitude;
 @property (assign, nonatomic) CLLocationDegrees longitude;
+@property (strong, nonatomic) NSString *address;
 @property (assign, nonatomic, readonly) BOOL hasBikes;
 @end

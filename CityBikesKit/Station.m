@@ -20,13 +20,19 @@
              @"emptySlots": @"empty_slots",
              @"numberOfBikes": @"free_bikes",
              @"latitude": @"latitude",
-             @"longitude": @"longitude"
+             @"longitude": @"longitude",
+             @"address": @"extra.address"
              };
 }
 
 - (BOOL)hasBikes
 {
     return self.numberOfBikes > 0;
+}
+
+- (NSInteger)totalSlots
+{
+    return self.numberOfBikes + self.emptySlots;
 }
 
 - (BOOL)isEqual:(id)object

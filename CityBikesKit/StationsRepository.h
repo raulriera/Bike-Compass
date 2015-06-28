@@ -35,6 +35,8 @@
 
 - (void)stationsForNetwork:(Network *)network withCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock;
 
+- (void)stationById:(NSString *)stationId forNetwork:(Network *)network withBlock:(void (^)(Station *station, NSError *))block;
+
 /*!
  *	Closest station for a given network
  *

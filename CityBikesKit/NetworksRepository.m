@@ -46,6 +46,16 @@ static NSString * const CurrentNetworkKey = @"com.raulriera.bikecompass.currentN
     }];
 }
 
+- (void)networkById:(NSString *)networkId withBlock:(void (^)(Network *, NSError *))block
+{
+    [self networksWithBlock:^(NSArray *networks, NSError *error) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", networkId];
+        Network *network = [[networks filteredArrayUsingPredicate:predicate] firstObject];
+        
+        block(network, error);
+    }];
+}
+
 - (void)networksWithBlock:(void (^)(NSArray *networks, NSError *error))block
 {
     NSString *url = [RepositoryBaseURL stringByAppendingString:@"/v2/networks?fields=id,name,href,location"];

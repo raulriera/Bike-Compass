@@ -19,18 +19,6 @@
 
 @implementation CityDetectionViewController
 
-#pragma mark - View Controller Lifecycle
-
-- (void)viewDidLoad
-{
-    [self registerForHandoffObserving];
-}
-
-- (void)dealloc
-{
-    [self unregisterForHandoffObserving];
-}
-
 #pragma mark - LocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)locationManager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -78,24 +66,11 @@
     self.locationManager.delegate = self;
 }
 
-- (void)didHandoffFromWatch:(NSNotification *)notification
+#pragma mark - NSUserActivity
+
+- (void)restoreUserActivityState:(nonnull NSUserActivity *)activity
 {
     [self requestLocationServices];
-}
-
-#pragma mark - Observing
-
-- (void)registerForHandoffObserving
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didHandoffFromWatch:)
-                                                 name:@"didHandoffFromWatch"
-                                               object:nil];
-}
-
-- (void)unregisterForHandoffObserving
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
