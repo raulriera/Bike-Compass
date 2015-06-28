@@ -11,9 +11,13 @@
 @implementation RootNavigationController
 
 - (void)restoreUserActivityState:(nonnull NSUserActivity *)activity
-{
-    UIViewController *visibleViewController = self.visibleViewController;
-    [visibleViewController restoreUserActivityState:activity];
+{    
+    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * __nonnull viewController, NSUInteger index, BOOL * __nonnull stop) {
+        
+        [viewController restoreUserActivityState:activity];
+    }];
+    
+    [super restoreUserActivityState:activity];
 }
 
 @end

@@ -54,10 +54,6 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     // position. We do this so the final animated state is
     // the final position of the view
     [self setupViewsForAnimation];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     
     // Setup the click handler for the station name label
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(stationNameTapped)];
@@ -65,19 +61,23 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     [self.stationLabel setUserInteractionEnabled:YES];
     [self.stationLabel addGestureRecognizer:tapGestureRecognizer];
     
-    if ([NetworksRepository sharedRepository].currentNetwork) {
-        [self updateCurrentNetwork];
-        [self startSignificantChangeUpdates];
-    } else {
-        [self performSegueWithIdentifier:kCityDetectionSegue sender:self];
-    }
-    
     // Newer phones have much more space to display information
     // increase the number of lines for those
     if (IS_IPHONE_6) {
         self.stationLabel.numberOfLines = 2;
     } else if (IS_IPHONE_6_PLUS) {
         self.stationLabel.numberOfLines = 3;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if ([NetworksRepository sharedRepository].currentNetwork) {
+        [self updateCurrentNetwork];
+        [self startSignificantChangeUpdates];
+    } else {
+        [self performSegueWithIdentifier:kCityDetectionSegue sender:self];
     }
 }
 
@@ -330,6 +330,10 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 - (void)restoreUserActivityState:(nonnull NSUserActivity *)activity
 {
+    if (![activity.activityType isEqualToString:CSSearchableItemActionType]) {
+        return;
+    }
+    
     NSString *uniqueIdentifier = [activity.userInfo objectForKey:CSSearchableItemActivityIdentifier];
     
     // Create a NSURLComponents so we can easily parse the query string format
