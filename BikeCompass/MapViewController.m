@@ -214,4 +214,11 @@
     }    
 }
 
+#pragma mark - NSUserActivity
+
+- (void)restoreUserActivityState:(nonnull NSUserActivity *)activity
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

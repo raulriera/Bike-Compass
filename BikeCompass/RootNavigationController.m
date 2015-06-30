@@ -17,6 +17,7 @@
         [viewController restoreUserActivityState:activity];
     }];
     
+    [[self visibleViewController] restoreUserActivityState:activity];
     [super restoreUserActivityState:activity];
 }
 
