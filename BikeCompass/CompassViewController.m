@@ -68,17 +68,21 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     } else if (IS_IPHONE_6_PLUS) {
         self.stationLabel.numberOfLines = 3;
     }
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     
     if ([NetworksRepository sharedRepository].currentNetwork) {
-        [self updateCurrentNetwork];
         [self startSignificantChangeUpdates];
-    } else {
-        [self performSegueWithIdentifier:kCityDetectionSegue sender:self];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive:)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidBecomeActiveNotification
+                                                  object:nil];
 }
 
 #pragma mark -
@@ -88,24 +92,47 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     // Get the previously selected network
     Network *network = [NetworksRepository sharedRepository].currentNetwork;
     
+    __weak typeof(self) weakSelf = self;
+    
     // Get all the stations of the first network
     [[StationsRepository sharedRepository] stationsForNetwork:network withCompletionBlock:^(NSArray *stations, NSError *error) {
         
         // Find the closest station to the current location
-        self.stations = [[StationsRepository sharedRepository] sortStations:stations closestToLocation:self.locationManager.currentLocation withMoreThanBikes:0];
+        weakSelf.stations = [[StationsRepository sharedRepository] sortStations:stations closestToLocation:weakSelf.locationManager.currentLocation withMoreThanBikes:0];
         
         // Store the current station for future references
-        Station *station = [[[StationsRepository sharedRepository] sortStations:self.stations closestToLocation:self.locationManager.currentLocation withMoreThanBikes:0] firstObject];
+        Station *station = [[[StationsRepository sharedRepository] sortStations:weakSelf.stations closestToLocation:weakSelf.locationManager.currentLocation withMoreThanBikes:0] firstObject];
         [StationsRepository sharedRepository].currentStation = station;
         
-        [self animateViews];
+        [weakSelf animateViews];
     }];
 }
 
-- (void)updateCurrentNetwork
+- (void)updateNetworkIfNeeded
 {
     NSString *networkName = [[NetworksRepository sharedRepository].currentNetwork.name uppercaseString];
     [self.networkNameButton setTitle:networkName forState:UIControlStateNormal];
+}
+
+- (void)updateStationIfNeeded
+{
+    Network *currentNetwork = [NetworksRepository sharedRepository].currentNetwork;
+    Station *currentStation = [StationsRepository sharedRepository].currentStation;
+    
+    if (currentNetwork && currentStation) {
+        __weak typeof(self) weakSelf = self;
+        
+        [[StationsRepository sharedRepository] stationsForNetwork:currentNetwork withCompletionBlock:^(NSArray *stations, NSError *error) {
+            
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", currentStation.id];
+            Station *station = [[stations filteredArrayUsingPredicate:predicate] firstObject];
+
+            [weakSelf updateInformationWithStation:station];
+        }];
+    } else {
+        [self performSegueWithIdentifier:kCityDetectionSegue sender:self];
+    }
+
 }
 
 - (void)updateInformationWithStation:(Station *)station
@@ -126,19 +153,12 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     [self updateDistanceToStation:[StationsRepository sharedRepository].currentStation];
 }
 
-- (void)startSignificantChangeUpdates {
-    // Prepare to init the compass
-    self.locationManager = [[LocationManager alloc] init];
-    
-    // Makes us the delegate
-    self.locationManager.delegate = self;
-}
+# pragma mark - NSNotification
 
-- (void)pointCompassToStation:(Station *)station
+- (void)applicationDidBecomeActive:(NSNotification *)notification
 {
-    // Set the coordinates of the location to be used for calculating the angle
-    self.locationManager.latitudeOfTargetedPoint = station.latitude;
-    self.locationManager.longitudeOfTargetedPoint = station.longitude;
+    [self updateNetworkIfNeeded];
+    [self updateStationIfNeeded];
 }
 
 # pragma mark - Animation
@@ -229,6 +249,23 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     self.distanceLabel.text = [lengthFormatter stringFromMeters:distance];
 }
 
+# pragma mark - LocationManager
+
+- (void)startSignificantChangeUpdates {
+    // Prepare to init the compass
+    self.locationManager = [[LocationManager alloc] init];
+    
+    // Makes us the delegate
+    self.locationManager.delegate = self;
+}
+
+- (void)pointCompassToStation:(Station *)station
+{
+    // Set the coordinates of the location to be used for calculating the angle
+    self.locationManager.latitudeOfTargetedPoint = station.latitude;
+    self.locationManager.longitudeOfTargetedPoint = station.longitude;
+}
+
 # pragma mark - LocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)locationManager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -263,8 +300,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 - (void)viewController:(UIViewController *)viewController didChooseNetwork:(Network *)network
 {
-    [NetworksRepository sharedRepository].currentNetwork = network;
-    [self updateCurrentNetwork];
+    [self updateNetworkIfNeeded];
     [self startSignificantChangeUpdates];
 }
 
@@ -354,7 +390,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             // Update the UI to match the new network and station
             weakSelf.stations = stations;
             [NetworksRepository sharedRepository].currentNetwork = network;
-            [weakSelf updateCurrentNetwork];
+            [weakSelf updateNetworkIfNeeded];
             [weakSelf updateInformationWithStation:station];
         }];
                 
