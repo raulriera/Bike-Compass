@@ -39,12 +39,13 @@
 {    
     [[NetworksRepository sharedRepository] closestNetworkToLocation:location withBlock:^(Network *network, NSError *error) {
         
+        [NetworksRepository sharedRepository].currentNetwork = network;
+        
         if (self.delegate) {
             [self.delegate viewController:self didChooseNetwork:network];
         }
         
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-
     }];
 }
 

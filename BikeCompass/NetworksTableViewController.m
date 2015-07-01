@@ -15,8 +15,7 @@
 
 @property (strong, nonatomic) NSArray *networks;
 @property (strong, nonatomic) NSArray *filteredNetworks;
-@property (nonatomic, strong) UISearchController *searchController;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (strong, nonatomic) UISearchController *searchController;
 
 @end
 
@@ -38,7 +37,7 @@
     
     // Include the search controller's search bar within the table's header view.
     self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.tableView.estimatedRowHeight = 86;
+    self.tableView.estimatedRowHeight = self.tableView.rowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     self.definesPresentationContext = YES;
@@ -108,16 +107,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Network *network = [self.filteredNetworks objectAtIndex:indexPath.row];
+    
+    [NetworksRepository sharedRepository].currentNetwork = network;
+    
     if (self.delegate) {
-        [self.delegate viewController:self didChooseNetwork:[self.filteredNetworks objectAtIndex:indexPath.row]];
+        [self.delegate viewController:self didChooseNetwork:network];
     }
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)dismiss:(id)sender {
+- (IBAction)dismiss:(id)sender
+{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end
