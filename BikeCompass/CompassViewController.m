@@ -31,6 +31,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 @property (weak, nonatomic) IBOutlet UIImageView *pointerBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *pointer;
+@property (weak, nonatomic) IBOutlet UIView *pointerView;
 @property (weak, nonatomic) IBOutlet UIButton *bicyclesRemainingButton;
 @property (weak, nonatomic) IBOutlet UILabel *stationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
@@ -56,10 +57,16 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     [self setupViewsForAnimation];
     
     // Setup the click handler for the station name label
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(stationNameTapped)];
-    tapGestureRecognizer.numberOfTapsRequired = 1;
+    UITapGestureRecognizer *networkTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(stationNameTapped)];
+    networkTapGestureRecognizer.numberOfTapsRequired = 1;
     [self.stationLabel setUserInteractionEnabled:YES];
-    [self.stationLabel addGestureRecognizer:tapGestureRecognizer];
+    [self.stationLabel addGestureRecognizer:networkTapGestureRecognizer];
+    
+    // Setup the click handler for the pointer view
+    UITapGestureRecognizer *pointerTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wheelTapped:)];
+    pointerTapGestureRecognizer.numberOfTapsRequired = 1;
+    [self.pointerView setUserInteractionEnabled:YES];
+    [self.pointerView addGestureRecognizer:pointerTapGestureRecognizer];
     
     // Newer phones have much more space to display information
     // increase the number of lines for those
@@ -71,18 +78,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     
     if ([NetworksRepository sharedRepository].currentNetwork) {
         [self startSignificantChangeUpdates];
-    }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationDidBecomeActive:)
-                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationDidBecomeActiveNotification
-                                                  object:nil];
+    }    
 }
 
 #pragma mark -
@@ -139,7 +135,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 {
     if ((station.numberOfBikes != [StationsRepository sharedRepository].currentStation.numberOfBikes) ||
         (![station.name isEqualToString:[StationsRepository sharedRepository].currentStation.name])) {
-        //[SAMSoundEffect playSoundEffectNamed:@"bell"];
+        [SAMSoundEffect playSoundEffectNamed:@"bell"];
     }
     
     [StationsRepository sharedRepository].currentStation = station;
@@ -151,14 +147,6 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     
     [self pointCompassToStation:station];
     [self updateDistanceToStation:[StationsRepository sharedRepository].currentStation];
-}
-
-# pragma mark - NSNotification
-
-- (void)applicationDidBecomeActive:(NSNotification *)notification
-{
-    [self updateNetworkIfNeeded];
-    [self updateStationIfNeeded];
 }
 
 # pragma mark - Animation
@@ -231,7 +219,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             // once Facebook POP has finished with it
             self.locationManager.arrowImageView = self.pointer;
             
-            //[SAMSoundEffect playSoundEffectNamed:@"bell"];
+            [SAMSoundEffect playSoundEffectNamed:@"bell"];
         }
     }];
 }
@@ -305,6 +293,28 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 }
 
 # pragma mark - Actions
+
+- (IBAction)wheelTapped:(UIButton *)sender {
+    
+    [self updateNetworkIfNeeded];
+    [self startSignificantChangeUpdates];
+    
+    [UIView animateWithDuration:0.15 delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:10 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        
+        self.pointerBackground.transform = CGAffineTransformMakeScale(0.9, 0.9);
+        self.pointer.transform = CGAffineTransformMakeScale(0.95, 0.95);
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.15 delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:10 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            
+            self.pointerBackground.transform = CGAffineTransformIdentity;
+            self.pointer.transform = CGAffineTransformIdentity;
+            
+        } completion:nil];
+        
+    }];
+}
 
 - (IBAction)networkNameTapped:(UIButton *)sender {
     [self performSegueWithIdentifier:kNetworksSegue sender:self];

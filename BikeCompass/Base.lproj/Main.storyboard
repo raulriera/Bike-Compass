@@ -191,6 +191,7 @@
                         <outlet property="networkNameButton" destination="BLt-Kl-paO" id="Stb-Wf-jeK"/>
                         <outlet property="pointer" destination="oaP-Hp-sbx" id="RSW-rY-8mx"/>
                         <outlet property="pointerBackground" destination="IEJ-0o-fHb" id="wEF-JM-yDE"/>
+                        <outlet property="pointerView" destination="cWe-bo-S77" id="TXo-QD-AdU"/>
                         <outlet property="stationLabel" destination="ccV-PD-pc5" id="nYK-X3-A7K"/>
                         <segue destination="hEM-qw-srY" kind="presentation" identifier="ShowMapSegue" id="ra2-Lj-UcQ"/>
                         <segue destination="n45-s8-jaM" kind="presentation" identifier="ShowCityDetectionSegue" id="SVd-Vv-1a3"/>
