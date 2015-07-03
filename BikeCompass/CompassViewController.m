@@ -133,6 +133,8 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 - (void)updateInformationWithStation:(Station *)station
 {
+    [self updateNetworkIfNeeded];
+    
     if ((station.numberOfBikes != [StationsRepository sharedRepository].currentStation.numberOfBikes) ||
         (![station.name isEqualToString:[StationsRepository sharedRepository].currentStation.name])) {
         [SAMSoundEffect playSoundEffectNamed:@"bell"];
