@@ -1,2 +1,3 @@
-Pods/
-BikeCompass.xcworkspace/xcuserdata/
+Pods/*
+BikeCompass.xcworkspace/xcuserdata/*
+BikeCompass.xcodeproj/xcuserdata/*
