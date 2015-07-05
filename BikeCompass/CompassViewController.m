@@ -123,7 +123,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", currentStation.id];
             Station *station = [[stations filteredArrayUsingPredicate:predicate] firstObject];
 
-            [weakSelf updateInformationWithStation:station];
+            [weakSelf updateInterfaceWithStation:station];
         }];
     } else {
         [self performSegueWithIdentifier:kCityDetectionSegue sender:self];
@@ -131,7 +131,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 }
 
-- (void)updateInformationWithStation:(Station *)station
+- (void)updateInterfaceWithStation:(Station *)station
 {
     [self updateNetworkIfNeeded];
     
@@ -187,7 +187,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             [self.pointer.layer pop_removeAllAnimations];
             self.pointer.transform = CGAffineTransformIdentity;
             
-            [self updateInformationWithStation:[StationsRepository sharedRepository].currentStation];
+            [self updateInterfaceWithStation:[StationsRepository sharedRepository].currentStation];
             
             POPBasicAnimation *fadeInStation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
             fadeInStation.name = @"stationFadeIn";
@@ -283,7 +283,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 - (void)mapViewController:(MapViewController *)mapViewController didSelectStation:(Station *)station
 {
-    [self updateInformationWithStation:station];
+    [self updateInterfaceWithStation:station];
 }
 
 # pragma mark - NetworksTableViewControllerDelegate
@@ -299,7 +299,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 - (IBAction)wheelTapped:(UIButton *)sender {
     
     [self updateNetworkIfNeeded];
-    [self startSignificantChangeUpdates];
+    [self updateStationIfNeeded];
     
     [UIView animateWithDuration:0.15 delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:10 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         
@@ -402,8 +402,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             // Update the UI to match the new network and station
             weakSelf.stations = stations;
             [NetworksRepository sharedRepository].currentNetwork = network;
-            [weakSelf updateNetworkIfNeeded];
-            [weakSelf updateInformationWithStation:station];
+            [weakSelf updateInterfaceWithStation:station];
         }];
                 
     }];
