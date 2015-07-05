@@ -21,23 +21,23 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - FBAnnotationClustering (0.1.2)
-  - Mantle (1.5.4):
-    - Mantle/extobjc (= 1.5.4)
-  - Mantle/extobjc (1.5.4)
+  - Mantle (2.0.2):
+    - Mantle/extobjc (= 2.0.2)
+  - Mantle/extobjc (2.0.2)
   - pop (1.0.7)
   - SAMSoundEffect (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - FBAnnotationClustering (~> 0.1)
-  - Mantle (~> 1.5)
+  - Mantle (~> 2.0)
   - pop (~> 1.0)
   - SAMSoundEffect (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   FBAnnotationClustering: 8be556cf48b27262acab01ad8419bc01703615e3
-  Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
+  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   SAMSoundEffect: d09dec216800496975944dbcf717c8e1278dd607
 

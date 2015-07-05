@@ -6,5 +6,5 @@ pod 'FBAnnotationClustering', '~> 0.1'
 
 target :CityBikesKit, :exclusive => true do
   pod 'AFNetworking', '~> 2.5'
-  pod 'Mantle', '~> 1.5'
+  pod 'Mantle', '~> 2.0'
 end
