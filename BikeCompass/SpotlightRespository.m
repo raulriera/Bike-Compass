@@ -21,7 +21,7 @@
         CSSearchableItemAttributeSet* attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeText];
 
         attributeSet.title = network.name;
-        attributeSet.contentDescription = [NSString stringWithFormat:NSLocalizedString(@"%@\r%d bicycle slots.", @"Description presented to the user as search results in spotlight"), station.name, station.totalSlots];
+        attributeSet.contentDescription = [NSString stringWithFormat:NSLocalizedString(@"Total of %@\r%d bicycle slots.", @"Description presented to the user as search results in spotlight"), station.name, station.totalSlots];
 
         NSString *uniqueIdentifier = [NSString stringWithFormat:@"station=%@&network=%@", station.id, network.id];
         CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:uniqueIdentifier domainIdentifier:@"com.raulriera.bikecompass" attributeSet:attributeSet];
