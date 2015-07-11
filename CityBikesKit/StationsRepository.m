@@ -50,8 +50,10 @@ static NSString * const CurrentStationKey = @"com.raulriera.bikecompass.currentS
             block(nil, error);
         }
         
-        // Index the stations with Spotlight
-        [SpotlightRespository indexStations:data andNetwork:network];
+        // Index the stations with Spotlight if needed
+        if ([SpotlightRespository indexStatusForNetwork:network] == SpotlightIndexStatusMissing) {
+            [SpotlightRespository indexStations:data andNetwork:network];
+        }
         
         block(data, error);
         

@@ -10,8 +10,14 @@
 #import "Station.h"
 #import "Network.h"
 
+typedef enum : NSUInteger {
+    SpotlightIndexStatusIndexed,
+    SpotlightIndexStatusMissing
+} SpotlightIndexStatus;
+
 @interface SpotlightRespository : NSObject
 
 + (void)indexStations:(NSArray *)stations andNetwork:(Network *)network;
++ (SpotlightIndexStatus)indexStatusForNetwork:(Network *)network;
 
 @end

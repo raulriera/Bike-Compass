@@ -7,6 +7,7 @@
 //
 
 #import "SpotlightRespository.h"
+#import "Repository.h"
 @import CoreSpotlight;
 @import MobileCoreServices;
 
@@ -31,7 +32,32 @@
 
     [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:items completionHandler: ^(NSError * __nullable error) {
         NSLog(@"Stations for '%@' indexed", network.name);
+        [self setIndexStatus:SpotlightIndexStatusIndexed forNetwork:network];
     }];
+}
+
+# pragma mark -
+
++ (SpotlightIndexStatus)indexStatusForNetwork:(Network *)network
+{
+    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
+    
+    if ([sharedUserDefaults boolForKey:network.id]) {
+        return SpotlightIndexStatusIndexed;
+    } else {
+        return SpotlightIndexStatusMissing;
+    }
+}
+
++ (void)setIndexStatus:(SpotlightIndexStatus)indexStatus forNetwork:(Network *)network
+{
+    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
+    
+    if (indexStatus == SpotlightIndexStatusIndexed) {
+        [sharedUserDefaults setBool:YES forKey:network.id];
+    } else {
+        [sharedUserDefaults setBool:NO forKey:network.id];
+    }
 }
 
 @end
