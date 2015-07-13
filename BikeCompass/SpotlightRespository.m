@@ -13,7 +13,7 @@
 
 @implementation SpotlightRespository
 
-+ (void)indexStations:(NSArray *)stations andNetwork:(Network *)network
++ (void)indexStations:(nonnull NSArray *)stations andNetwork:(nonnull Network *)network
 {
     NSMutableArray *items = [[NSMutableArray alloc] init];
 
@@ -38,7 +38,7 @@
 
 # pragma mark -
 
-+ (SpotlightIndexStatus)indexStatusForNetwork:(Network *)network
++ (SpotlightIndexStatus)indexStatusForNetwork:(nonnull Network *)network
 {
     NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
     
@@ -49,7 +49,7 @@
     }
 }
 
-+ (void)setIndexStatus:(SpotlightIndexStatus)indexStatus forNetwork:(Network *)network
++ (void)setIndexStatus:(SpotlightIndexStatus)indexStatus forNetwork:(nonnull Network *)network
 {
     NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
     

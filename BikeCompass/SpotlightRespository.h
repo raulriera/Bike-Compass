@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 
 @interface SpotlightRespository : NSObject
 
-+ (void)indexStations:(NSArray *)stations andNetwork:(Network *)network;
-+ (SpotlightIndexStatus)indexStatusForNetwork:(Network *)network;
++ (void)indexStations:(nonnull NSArray *)stations andNetwork:(nonnull Network *)network;
++ (SpotlightIndexStatus)indexStatusForNetwork:(nonnull Network *)network;
 
 @end

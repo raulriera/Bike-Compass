@@ -32,7 +32,6 @@
  *	@param network         Network object to query against
  *	@param completionBlock block to execute after the request has finished
  */
-
 - (void)stationsForNetwork:(Network *)network withCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock;
 
 /*!
