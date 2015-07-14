@@ -42,6 +42,7 @@
 		4CA6B4BB1A2B97FE00E3A647 /* NetworksRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B51A2B97FE00E3A647 /* NetworksRepository.m */; };
 		4CA6B4BD1A2B97FE00E3A647 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B71A2B97FE00E3A647 /* Repository.m */; };
 		4CA6B4BF1A2B97FE00E3A647 /* StationsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */; };
+		4CA902821B5179480067EF68 /* CompassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA902811B5179480067EF68 /* CompassView.m */; };
 		4CA9A14419FC52F1008F6D74 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */; };
 		4CA9A14719FC755E008F6D74 /* FadeInTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */; };
 		4CB4B8B519CB87B0004E0787 /* MKMapView+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4B8B419CB87B0004E0787 /* MKMapView+Extended.m */; };
@@ -50,7 +51,6 @@
 		4CB962F61A228BE80047B5DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962F81A228BE80047B5DA /* Localizable.strings */; };
 		4CB962FB1A228BE80047B5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962FD1A228BE80047B5DA /* InfoPlist.strings */; };
 		4CBADAFE1B3F1E2E0079086F /* SpotlightRespository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBADAFC1B3F1E2E0079086F /* SpotlightRespository.m */; };
-		4CBADB011B402B2F0079086F /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBADB001B402B2F0079086F /* RootNavigationController.m */; };
 		4CBAF97419FB066200BB0FF7 /* BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */; };
 		4CC2485619FD49EA0057B149 /* BlankState.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC2485519FD49EA0057B149 /* BlankState.storyboard */; };
 		4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2485919FDBC180057B149 /* UIViewController+BlankStateViewController.m */; };
@@ -194,6 +194,8 @@
 		4CA6B4B71A2B97FE00E3A647 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Repository.m; path = CityBikesKit/Repository.m; sourceTree = SOURCE_ROOT; };
 		4CA6B4B81A2B97FE00E3A647 /* StationsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationsRepository.h; path = CityBikesKit/StationsRepository.h; sourceTree = SOURCE_ROOT; };
 		4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationsRepository.m; path = CityBikesKit/StationsRepository.m; sourceTree = SOURCE_ROOT; };
+		4CA902801B5179480067EF68 /* CompassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassView.h; sourceTree = "<group>"; };
+		4CA902811B5179480067EF68 /* CompassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompassView.m; sourceTree = "<group>"; };
 		4CA9A14319FC52F1008F6D74 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		4CA9A14519FC755E008F6D74 /* FadeInTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeInTransitioning.h; sourceTree = "<group>"; };
 		4CA9A14619FC755E008F6D74 /* FadeInTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeInTransitioning.m; sourceTree = "<group>"; };
@@ -204,8 +206,6 @@
 		4CB962FE1A228CFC0047B5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CBADAFB1B3F1E2E0079086F /* SpotlightRespository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightRespository.h; sourceTree = "<group>"; };
 		4CBADAFC1B3F1E2E0079086F /* SpotlightRespository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightRespository.m; sourceTree = "<group>"; };
-		4CBADAFF1B402B2F0079086F /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
-		4CBADB001B402B2F0079086F /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
 		4CBAF97219FB066200BB0FF7 /* BlankStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankStateViewController.h; sourceTree = "<group>"; };
 		4CBAF97319FB066200BB0FF7 /* BlankStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankStateViewController.m; sourceTree = "<group>"; };
 		4CC2485519FD49EA0057B149 /* BlankState.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BlankState.storyboard; sourceTree = "<group>"; };
@@ -462,8 +462,6 @@
 				4C1B31C719C7AC920096E52F /* NetworksTableViewController */,
 				4C4BE82A19B65B62000AD804 /* CompassViewController */,
 				4C4BE82919B65B2D000AD804 /* MapViewController */,
-				4CBADAFF1B402B2F0079086F /* RootNavigationController.h */,
-				4CBADB001B402B2F0079086F /* RootNavigationController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -529,10 +527,10 @@
 		4C8DE37B19AD211500F6DE5A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				4CA6B4B41A2B97FE00E3A647 /* NetworksRepository.h */,
-				4CA6B4B51A2B97FE00E3A647 /* NetworksRepository.m */,
 				4CA6B4B61A2B97FE00E3A647 /* Repository.h */,
 				4CA6B4B71A2B97FE00E3A647 /* Repository.m */,
+				4CA6B4B41A2B97FE00E3A647 /* NetworksRepository.h */,
+				4CA6B4B51A2B97FE00E3A647 /* NetworksRepository.m */,
 				4CA6B4B81A2B97FE00E3A647 /* StationsRepository.h */,
 				4CA6B4B91A2B97FE00E3A647 /* StationsRepository.m */,
 				4CBADAFB1B3F1E2E0079086F /* SpotlightRespository.h */,
@@ -620,6 +618,7 @@
 		4CCFCEE419B7C07F00F29AAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CFDFDF31B51F3FA00E816A8 /* CompassView */,
 				4CC248601A02E3E80057B149 /* RoundedButton */,
 				4C1B31CB19C7AE050096E52F /* NetworkTableViewCell */,
 				4CB4B8AE19CB8043004E0787 /* StationPointAnnotation */,
@@ -634,6 +633,15 @@
 				4CDBF3DF19CEF6980020E4F7 /* FBAnnotationCluster+Extended.m */,
 			);
 			name = FBAnnotationCluster;
+			sourceTree = "<group>";
+		};
+		4CFDFDF31B51F3FA00E816A8 /* CompassView */ = {
+			isa = PBXGroup;
+			children = (
+				4CA902801B5179480067EF68 /* CompassView.h */,
+				4CA902811B5179480067EF68 /* CompassView.m */,
+			);
+			name = CompassView;
 			sourceTree = "<group>";
 		};
 		CC40FCD70A34FED984E2E0CE /* Pods */ = {
@@ -988,9 +996,9 @@
 				4C032F5D19ABC52600AECF05 /* LocationManager.m in Sources */,
 				4CDBF3E019CEF6980020E4F7 /* FBAnnotationCluster+Extended.m in Sources */,
 				4CC2485E1A004E060057B149 /* CityDetectionViewController.m in Sources */,
+				4CA902821B5179480067EF68 /* CompassView.m in Sources */,
 				4CC2485A19FDBC180057B149 /* UIViewController+BlankStateViewController.m in Sources */,
 				4C3D441119EB1AC5001E45F2 /* LocationDisabledViewController.m in Sources */,
-				4CBADB011B402B2F0079086F /* RootNavigationController.m in Sources */,
 				4C1B31CA19C7ACB90096E52F /* NetworksTableViewController.m in Sources */,
 				4C53611F19B374750007D24E /* StationPointAnnotation.m in Sources */,
 				4C1B31CE19C7AE250096E52F /* NetworkTableViewCell.m in Sources */,

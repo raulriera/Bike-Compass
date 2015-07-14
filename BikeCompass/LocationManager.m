@@ -66,10 +66,9 @@
 
 # pragma mark - CLLocationManagerDelegate
 
-- (void)locationManager:(CLLocationManager *)manager
-       didFailWithError:(NSError *)error
+- (void)locationManager:(nonnull CLLocationManager *)manager didFailWithError:(nonnull NSError *)error
 {
-    NSLog(@"Error : %@",[error localizedDescription]);
+    NSLog(@"Location failed: %@", [error localizedDescription]);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading

@@ -17,6 +17,7 @@
 #import "FadeInTransitioning.h"
 #import "NetworksRepository.h"
 #import "StationsRepository.h"
+#import "CompassView.h"
 @import CoreSpotlight;
 
 NSString *const kMapSegue = @"ShowMapSegue";
@@ -29,9 +30,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 @interface CompassViewController () <LocationManagerDelegate, MapViewControllerDelegate, NetworksViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *pointerBackground;
-@property (weak, nonatomic) IBOutlet UIImageView *pointer;
-@property (weak, nonatomic) IBOutlet UIView *pointerView;
+@property (weak, nonatomic) IBOutlet CompassView *pointerView;
 @property (weak, nonatomic) IBOutlet UIButton *bicyclesRemainingButton;
 @property (weak, nonatomic) IBOutlet UILabel *stationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
@@ -57,7 +56,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     [self setupViewsForAnimation];
     
     // Setup the click handler for the station name label
-    UITapGestureRecognizer *networkTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(stationNameTapped)];
+    UITapGestureRecognizer *networkTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(stationNameTapped:)];
     networkTapGestureRecognizer.numberOfTapsRequired = 1;
     [self.stationLabel setUserInteractionEnabled:YES];
     [self.stationLabel addGestureRecognizer:networkTapGestureRecognizer];
@@ -78,7 +77,9 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     
     if ([NetworksRepository sharedRepository].currentNetwork) {
         [self startSignificantChangeUpdates];
-    }    
+    } else {
+        // I need an else case here, otherwise nothing will show on the first load
+    }
 }
 
 #pragma mark -
@@ -122,16 +123,15 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", currentStation.id];
             Station *station = [[stations filteredArrayUsingPredicate:predicate] firstObject];
-
+            
             [weakSelf updateInterfaceWithStation:station];
         }];
     } else {
-        [self performSegueWithIdentifier:kCityDetectionSegue sender:self];
+        [self performSegueWithIdentifier:kCityDetectionSegue sender:nil];
     }
-
 }
 
-- (void)updateInterfaceWithStation:(Station *)station
+- (void)updateInterfaceWithStation:(nonnull Station *)station
 {
     [self updateNetworkIfNeeded];
     
@@ -154,11 +154,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 # pragma mark - Animation
 
 - (void)setupViewsForAnimation
-{
-    // Scale down the compass
-    self.pointerBackground.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    self.pointer.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    
+{    
     // Fade out the views
     self.networkNameButton.alpha = 0;
     self.bicyclesRemainingButton.alpha = 0;
@@ -167,26 +163,9 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 }
 
 - (void)animateViews
-{
-    POPSpringAnimation *popInPointerBackground = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-    popInPointerBackground.name = @"pointerBackgroundPopIn";
-    popInPointerBackground.toValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
-    popInPointerBackground.springBounciness = 15.f;
-    
-    [self.pointerBackground.layer pop_addAnimation:popInPointerBackground forKey:@"popIn"];
-    
-    POPSpringAnimation *popInPointer = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-    popInPointer.toValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
-    popInPointer.name = @"pointerPopIn";
-    popInPointer.springBounciness = 5.f;
-    
-    [self.pointer.layer pop_addAnimation:popInPointer forKey:@"popIn"];
-    
-    [popInPointer setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+{    
+    [self.pointerView startPopUpAnimationWithCompletionBlock:^(BOOL finished) {
         if (finished) {
-            [self.pointer.layer pop_removeAllAnimations];
-            self.pointer.transform = CGAffineTransformIdentity;
-            
             [self updateInterfaceWithStation:[StationsRepository sharedRepository].currentStation];
             
             POPBasicAnimation *fadeInStation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
@@ -219,14 +198,14 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             // Add the image to be used as the compass on the GUI
             // this is very important because we can only animate it
             // once Facebook POP has finished with it
-            self.locationManager.arrowImageView = self.pointer;
+            self.locationManager.arrowImageView = self.pointerView.pointerImageView;
             
             [SAMSoundEffect playSoundEffectNamed:@"bell"];
         }
     }];
 }
 
-- (void)updateDistanceToStation:(Station *)station
+- (void)updateDistanceToStation:(nonnull Station *)station
 {
     CLLocation *stationLocation = [[CLLocation alloc] initWithLatitude:station.latitude longitude:station.longitude];
     
@@ -242,14 +221,13 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 # pragma mark - LocationManager
 
 - (void)startSignificantChangeUpdates {
-    // Prepare to init the compass
-    self.locationManager = [[LocationManager alloc] init];
-    
-    // Makes us the delegate
-    self.locationManager.delegate = self;
+    if (self.locationManager == nil) {
+        self.locationManager = [[LocationManager alloc] init];
+        self.locationManager.delegate = self;
+    }
 }
 
-- (void)pointCompassToStation:(Station *)station
+- (void)pointCompassToStation:(nonnull Station *)station
 {
     // Set the coordinates of the location to be used for calculating the angle
     self.locationManager.latitudeOfTargetedPoint = station.latitude;
@@ -281,50 +259,41 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
 
 # pragma mark - MapViewControllerDelegate
 
-- (void)mapViewController:(MapViewController *)mapViewController didSelectStation:(Station *)station
+- (void)mapViewController:(MapViewController *)mapViewController didSelectStation:(nonnull Station *)station
 {
     [self updateInterfaceWithStation:station];
 }
 
 # pragma mark - NetworksTableViewControllerDelegate
 
-- (void)viewController:(UIViewController *)viewController didChooseNetwork:(Network *)network
+- (void)viewController:(UIViewController *)viewController didChooseNetwork:(nonnull Network *)network
 {
-    [self updateNetworkIfNeeded];
     [self startSignificantChangeUpdates];
+    [self updateNetworkIfNeeded];
+    [self updateStationIfNeeded];
 }
 
-# pragma mark - Actions
+# pragma mark -
 
-- (IBAction)wheelTapped:(UIButton *)sender {
+- (void)wheelTapped:(UITapGestureRecognizer *)gestureRecognizer {
+    
+    self.pointerView.userInteractionEnabled = NO;
     
     [self updateNetworkIfNeeded];
     [self updateStationIfNeeded];
     
-    [UIView animateWithDuration:0.15 delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:10 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        
-        self.pointerBackground.transform = CGAffineTransformMakeScale(0.9, 0.9);
-        self.pointer.transform = CGAffineTransformMakeScale(0.95, 0.95);
-        
-    } completion:^(BOOL finished) {
-        
-        [UIView animateWithDuration:0.15 delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:10 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            
-            self.pointerBackground.transform = CGAffineTransformIdentity;
-            self.pointer.transform = CGAffineTransformIdentity;
-            
-        } completion:nil];
-        
+    [self.pointerView startPopDownAnimationWithCompletionBlock:^(BOOL finished) {
+        self.pointerView.userInteractionEnabled = YES;
     }];
+}
+
+- (void)stationNameTapped:(UITapGestureRecognizer *)gestureRecognizer
+{
+    [self performSegueWithIdentifier:kMapSegue sender:self];
 }
 
 - (IBAction)networkNameTapped:(UIButton *)sender {
     [self performSegueWithIdentifier:kNetworksSegue sender:self];
-}
-
-- (void)stationNameTapped
-{
-    [self performSegueWithIdentifier:kMapSegue sender:self];
 }
 
 # pragma mark - Segues

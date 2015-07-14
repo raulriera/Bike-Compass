@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import "CompassViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,7 @@
             
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Prevent the music to be interrupted
+    // Prevent the music from being interrupted
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
     
     return YES;
@@ -26,7 +27,14 @@
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler
 {
     
-    [self.window.rootViewController restoreUserActivityState:userActivity];
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    UIViewController *visibleViewController = [navigationController visibleViewController];
+    
+    if (![visibleViewController isMemberOfClass:[CompassViewController class]]) {
+        [visibleViewController dismissViewControllerAnimated:NO completion:nil];
+    }
+    
+    [[navigationController.viewControllers firstObject] restoreUserActivityState:userActivity];
     
     return YES;
 }
