@@ -12,9 +12,9 @@
 
 @interface Network : Model
 
-@property (strong, nonatomic) NSString *href;
-@property (strong, nonatomic) NSString *id;
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) Location *location;
+@property (strong, nonatomic, nonnull) NSString *href;
+@property (strong, nonatomic, nonnull) NSString *id;
+@property (strong, nonatomic, nonnull) NSString *name;
+@property (strong, nonatomic, nonnull) Location *location;
 
 @end

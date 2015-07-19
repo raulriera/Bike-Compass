@@ -15,24 +15,24 @@
 /*!
  *	The current "active" network
  */
-@property (strong, nonatomic) Network *currentNetwork;
+@property (strong, nonatomic, nullable) Network *currentNetwork;
 
 /*!
  *	Singletion method
  *
  *	@return returns the instance of this repository
  */
-+ (instancetype)sharedRepository;
-- (instancetype)init __attribute__((unavailable("init not available. Did you mean sharedRepository?")));
++ (nullable instancetype)sharedRepository;
+- (nullable instancetype)init __attribute__((unavailable("init not available. Did you mean sharedRepository?")));
 
 /*!
  *	All the networks available
  *
  *	@param block to execute after the request has finished, containing an array of Network objects if no error ocurred
  */
-- (void)networksWithBlock:(void (^)(NSArray *, NSError *))block;
-- (void)closestNetworkToLocation:(CLLocation *)location withBlock:(void (^)(Network *network, NSError *error))block;
-- (void)networkById:(NSString *)networkId withBlock:(void (^)(Network *network, NSError *))block;
-- (NSArray *)filterNetworks:(NSArray *)networks usingKeyword:(NSString *)keyword;
+- (void)networksWithBlock:(nonnull void (^)(NSArray * __nullable, NSError * __nullable))block;
+- (void)closestNetworkToLocation:(nonnull CLLocation *)location withBlock:(nonnull void (^)(Network * __nullable, NSError * __nullable))block;
+- (void)networkById:(nonnull NSString *)networkId withBlock:(nonnull void (^)(Network * __nullable, NSError * __nullable))block;
+- (nullable NSArray *)filterNetworks:(nonnull NSArray *)networks usingKeyword:(nonnull NSString *)keyword;
 
 @end

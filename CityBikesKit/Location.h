@@ -12,8 +12,8 @@
 
 @interface Location : Model
 
-@property (strong, nonatomic) NSString *city;
-@property (strong, nonatomic) NSString *country;
+@property (strong, nonatomic, nonnull) NSString *city;
+@property (strong, nonatomic, nonnull) NSString *country;
 @property (assign, nonatomic) CLLocationDegrees latitude;
 @property (assign, nonatomic) CLLocationDegrees longitude;
 

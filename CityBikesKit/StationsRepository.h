@@ -16,15 +16,15 @@
 /*!
  *	The current "active" station
  */
-@property (strong, nonatomic) Station *currentStation;
+@property (strong, nonatomic, nullable) Station *currentStation;
 
 /*!
  *	Singletion method
  *
  *	@return returns the instance of this repository
  */
-+ (instancetype)sharedRepository;
-- (instancetype)init __attribute__((unavailable("init not available. Did you mean sharedRepository?")));
++ (nullable instancetype)sharedRepository;
+- (nullable instancetype)init __attribute__((unavailable("init not available. Did you mean sharedRepository?")));
 
 /*!
  *	All the stations for a given network
@@ -32,7 +32,7 @@
  *	@param network         Network object to query against
  *	@param completionBlock block to execute after the request has finished
  */
-- (void)stationsForNetwork:(Network *)network withCompletionBlock:(void (^)(NSArray *, NSError *))completionBlock;
+- (void)stationsForNetwork:(nonnull Network *)network withCompletionBlock:(nonnull void (^)(NSArray * __nullable, NSError * __nullable))completionBlock;
 
 /*!
  *	Closest station for a given network
@@ -41,7 +41,7 @@
  *	@param location        Location object
  *	@param completionBlock block to execute after the request has finished
  */
-- (void)closestStationForNetwork:(Network *)network toLocation:(CLLocation *)location withCompletionBlock:(void (^)(Station *, NSError *))completionBlock;
+- (void)closestStationForNetwork:(nonnull Network *)network toLocation:(nonnull CLLocation *)location withCompletionBlock:(nonnull void (^)(Station * __nullable, NSError * __nullable))completionBlock;
 
 /*!
  *	Orders a given array of stations by proximity to a given location and with more than the specified number of bikes
@@ -52,6 +52,6 @@
  *
  *	@return NSArray of Station objects
  */
-- (NSArray *)sortStations:(NSArray *)stations closestToLocation:(CLLocation *)location withMoreThanBikes:(NSInteger)bikes;
+- (nonnull NSArray *)sortStations:(nonnull NSArray *)stations closestToLocation:(nonnull CLLocation *)location withMoreThanBikes:(NSInteger)bikes;
 
 @end
