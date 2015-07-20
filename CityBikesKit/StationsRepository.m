@@ -39,26 +39,21 @@ static NSString * const CurrentStationKey = @"com.raulriera.bikecompass.currentS
 
 - (void)stationsForNetwork:(Network *)network withCompletionBlock:(void (^)(NSArray *stations, NSError *error))block
 {
-    NSString *url = [RepositoryBaseURL stringByAppendingString:network.href];
+    NSString *resource = [RepositoryBaseURL stringByAppendingString:network.href];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSError *error;
-        NSArray *data = [MTLJSONAdapter modelsOfClass:[Station class] fromJSONArray:[[responseObject valueForKey:@"network"] valueForKey:@"stations"] error:&error];
+    [Repository taskWithURL:[NSURL URLWithString:resource] withCompletionBlock:^(NSDictionary *json, NSError *error) {
         if (error) {
             block(nil, error);
         }
         
+        NSArray *stations = [MTLJSONAdapter modelsOfClass:[Station class] fromJSONArray:[[json valueForKey:@"network"] valueForKey:@"stations"] error:&error];
+        
         // Index the stations with Spotlight if needed
         if ([SpotlightRespository indexStatusForNetwork:network] == SpotlightIndexStatusMissing) {
-            [SpotlightRespository indexStations:data andNetwork:network];
+            [SpotlightRespository indexStations:stations andNetwork:network];
         }
         
-        block(data, error);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        block(nil, error);
+        block(stations, error);
     }];
 }
 

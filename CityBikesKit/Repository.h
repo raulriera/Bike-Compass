@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
 #import <MTLJSONAdapter.h>
 
 @interface Repository : NSObject
 
-extern NSString *const RepositoryBaseURL;
-extern NSString *const AppGroupKey;
+extern NSString *const __nonnull RepositoryBaseURL;
+extern NSString *const __nonnull AppGroupKey;
+
++ (void)taskWithURL:(nonnull NSURL *)url withCompletionBlock:(nullable void (^)(NSDictionary * __nullable, NSError * __nullable))block;
 
 @end

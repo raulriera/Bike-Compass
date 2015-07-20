@@ -7,7 +7,6 @@
 //
 
 #import "NetworksRepository.h"
-#import <AFNetworking.h>
 #import <MTLJSONAdapter.h>
 
 @implementation NetworksRepository
@@ -17,8 +16,7 @@ static NSString * const CurrentNetworkKey = @"com.raulriera.bikecompass.currentN
 + (instancetype)sharedRepository
 {
     static NetworksRepository *sharedRepository = nil;
-    if (sharedRepository == nil)
-    {
+    if (sharedRepository == nil) {
         sharedRepository = [[self alloc] init];
     }
     return sharedRepository;
@@ -26,16 +24,16 @@ static NSString * const CurrentNetworkKey = @"com.raulriera.bikecompass.currentN
 
 - (Network *)currentNetwork
 {
-    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
-    NSData *data = [sharedUserDefaults objectForKey:CurrentNetworkKey];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
+    NSData *data = [userDefaults objectForKey:CurrentNetworkKey];
     return [NSKeyedUnarchiver unarchiveObjectWithData:data];
 }
 
 - (void)setCurrentNetwork:(Network *)currentNetwork
 {
-    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:AppGroupKey];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:currentNetwork];
-    [sharedUserDefaults setObject:data forKey:CurrentNetworkKey];
+    [userDefaults setObject:data forKey:CurrentNetworkKey];
 }
 
 - (void)closestNetworkToLocation:(CLLocation *)location withBlock:(void (^)(Network *network, NSError *error))block
@@ -58,30 +56,26 @@ static NSString * const CurrentNetworkKey = @"com.raulriera.bikecompass.currentN
 
 - (void)networksWithBlock:(void (^)(NSArray *networks, NSError *error))block
 {
-    NSString *url = [RepositoryBaseURL stringByAppendingString:@"/v2/networks?fields=id,name,href,location"];
+    NSString *resource = [RepositoryBaseURL stringByAppendingString:@"/v2/networks?fields=id,name,href,location"];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSError *error;
-        NSArray *data = [MTLJSONAdapter modelsOfClass:[Network class] fromJSONArray:[responseObject valueForKey:@"networks"] error:&error];
+    [Repository taskWithURL:[NSURL URLWithString:resource] withCompletionBlock:^(NSDictionary *json, NSError *error) {
         if (error) {
             block(nil, error);
         }
         
-        data = [self sortNetworksAlphabetically:data];
+        NSArray *networks = [MTLJSONAdapter modelsOfClass:[Network class] fromJSONArray:[json valueForKey:@"networks"] error:&error];
+        if (error) {
+            block(nil, error);
+        }
         
-        block(data, error);
+        networks = [self sortNetworksAlphabetically:networks];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        block(nil, error);
+        block(networks, error);
     }];
-    
 }
 
 - (NSArray *)sortNetworks:(NSArray *)networks closestToLocation:(CLLocation *)location
 {
-    
     networks = [networks sortedArrayUsingComparator: ^(Network *a, Network *b) {
         
         CLLocation *aLocation = [[CLLocation alloc] initWithLatitude:a.location.latitude longitude:a.location.longitude];

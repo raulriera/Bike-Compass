@@ -13,4 +13,24 @@
 NSString *const RepositoryBaseURL = @"http://api.citybik.es";
 NSString *const AppGroupKey = @"group.raulriera.bikecompass";
 
++ (void)taskWithURL:(NSURL *)url withCompletionBlock:(void (^)(NSDictionary *, NSError *))block
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithURL:url
+            completionHandler:^(NSData *data,
+                                NSURLResponse *response,
+                                NSError *error) {
+                
+                if (error) {
+                    block(nil, error);
+                }
+                
+                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+
+                block(json, error);
+                
+            }] resume];
+}
+
 @end
