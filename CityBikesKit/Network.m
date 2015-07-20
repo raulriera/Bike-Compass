@@ -24,7 +24,7 @@
 }
 
 + (NSValueTransformer *)locationJSONTransformer {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:Location.class];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Location.class];
 }
 
 @end
