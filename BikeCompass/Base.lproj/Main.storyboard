@@ -35,10 +35,10 @@
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cWe-bo-S77" secondAttribute="height" multiplier="1:1" id="9ii-hT-rxa"/>
-                                    <constraint firstAttribute="height" constant="301" id="KZk-OT-BTm">
+                                    <constraint firstAttribute="height" constant="300" id="KZk-OT-BTm">
                                         <variation key="heightClass=compact" constant="300"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" constant="301" id="sQc-Va-2Zh">
+                                    <constraint firstAttribute="width" constant="300" id="sQc-Va-2Zh">
                                         <variation key="heightClass=compact" constant="300"/>
                                     </constraint>
                                 </constraints>
