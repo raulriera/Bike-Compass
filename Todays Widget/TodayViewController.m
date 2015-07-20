@@ -22,6 +22,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     Station *cachedStation = [StationsRepository sharedRepository].currentStation;
     
     if (cachedStation) {
