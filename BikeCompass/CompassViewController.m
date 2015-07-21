@@ -78,7 +78,7 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
     if ([NetworksRepository sharedRepository].currentNetwork) {
         [self startSignificantChangeUpdates];
     } else {
-        // I need an else case here, otherwise nothing will show on the first load
+        [self performSegueWithIdentifier:kCityDetectionSegue sender:self];
     }
 }
 
@@ -101,7 +101,9 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
         Station *station = [[[StationsRepository sharedRepository] sortStations:weakSelf.stations closestToLocation:weakSelf.locationManager.currentLocation withMoreThanBikes:0] firstObject];
         [StationsRepository sharedRepository].currentStation = station;
         
-        [weakSelf animateViews];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf animateViews];
+        });
     }];
 }
 
@@ -126,9 +128,10 @@ NSString *const kCityDetectionSegue = @"ShowCityDetectionSegue";
             
             [weakSelf updateInterfaceWithStation:station];
         }];
-    } else {
-        [self performSegueWithIdentifier:kCityDetectionSegue sender:nil];
     }
+//    else {
+//        [self performSegueWithIdentifier:kCityDetectionSegue sender:nil];
+//    }
 }
 
 - (void)updateInterfaceWithStation:(nonnull Station *)station

@@ -54,9 +54,13 @@
     [[NetworksRepository sharedRepository] networksWithBlock:^(NSArray *networks, NSError *error) {
         
         if (!error) {
-            self.networks = networks;
-            self.filteredNetworks = self.networks;
-            [self.tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.networks = networks;
+                self.filteredNetworks = self.networks;
+                
+                [self.tableView reloadData];
+            });
+            
         } else {
             UIAlertController * alert = [UIAlertController
                                           alertControllerWithTitle:NSLocalizedString(@"Network", @"Generic network error message title")
@@ -65,7 +69,9 @@
                                               [self allNetworks];
                                           }];
             
-            [self presentViewController:alert animated:YES completion:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self presentViewController:alert animated:YES completion:nil];
+            });
         }
         
     }];
