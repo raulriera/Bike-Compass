@@ -47,4 +47,14 @@
     }
 }
 
+- (void)setNilValueForKey:(NSString *)key {
+    if ([key isEqualToString:@"emptySlots"]) {
+        self.emptySlots = 0;
+    } else if ([key isEqualToString:@"numberOfBikes"]) {
+        self.numberOfBikes = 0;
+    } else {
+        [super setNilValueForKey:key];
+    }
+}
+
 @end
