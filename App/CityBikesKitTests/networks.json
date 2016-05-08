@@ -1,0 +1,74 @@
+{
+  "networks": [
+    {
+      "company": "Nextbike GmbH",
+      "href": "/v2/networks/opole-bike",
+      "id": "opole-bike",
+      "location": {
+        "city": "Opole",
+        "country": "PL",
+        "latitude": 50.6645,
+        "longitude": 17.9276
+      },
+      "name": "Opole Bike"
+    },
+    {
+      "company": "JCDecaux",
+      "href": "/v2/networks/dublinbikes",
+      "id": "dublinbikes",
+      "license": {
+        "name": "Open Licence",
+        "url": "https://developer.jcdecaux.com/#/opendata/licence"
+      },
+      "location": {
+        "city": "Dublin",
+        "country": "IE",
+        "latitude": 53.3498053,
+        "longitude": -6.2603097
+      },
+      "name": "dublinbikes"
+    },
+    {
+      "company": [
+        "PBSC",
+        "Alta Bicycle Share, Inc"
+      ],
+      "href": "/v2/networks/melbourne-bike-share",
+      "id": "melbourne-bike-share",
+      "location": {
+        "city": "Melbourne",
+        "country": "AU",
+        "latitude": -37.814107,
+        "longitude": 144.96328
+      },
+      "name": "Melbourne Bike Share"
+    },
+    {
+      "company": "Comunicare S.r.l.",
+      "href": "/v2/networks/mar-e-bici",
+      "id": "mar-e-bici",
+      "location": {
+        "city": "Marciana Marina",
+        "country": "IT",
+        "latitude": 42.805855,
+        "longitude": 10.196514
+      },
+      "name": "Mar e Bici"
+    },
+    {
+      "company": [
+        "PBSC",
+        "Alta Bicycle Share, Inc"
+      ],
+      "href": "/v2/networks/bay-area-bike-share",
+      "id": "bay-area-bike-share",
+      "location": {
+        "city": "San Francisco Bay Area, CA",
+        "country": "US",
+        "latitude": 37.7141454,
+        "longitude": -122.25
+      },
+      "name": "Bay Area Bike Share"
+    }
+  ]
+}

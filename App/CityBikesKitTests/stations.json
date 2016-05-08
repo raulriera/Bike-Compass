@@ -1,0 +1,38 @@
+{
+  "network": {
+    "company": "JCDecaux",
+    "href": "/v2/networks/dublinbikes",
+    "id": "dublinbikes",
+    "license": {
+      "name": "Open Licence",
+      "url": "https://developer.jcdecaux.com/#/opendata/licence"
+    },
+    "location": {
+      "city": "Dublin",
+      "country": "IE",
+      "latitude": 53.3498053,
+      "longitude": -6.2603097
+    },
+    "name": "dublinbikes",
+    "stations": [
+      {
+        "empty_slots": 4,
+        "extra": {
+          "address": "Fenian Street",
+          "banking": false,
+          "bonus": false,
+          "last_update": 1461586305000,
+          "slots": 35,
+          "status": "OPEN",
+          "uid": 63
+        },
+        "free_bikes": 31,
+        "id": "b1c774f178240d5d757854364dafc840",
+        "latitude": 53.341428,
+        "longitude": -6.24672,
+        "name": "FENIAN STREET",
+        "timestamp": "2016-04-25T12:13:12.065Z"
+      }
+    ]
+  }
+}

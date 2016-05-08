@@ -1,0 +1,10 @@
+framework module Decodable {
+  umbrella header "Decodable.h"
+
+  export *
+  module * { export * }
+}
+
+module Decodable.Swift {
+    header "Decodable-Swift.h"
+}

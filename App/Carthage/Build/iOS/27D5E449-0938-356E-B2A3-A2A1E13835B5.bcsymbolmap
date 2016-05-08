@@ -1,0 +1,879 @@
+BCSymbolMap Version: 1.0
+-[KPGridClusteringAlgorithm init]
+-[KPGridClusteringAlgorithm clusterAnnotationsInMapRect:parentMapView:annotationTree:]
+__Block_byref_object_copy_
+__Block_byref_object_dispose_
+-[KPGridClusteringAlgorithm mapCellSizeForGridSize:inMapView:]
+-[KPGridClusteringAlgorithm _ensureStrategyIntegrity]
+-[KPGridClusteringAlgorithm _mergeOverlappingClusters:inMapView:clusterGrid:gridSizeX:gridSizeY:]
+__97-[KPGridClusteringAlgorithm _mergeOverlappingClusters:inMapView:clusterGrid:gridSizeX:gridSizeY:]_block_invoke
+__copy_helper_block_
+__destroy_helper_block_
+-[KPGridClusteringAlgorithm clusterIntersects:anotherCluster:inMapView:]
+-[KPGridClusteringAlgorithm gridSize]
+-[KPGridClusteringAlgorithm setGridSize:]
+-[KPGridClusteringAlgorithm clusteringStrategy]
+-[KPGridClusteringAlgorithm setClusteringStrategy:]
+-[KPGridClusteringAlgorithm annotationSize]
+-[KPGridClusteringAlgorithm setAnnotationSize:]
+-[KPGridClusteringAlgorithm annotationCenterOffset]
+-[KPGridClusteringAlgorithm setAnnotationCenterOffset:]
+OBJC_CLASSLIST_SUP_REFS_$_
+OBJC_METH_VAR_NAME_
+OBJC_SELECTOR_REFERENCES_
+OBJC_METH_VAR_NAME_.1
+OBJC_SELECTOR_REFERENCES_.2
+OBJC_METH_VAR_NAME_.3
+OBJC_SELECTOR_REFERENCES_.4
+OBJC_METH_VAR_NAME_.5
+OBJC_SELECTOR_REFERENCES_.6
+OBJC_METH_VAR_NAME_.7
+OBJC_SELECTOR_REFERENCES_.8
+OBJC_METH_VAR_NAME_.9
+OBJC_SELECTOR_REFERENCES_.10
+OBJC_CLASSLIST_REFERENCES_$_
+OBJC_METH_VAR_NAME_.11
+OBJC_SELECTOR_REFERENCES_.12
+OBJC_METH_VAR_NAME_.13
+OBJC_SELECTOR_REFERENCES_.14
+OBJC_METH_VAR_NAME_.15
+OBJC_SELECTOR_REFERENCES_.16
+OBJC_METH_VAR_NAME_.17
+OBJC_SELECTOR_REFERENCES_.18
+OBJC_CLASSLIST_REFERENCES_$_.19
+OBJC_METH_VAR_NAME_.20
+OBJC_SELECTOR_REFERENCES_.21
+OBJC_METH_VAR_NAME_.22
+OBJC_SELECTOR_REFERENCES_.23
+OBJC_METH_VAR_NAME_.24
+OBJC_SELECTOR_REFERENCES_.25
+OBJC_METH_VAR_NAME_.26
+OBJC_SELECTOR_REFERENCES_.27
+OBJC_METH_VAR_NAME_.28
+OBJC_SELECTOR_REFERENCES_.29
+OBJC_METH_VAR_NAME_.30
+OBJC_SELECTOR_REFERENCES_.31
+OBJC_METH_VAR_NAME_.32
+OBJC_SELECTOR_REFERENCES_.33
+OBJC_METH_VAR_NAME_.34
+OBJC_SELECTOR_REFERENCES_.35
+.str
+_unnamed_cfstring_
+OBJC_CLASSLIST_REFERENCES_$_.36
+OBJC_METH_VAR_NAME_.37
+OBJC_SELECTOR_REFERENCES_.38
+OBJC_METH_VAR_NAME_.39
+OBJC_SELECTOR_REFERENCES_.40
+OBJC_CLASSLIST_REFERENCES_$_.41
+OBJC_METH_VAR_NAME_.42
+OBJC_SELECTOR_REFERENCES_.43
+OBJC_METH_VAR_NAME_.44
+OBJC_SELECTOR_REFERENCES_.45
+OBJC_METH_VAR_NAME_.46
+OBJC_SELECTOR_REFERENCES_.47
+OBJC_CLASSLIST_REFERENCES_$_.48
+OBJC_METH_VAR_NAME_.49
+OBJC_SELECTOR_REFERENCES_.50
+OBJC_METH_VAR_NAME_.51
+OBJC_SELECTOR_REFERENCES_.52
+OBJC_METH_VAR_NAME_.53
+OBJC_SELECTOR_REFERENCES_.54
+OBJC_METH_VAR_NAME_.55
+OBJC_SELECTOR_REFERENCES_.56
+OBJC_METH_VAR_NAME_.57
+OBJC_SELECTOR_REFERENCES_.58
+OBJC_METH_VAR_NAME_.59
+OBJC_SELECTOR_REFERENCES_.60
+.str.61
+__block_descriptor_tmp
+KPClusterAdjacentClusterLocationsTable
+KPAdjacentClusterPositionDeltas
+KPClusterConformityTable
+OBJC_METH_VAR_NAME_.62
+OBJC_SELECTOR_REFERENCES_.63
+OBJC_METH_VAR_NAME_.64
+OBJC_SELECTOR_REFERENCES_.65
+OBJC_METH_VAR_NAME_.66
+OBJC_SELECTOR_REFERENCES_.67
+OBJC_METH_VAR_NAME_.68
+OBJC_SELECTOR_REFERENCES_.69
+OBJC_METH_VAR_NAME_.70
+OBJC_SELECTOR_REFERENCES_.71
+OBJC_IVAR_$_KPGridClusteringAlgorithm._gridSize
+OBJC_IVAR_$_KPGridClusteringAlgorithm._clusteringStrategy
+OBJC_IVAR_$_KPGridClusteringAlgorithm._annotationSize
+OBJC_IVAR_$_KPGridClusteringAlgorithm._annotationCenterOffset
+OBJC_CLASS_NAME_
+OBJC_METH_VAR_NAME_.72
+OBJC_METH_VAR_TYPE_
+OBJC_METH_VAR_TYPE_.73
+OBJC_CLASS_NAME_.74
+OBJC_METH_VAR_NAME_.75
+OBJC_METH_VAR_TYPE_.76
+OBJC_METH_VAR_NAME_.77
+OBJC_METH_VAR_TYPE_.78
+OBJC_METH_VAR_NAME_.79
+OBJC_METH_VAR_TYPE_.80
+OBJC_METH_VAR_NAME_.81
+OBJC_METH_VAR_TYPE_.82
+OBJC_METH_VAR_NAME_.83
+OBJC_METH_VAR_TYPE_.84
+OBJC_METH_VAR_NAME_.85
+OBJC_METH_VAR_TYPE_.86
+OBJC_METH_VAR_NAME_.87
+OBJC_METH_VAR_TYPE_.88
+OBJC_METH_VAR_NAME_.89
+OBJC_METH_VAR_TYPE_.90
+OBJC_METH_VAR_NAME_.91
+OBJC_METH_VAR_NAME_.92
+OBJC_METH_VAR_TYPE_.93
+OBJC_METH_VAR_NAME_.94
+OBJC_METH_VAR_TYPE_.95
+OBJC_METH_VAR_NAME_.96
+OBJC_METH_VAR_NAME_.97
+OBJC_METH_VAR_TYPE_.98
+OBJC_METH_VAR_NAME_.99
+OBJC_METH_VAR_NAME_.100
+OBJC_METH_VAR_TYPE_.101
+OBJC_METH_VAR_NAME_.102
+OBJC_METH_VAR_TYPE_.103
+OBJC_METH_VAR_NAME_.104
+OBJC_METH_VAR_NAME_.105
+OBJC_METH_VAR_NAME_.106
+OBJC_METH_VAR_TYPE_.107
+OBJC_METH_VAR_NAME_.108
+OBJC_CLASS_NAME_.109
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+OBJC_PROP_NAME_ATTR_
+OBJC_PROP_NAME_ATTR_.110
+OBJC_PROP_NAME_ATTR_.111
+OBJC_PROP_NAME_ATTR_.112
+OBJC_PROP_NAME_ATTR_.113
+OBJC_PROP_NAME_ATTR_.114
+OBJC_PROP_NAME_ATTR_.115
+l_OBJC_$_PROP_LIST_NSObject
+l_OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_$_PROTOCOL_REFS_KPClusteringAlgorithm
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_KPClusteringAlgorithm
+l_OBJC_$_PROTOCOL_METHOD_TYPES_KPClusteringAlgorithm
+l_OBJC_PROTOCOL_$_KPClusteringAlgorithm
+l_OBJC_LABEL_PROTOCOL_$_KPClusteringAlgorithm
+l_OBJC_CLASS_PROTOCOLS_$_KPGridClusteringAlgorithm
+l_OBJC_METACLASS_RO_$_KPGridClusteringAlgorithm
+OBJC_METH_VAR_TYPE_.116
+OBJC_METH_VAR_TYPE_.117
+OBJC_METH_VAR_TYPE_.118
+OBJC_METH_VAR_TYPE_.119
+OBJC_METH_VAR_TYPE_.120
+OBJC_METH_VAR_TYPE_.121
+OBJC_METH_VAR_TYPE_.122
+OBJC_METH_VAR_TYPE_.123
+OBJC_METH_VAR_NAME_.124
+OBJC_METH_VAR_TYPE_.125
+OBJC_METH_VAR_NAME_.126
+OBJC_METH_VAR_TYPE_.127
+l_OBJC_$_INSTANCE_METHODS_KPGridClusteringAlgorithm
+OBJC_METH_VAR_NAME_.128
+OBJC_METH_VAR_TYPE_.129
+OBJC_METH_VAR_NAME_.130
+OBJC_METH_VAR_TYPE_.131
+OBJC_METH_VAR_NAME_.132
+OBJC_METH_VAR_NAME_.133
+OBJC_METH_VAR_TYPE_.134
+l_OBJC_$_INSTANCE_VARIABLES_KPGridClusteringAlgorithm
+OBJC_PROP_NAME_ATTR_.135
+OBJC_PROP_NAME_ATTR_.136
+OBJC_PROP_NAME_ATTR_.137
+OBJC_PROP_NAME_ATTR_.138
+OBJC_PROP_NAME_ATTR_.139
+OBJC_PROP_NAME_ATTR_.140
+OBJC_PROP_NAME_ATTR_.141
+OBJC_PROP_NAME_ATTR_.142
+l_OBJC_$_PROP_LIST_KPGridClusteringAlgorithm
+l_OBJC_CLASS_RO_$_KPGridClusteringAlgorithm
+OBJC_CLASSLIST_REFERENCES_$_.143
+OBJC_METH_VAR_NAME_.144
+OBJC_SELECTOR_REFERENCES_.145
+OBJC_METH_VAR_NAME_.146
+OBJC_SELECTOR_REFERENCES_.147
+OBJC_LABEL_CLASS_$
+Apple LLVM version 7.3.0 (clang-703.0.29)
+CGRectMake
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin-dev
+CGPointFromNSValue
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPGridClusteringAlgorithm.m
+NSValueFromCGPoint
+KPClusterGridCellPositionCompareWithPosition
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPGridClusteringAlgorithm_Private.h
+__CGSizeEqualToSize
+MKMapSizeMake
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MKGeometry.h
+KPClusterGridFree
+MKMapRectGetMidY
+MKMapRectGetMidX
+KPClusterDistributionQuadrantForPointInsideMapRect
+MKMapPointMake
+MKMapRectMake
+KPClusterGridCreate
+MKMapRectNormalizeToCellSize
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPGeometry.h
+CGSizeMake
+-[KPGridClusteringAlgorithm setAnnotationCenterOffset:]
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPGridClusteringAlgorithm.h
+-[KPGridClusteringAlgorithm annotationCenterOffset]
+-[KPGridClusteringAlgorithm setAnnotationSize:]
+-[KPGridClusteringAlgorithm annotationSize]
+-[KPGridClusteringAlgorithm setClusteringStrategy:]
+-[KPGridClusteringAlgorithm clusteringStrategy]
+-[KPGridClusteringAlgorithm setGridSize:]
+-[KPGridClusteringAlgorithm gridSize]
+-[KPGridClusteringAlgorithm clusterIntersects:anotherCluster:inMapView:]
+-[KPGridClusteringAlgorithm _mergeOverlappingClusters:inMapView:clusterGrid:gridSizeX:gridSizeY:]
+-[KPGridClusteringAlgorithm _ensureStrategyIntegrity]
+-[KPGridClusteringAlgorithm mapCellSizeForGridSize:inMapView:]
+-[KPGridClusteringAlgorithm clusterAnnotationsInMapRect:parentMapView:annotationTree:]
+-[KPGridClusteringAlgorithm init]
+-[NSArray(KP) kp_map:]
+__22-[NSArray(KP) kp_map:]_block_invoke
+-[NSArray(KP) kp_filter:]
+__25-[NSArray(KP) kp_filter:]_block_invoke
+__copy_helper_block_.5
+__destroy_helper_block_.6
+__block_descriptor_tmp.7
+OBJC_METH_VAR_NAME_.8
+OBJC_SELECTOR_REFERENCES_.9
+OBJC_METH_VAR_NAME_.10
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSArray_$_KP
+l_OBJC_$_CATEGORY_NSArray_$_KP
+OBJC_LABEL_CATEGORY_$
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/NSArray+KP.m
+-[NSArray(KP) kp_filter:]
+-[NSArray(KP) kp_map:]
+-[KPAnnotationTree initWithAnnotations:]
+-[KPAnnotationTree dealloc]
+-[KPAnnotationTree annotationsInMapRect:]
+-[KPAnnotationTree _annotationsInMapRect:]
+-[KPAnnotationTree annotations]
+-[KPAnnotationTree setAnnotations:]
+-[KPAnnotationTree tree]
+-[KPAnnotationTree setTree:]
+-[KPAnnotationTree .cxx_destruct]
+__kp_2dtree_create_block_invoke
+__kp_2dtree_create_block_invoke.44
+__kp_2dtree_create_block_invoke_2
+OBJC_IVAR_$_KPAnnotationTree._annotations
+OBJC_IVAR_$_KPAnnotationTree._tree
+OBJC_CLASSLIST_REFERENCES_$_.13
+OBJC_METH_VAR_NAME_.14
+OBJC_SELECTOR_REFERENCES_.15
+OBJC_METH_VAR_NAME_.16
+OBJC_SELECTOR_REFERENCES_.17
+l_OBJC_METACLASS_RO_$_KPAnnotationTree
+OBJC_CLASS_NAME_.18
+OBJC_METH_VAR_NAME_.19
+OBJC_METH_VAR_TYPE_.20
+OBJC_METH_VAR_NAME_.21
+OBJC_METH_VAR_TYPE_.22
+OBJC_METH_VAR_NAME_.23
+OBJC_METH_VAR_TYPE_.25
+OBJC_METH_VAR_TYPE_.27
+OBJC_METH_VAR_TYPE_.28
+OBJC_METH_VAR_NAME_.29
+OBJC_METH_VAR_TYPE_.30
+l_OBJC_$_INSTANCE_METHODS_KPAnnotationTree
+OBJC_METH_VAR_NAME_.31
+OBJC_METH_VAR_TYPE_.32
+OBJC_METH_VAR_NAME_.33
+OBJC_METH_VAR_TYPE_.34
+l_OBJC_$_INSTANCE_VARIABLES_KPAnnotationTree
+OBJC_PROP_NAME_ATTR_.35
+OBJC_PROP_NAME_ATTR_.36
+OBJC_PROP_NAME_ATTR_.37
+l_OBJC_$_PROP_LIST_KPAnnotationTree
+l_OBJC_CLASS_RO_$_KPAnnotationTree
+OBJC_METH_VAR_NAME_.38
+OBJC_SELECTOR_REFERENCES_.39
+OBJC_METH_VAR_NAME_.40
+OBJC_SELECTOR_REFERENCES_.41
+.str.45
+__block_descriptor_tmp.46
+__block_literal_global
+__block_descriptor_tmp.47
+__block_literal_global.48
+MKMapPointOffsets
+kp_stack_reset
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/kp_2dtree.h
+kp_2dtree_search
+MKMapRectGetMaxY
+MKMapRectGetMaxX
+MKMapRectGetMinX
+kp_2dtree_free
+kp_stack_pop
+MKMapPointGetCoordinateForAxis
+kp_stack_push
+kp_stack_create
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPAnnotationTree.m
+kp_2dtree_create
+-[KPAnnotationTree .cxx_destruct]
+-[KPAnnotationTree setTree:]
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPAnnotationTree_Private.h
+-[KPAnnotationTree tree]
+-[KPAnnotationTree setAnnotations:]
+-[KPAnnotationTree annotations]
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPAnnotationTree.h
+-[KPAnnotationTree _annotationsInMapRect:]
+-[KPAnnotationTree annotationsInMapRect:]
+-[KPAnnotationTree dealloc]
+-[KPAnnotationTree initWithAnnotations:]
+-[KPClusteringController initWithMapView:]
+-[KPClusteringController initWithMapView:clusteringAlgorithm:]
+-[KPClusteringController currentAnnotations]
+__44-[KPClusteringController currentAnnotations]_block_invoke
+-[KPClusteringController setAnnotations:]
+-[KPClusteringController refresh:]
+-[KPClusteringController refresh:force:]
+-[KPClusteringController mapViewportChangeState]
+-[KPClusteringController clusteringMapRectForVisibleMapRect]
+-[KPClusteringController updateVisibleMapAnnotationsOnMapView:]
+__63-[KPClusteringController updateVisibleMapAnnotationsOnMapView:]_block_invoke
+__63-[KPClusteringController updateVisibleMapAnnotationsOnMapView:]_block_invoke_2
+__copy_helper_block_.103
+__destroy_helper_block_.104
+__63-[KPClusteringController updateVisibleMapAnnotationsOnMapView:]_block_invoke.113
+__copy_helper_block_.116
+__destroy_helper_block_.117
+__63-[KPClusteringController updateVisibleMapAnnotationsOnMapView:]_block_invoke.119
+__copy_helper_block_.122
+__destroy_helper_block_.123
+-[KPClusteringController animateCluster:fromAnnotation:toAnnotation:completion:]
+__80-[KPClusteringController animateCluster:fromAnnotation:toAnnotation:completion:]_block_invoke
+__copy_helper_block_.134
+__destroy_helper_block_.135
+__80-[KPClusteringController animateCluster:fromAnnotation:toAnnotation:completion:]_block_invoke.137
+__copy_helper_block_.138
+__destroy_helper_block_.139
+__80-[KPClusteringController animateCluster:fromAnnotation:toAnnotation:completion:]_block_invoke.141
+__copy_helper_block_.142
+__destroy_helper_block_.143
+-[KPClusteringController executeAnimations:completion:]
+-[KPClusteringController animationDuration]
+-[KPClusteringController setAnimationDuration:]
+-[KPClusteringController minimalZoomChange]
+-[KPClusteringController setMinimalZoomChange:]
+-[KPClusteringController animationOptions]
+-[KPClusteringController setAnimationOptions:]
+-[KPClusteringController delegate]
+-[KPClusteringController setDelegate:]
+-[KPClusteringController mapView]
+-[KPClusteringController setMapView:]
+-[KPClusteringController annotationTree]
+-[KPClusteringController setAnnotationTree:]
+-[KPClusteringController clusteringAlgorithm]
+-[KPClusteringController setClusteringAlgorithm:]
+-[KPClusteringController lastRefreshedMapRect]
+-[KPClusteringController setLastRefreshedMapRect:]
+-[KPClusteringController lastRefreshedMapRegion]
+-[KPClusteringController setLastRefreshedMapRegion:]
+-[KPClusteringController .cxx_destruct]
+OBJC_SELECTOR_REFERENCES_.20
+OBJC_SELECTOR_REFERENCES_.22
+OBJC_SELECTOR_REFERENCES_.24
+OBJC_METH_VAR_NAME_.25
+OBJC_SELECTOR_REFERENCES_.26
+OBJC_CLASSLIST_REFERENCES_$_.27
+OBJC_METH_VAR_NAME_.36
+OBJC_SELECTOR_REFERENCES_.37
+OBJC_CLASSLIST_REFERENCES_$_.44
+OBJC_METH_VAR_NAME_.45
+OBJC_SELECTOR_REFERENCES_.46
+OBJC_METH_VAR_NAME_.47
+OBJC_SELECTOR_REFERENCES_.48
+OBJC_METH_VAR_NAME_.61
+OBJC_SELECTOR_REFERENCES_.62
+OBJC_METH_VAR_NAME_.63
+OBJC_SELECTOR_REFERENCES_.64
+OBJC_METH_VAR_NAME_.65
+OBJC_SELECTOR_REFERENCES_.66
+OBJC_METH_VAR_NAME_.67
+OBJC_SELECTOR_REFERENCES_.68
+OBJC_METH_VAR_NAME_.69
+OBJC_SELECTOR_REFERENCES_.70
+OBJC_METH_VAR_NAME_.71
+OBJC_SELECTOR_REFERENCES_.72
+OBJC_METH_VAR_NAME_.73
+OBJC_SELECTOR_REFERENCES_.74
+OBJC_SELECTOR_REFERENCES_.76
+OBJC_SELECTOR_REFERENCES_.78
+OBJC_SELECTOR_REFERENCES_.80
+OBJC_CLASSLIST_REFERENCES_$_.81
+OBJC_METH_VAR_NAME_.82
+OBJC_SELECTOR_REFERENCES_.83
+.str.84
+__block_descriptor_tmp.85
+OBJC_METH_VAR_NAME_.86
+OBJC_SELECTOR_REFERENCES_.87
+OBJC_METH_VAR_NAME_.88
+OBJC_SELECTOR_REFERENCES_.89
+OBJC_METH_VAR_NAME_.90
+OBJC_SELECTOR_REFERENCES_.91
+OBJC_CLASSLIST_REFERENCES_$_.92
+OBJC_METH_VAR_NAME_.93
+OBJC_SELECTOR_REFERENCES_.94
+OBJC_METH_VAR_NAME_.95
+OBJC_SELECTOR_REFERENCES_.96
+OBJC_SELECTOR_REFERENCES_.98
+OBJC_SELECTOR_REFERENCES_.100
+OBJC_METH_VAR_NAME_.101
+OBJC_SELECTOR_REFERENCES_.102
+.str.105
+__block_descriptor_tmp.106
+OBJC_METH_VAR_NAME_.107
+OBJC_SELECTOR_REFERENCES_.108
+OBJC_METH_VAR_NAME_.109
+OBJC_SELECTOR_REFERENCES_.110
+OBJC_METH_VAR_NAME_.111
+OBJC_SELECTOR_REFERENCES_.112
+OBJC_METH_VAR_NAME_.114
+OBJC_SELECTOR_REFERENCES_.115
+__block_descriptor_tmp.118
+OBJC_METH_VAR_NAME_.120
+OBJC_SELECTOR_REFERENCES_.121
+.str.124
+__block_descriptor_tmp.125
+OBJC_SELECTOR_REFERENCES_.127
+OBJC_SELECTOR_REFERENCES_.129
+OBJC_SELECTOR_REFERENCES_.131
+OBJC_SELECTOR_REFERENCES_.133
+__block_descriptor_tmp.136
+__block_descriptor_tmp.140
+__block_descriptor_tmp.144
+OBJC_METH_VAR_NAME_.145
+OBJC_SELECTOR_REFERENCES_.146
+OBJC_METH_VAR_NAME_.147
+OBJC_SELECTOR_REFERENCES_.148
+OBJC_CLASSLIST_REFERENCES_$_.149
+OBJC_METH_VAR_NAME_.150
+OBJC_SELECTOR_REFERENCES_.151
+OBJC_METH_VAR_NAME_.152
+OBJC_SELECTOR_REFERENCES_.153
+OBJC_METH_VAR_NAME_.154
+OBJC_SELECTOR_REFERENCES_.155
+OBJC_IVAR_$_KPClusteringController._animationDuration
+OBJC_IVAR_$_KPClusteringController._minimalZoomChange
+OBJC_IVAR_$_KPClusteringController._animationOptions
+OBJC_IVAR_$_KPClusteringController._delegate
+OBJC_IVAR_$_KPClusteringController._mapView
+OBJC_IVAR_$_KPClusteringController._annotationTree
+OBJC_IVAR_$_KPClusteringController._clusteringAlgorithm
+OBJC_IVAR_$_KPClusteringController._lastRefreshedMapRect
+OBJC_IVAR_$_KPClusteringController._lastRefreshedMapRegion
+l_OBJC_METACLASS_RO_$_KPClusteringController
+OBJC_CLASS_NAME_.156
+OBJC_METH_VAR_NAME_.157
+OBJC_METH_VAR_TYPE_.158
+OBJC_METH_VAR_TYPE_.159
+OBJC_METH_VAR_NAME_.160
+OBJC_METH_VAR_TYPE_.161
+OBJC_METH_VAR_NAME_.162
+OBJC_METH_VAR_TYPE_.163
+OBJC_METH_VAR_TYPE_.164
+OBJC_METH_VAR_TYPE_.165
+OBJC_METH_VAR_TYPE_.166
+OBJC_METH_VAR_TYPE_.167
+OBJC_METH_VAR_TYPE_.168
+OBJC_METH_VAR_NAME_.169
+OBJC_METH_VAR_TYPE_.170
+OBJC_METH_VAR_TYPE_.171
+OBJC_METH_VAR_TYPE_.172
+OBJC_METH_VAR_TYPE_.173
+OBJC_METH_VAR_TYPE_.174
+OBJC_METH_VAR_NAME_.175
+OBJC_METH_VAR_TYPE_.176
+l_OBJC_$_INSTANCE_METHODS_KPClusteringController
+OBJC_METH_VAR_NAME_.177
+OBJC_METH_VAR_TYPE_.178
+OBJC_METH_VAR_NAME_.179
+OBJC_METH_VAR_NAME_.180
+OBJC_METH_VAR_TYPE_.181
+OBJC_METH_VAR_NAME_.182
+OBJC_METH_VAR_TYPE_.183
+OBJC_METH_VAR_NAME_.184
+OBJC_METH_VAR_TYPE_.185
+OBJC_METH_VAR_NAME_.186
+OBJC_METH_VAR_TYPE_.187
+OBJC_METH_VAR_NAME_.188
+OBJC_METH_VAR_TYPE_.189
+OBJC_METH_VAR_NAME_.190
+OBJC_METH_VAR_TYPE_.191
+OBJC_METH_VAR_NAME_.192
+OBJC_METH_VAR_TYPE_.193
+l_OBJC_$_INSTANCE_VARIABLES_KPClusteringController
+OBJC_CLASS_NAME_.194
+OBJC_PROP_NAME_ATTR_.195
+OBJC_PROP_NAME_ATTR_.196
+OBJC_PROP_NAME_ATTR_.197
+OBJC_PROP_NAME_ATTR_.198
+OBJC_PROP_NAME_ATTR_.199
+OBJC_PROP_NAME_ATTR_.200
+OBJC_PROP_NAME_ATTR_.201
+OBJC_PROP_NAME_ATTR_.202
+OBJC_PROP_NAME_ATTR_.203
+OBJC_PROP_NAME_ATTR_.204
+OBJC_PROP_NAME_ATTR_.205
+OBJC_PROP_NAME_ATTR_.206
+OBJC_PROP_NAME_ATTR_.207
+OBJC_PROP_NAME_ATTR_.208
+OBJC_PROP_NAME_ATTR_.209
+OBJC_PROP_NAME_ATTR_.210
+OBJC_PROP_NAME_ATTR_.211
+OBJC_PROP_NAME_ATTR_.212
+OBJC_PROP_NAME_ATTR_.213
+OBJC_PROP_NAME_ATTR_.214
+OBJC_PROP_NAME_ATTR_.215
+OBJC_PROP_NAME_ATTR_.216
+OBJC_PROP_NAME_ATTR_.217
+l_OBJC_$_PROP_LIST_KPClusteringController
+l_OBJC_CLASS_RO_$_KPClusteringController
+dispatch_get_main_queue
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/dispatch/queue.h
+MKMapSizeEqualToSize
+MKMapPointEqualToPoint
+MKMapRectEqualToRect
+-[KPClusteringController .cxx_destruct]
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPClusteringController.m
+-[KPClusteringController setLastRefreshedMapRegion:]
+-[KPClusteringController lastRefreshedMapRegion]
+-[KPClusteringController setLastRefreshedMapRect:]
+-[KPClusteringController lastRefreshedMapRect]
+-[KPClusteringController setClusteringAlgorithm:]
+-[KPClusteringController clusteringAlgorithm]
+-[KPClusteringController setAnnotationTree:]
+-[KPClusteringController annotationTree]
+-[KPClusteringController setMapView:]
+-[KPClusteringController mapView]
+-[KPClusteringController setDelegate:]
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPClusteringController.h
+-[KPClusteringController delegate]
+-[KPClusteringController setAnimationOptions:]
+-[KPClusteringController animationOptions]
+-[KPClusteringController setMinimalZoomChange:]
+-[KPClusteringController minimalZoomChange]
+-[KPClusteringController setAnimationDuration:]
+-[KPClusteringController animationDuration]
+-[KPClusteringController executeAnimations:completion:]
+-[KPClusteringController animateCluster:fromAnnotation:toAnnotation:completion:]
+-[KPClusteringController updateVisibleMapAnnotationsOnMapView:]
+-[KPClusteringController clusteringMapRectForVisibleMapRect]
+-[KPClusteringController mapViewportChangeState]
+-[KPClusteringController refresh:force:]
+-[KPClusteringController refresh:]
+-[KPClusteringController setAnnotations:]
+-[KPClusteringController currentAnnotations]
+-[KPClusteringController initWithMapView:clusteringAlgorithm:]
+-[KPClusteringController initWithMapView:]
+-[KPAnnotation initWithAnnotations:]
+-[KPAnnotation initWithAnnotationSet:]
+-[KPAnnotation isCluster]
+-[KPAnnotation calculateValues]
+-[KPAnnotation description]
+-[KPAnnotation coordinate]
+-[KPAnnotation setCoordinate:]
+-[KPAnnotation radius]
+-[KPAnnotation setRadius:]
+-[KPAnnotation title]
+-[KPAnnotation setTitle:]
+-[KPAnnotation subtitle]
+-[KPAnnotation setSubtitle:]
+-[KPAnnotation annotations]
+-[KPAnnotation setAnnotations:]
+-[KPAnnotation _annotationPointInMapView]
+-[KPAnnotation set_annotationPointInMapView:]
+-[KPAnnotation .cxx_destruct]
+OBJC_CLASSLIST_REFERENCES_$_.7
+OBJC_SELECTOR_REFERENCES_.11
+OBJC_METH_VAR_NAME_.12
+OBJC_SELECTOR_REFERENCES_.13
+OBJC_METH_VAR_NAME_.18
+OBJC_SELECTOR_REFERENCES_.19
+.str.28
+_unnamed_cfstring_.29
+OBJC_IVAR_$_KPAnnotation._coordinate
+OBJC_IVAR_$_KPAnnotation._radius
+OBJC_IVAR_$_KPAnnotation._title
+OBJC_IVAR_$_KPAnnotation._subtitle
+OBJC_IVAR_$_KPAnnotation._annotations
+OBJC_IVAR_$_KPAnnotation.__annotationPointInMapView
+OBJC_METH_VAR_TYPE_.35
+OBJC_CLASS_NAME_.37
+OBJC_METH_VAR_TYPE_.39
+OBJC_METH_VAR_TYPE_.40
+OBJC_METH_VAR_NAME_.41
+OBJC_METH_VAR_TYPE_.43
+OBJC_METH_VAR_TYPE_.45
+OBJC_METH_VAR_TYPE_.47
+OBJC_METH_VAR_NAME_.48
+OBJC_METH_VAR_TYPE_.49
+OBJC_METH_VAR_NAME_.50
+OBJC_METH_VAR_TYPE_.51
+OBJC_METH_VAR_NAME_.52
+OBJC_METH_VAR_TYPE_.54
+OBJC_METH_VAR_TYPE_.56
+OBJC_METH_VAR_NAME_.58
+OBJC_METH_VAR_TYPE_.59
+OBJC_METH_VAR_NAME_.60
+OBJC_METH_VAR_TYPE_.62
+OBJC_METH_VAR_TYPE_.64
+OBJC_CLASS_NAME_.69
+OBJC_PROP_NAME_ATTR_.70
+OBJC_PROP_NAME_ATTR_.71
+OBJC_PROP_NAME_ATTR_.72
+OBJC_PROP_NAME_ATTR_.73
+OBJC_PROP_NAME_ATTR_.74
+OBJC_PROP_NAME_ATTR_.75
+l_OBJC_$_PROTOCOL_REFS_MKAnnotation
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_MKAnnotation
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_MKAnnotation
+OBJC_PROP_NAME_ATTR_.76
+OBJC_PROP_NAME_ATTR_.77
+OBJC_PROP_NAME_ATTR_.78
+OBJC_PROP_NAME_ATTR_.79
+OBJC_PROP_NAME_ATTR_.80
+l_OBJC_$_PROP_LIST_MKAnnotation
+l_OBJC_$_PROTOCOL_METHOD_TYPES_MKAnnotation
+l_OBJC_PROTOCOL_$_MKAnnotation
+l_OBJC_LABEL_PROTOCOL_$_MKAnnotation
+l_OBJC_CLASS_PROTOCOLS_$_KPAnnotation
+l_OBJC_METACLASS_RO_$_KPAnnotation
+OBJC_CLASS_NAME_.81
+OBJC_METH_VAR_TYPE_.83
+OBJC_METH_VAR_NAME_.84
+OBJC_METH_VAR_TYPE_.85
+OBJC_METH_VAR_TYPE_.89
+l_OBJC_$_INSTANCE_METHODS_KPAnnotation
+OBJC_METH_VAR_TYPE_.97
+OBJC_METH_VAR_NAME_.98
+OBJC_METH_VAR_TYPE_.100
+OBJC_METH_VAR_TYPE_.102
+OBJC_METH_VAR_NAME_.103
+OBJC_METH_VAR_TYPE_.104
+l_OBJC_$_INSTANCE_VARIABLES_KPAnnotation
+OBJC_PROP_NAME_ATTR_.105
+OBJC_PROP_NAME_ATTR_.106
+OBJC_PROP_NAME_ATTR_.107
+OBJC_PROP_NAME_ATTR_.108
+OBJC_PROP_NAME_ATTR_.109
+l_OBJC_$_PROP_LIST_KPAnnotation
+l_OBJC_CLASS_RO_$_KPAnnotation
+-[KPAnnotation .cxx_destruct]
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPAnnotation.m
+-[KPAnnotation set_annotationPointInMapView:]
+/Users/raulriera/Dropbox/Backup/Work/dublinbikes.com/swift/Bike Compass/Carthage/Checkouts/kingpin/kingpin/KPAnnotation.h
+-[KPAnnotation _annotationPointInMapView]
+-[KPAnnotation setAnnotations:]
+-[KPAnnotation annotations]
+-[KPAnnotation setSubtitle:]
+-[KPAnnotation subtitle]
+-[KPAnnotation setTitle:]
+-[KPAnnotation title]
+-[KPAnnotation setRadius:]
+-[KPAnnotation radius]
+-[KPAnnotation setCoordinate:]
+-[KPAnnotation coordinate]
+-[KPAnnotation description]
+-[KPAnnotation calculateValues]
+-[KPAnnotation isCluster]
+-[KPAnnotation initWithAnnotationSet:]
+-[KPAnnotation initWithAnnotations:]
+/Users/raulriera/Library/Developer/Xcode/DerivedData/kingpin-dev-cmzeqkiylyxvgteovugubkstayxy/Build/Intermediates/kingpin-dev.build/Release-iphoneos/kingpin-iOS.build/DerivedSources/kingpin_vers.c
+_ZL15__ARCLite__loadv
+_ZL58__arclite_NSMutableDictionary__setObject_forKeyedSubscriptP19NSMutableDictionaryP13objc_selectorP11objc_objectS4_
+_ZL22add_image_hook_swiftV1PK11mach_headerl
+_ZL42__arclite_NSUndoManagerProxy_isKindOfClassP11objc_objectP13objc_selectorP10objc_class
+_ZL13replaceMethodP10objc_classP13objc_selectorPFP11objc_objectS4_S2_zEPS6_
+_ZL30__arclite_NSManagedObject_initP11objc_objectP13objc_selector
+_ZL41__arclite_NSManagedObject_allocWithEntityP11objc_objectP13objc_selectorS0_
+_ZL36__arclite_NSManagedObject_allocBatchP11objc_objectP13objc_selectorPS0_S0_j
+_ZL37__arclite_NSKKMS_fastIndexForKnownKeyP11objc_objectP13objc_selectorS0_
+_ZL28__arclite_NSKKMS_indexForKeyP11objc_objectP13objc_selectorS0_
+_ZL29__arclite_NSKKsD_objectForKeyP11objc_objectP13objc_selectorS0_
+_ZL35__arclite_NSKKsD_removeObjectForKeyP11objc_objectP13objc_selectorS0_
+_ZL33__arclite_NSKKsD_setObject_forKeyP11objc_objectP13objc_selectorS0_S0_
+_ZL41__arclite_NSKKsD_addEntriesFromDictionaryP11objc_objectP13objc_selectorP12NSDictionary
+_ZL28__arclite_objc_readClassPairP10objc_classPK15objc_image_info
+_ZL32__arclite_objc_allocateClassPairP10objc_classPKcm
+_ZL32__arclite_object_getIndexedIvarsP11objc_object
+_ZL23__arclite_objc_getClassPKc
+_ZL27__arclite_objc_getMetaClassPKc
+_ZL31__arclite_objc_getRequiredClassPKc
+_ZL26__arclite_objc_lookUpClassPKc
+_ZL26__arclite_objc_getProtocolPKc
+_ZL23__arclite_class_getNameP10objc_class
+_ZL26__arclite_protocol_getNameP8Protocol
+_ZL37__arclite_objc_copyClassNamesForImagePKcPj
+_ZL17transcribeMethodsP10objc_classP15glue_class_ro_t
+_ZL19transcribeProtocolsP10objc_classP15glue_class_ro_t
+_ZL20transcribePropertiesP10objc_classP15glue_class_ro_t
+_ZL14initialize_impP11objc_objectP13objc_selector
+_ZL18allocateMaybeSwiftP18glue_swift_class_tm
+_ZL22copySwiftV1MangledNamePKcb
+_ZL13demangledNamePKcb
+_ZL16scanMangledFieldRPKcS0_S1_Ri
+_ZL30arclite_uninitialized_functionv
+_ZL12cxxConstructP11objc_object
+_ZL20fixStringForCoreDataP11objc_object
+OBJC_METACLASS_$___ARCLite__
+_ZL24OBJC_CLASS_$___ARCLite__
+_ZL31OBJC_METACLASS_RO_$___ARCLite__
+_non_lazy_classes
+_ZL27OBJC_CLASS_RO_$___ARCLite__
+_ZL11_class_name
+_ZL32OBJC_$_CLASS_METHODS___ARCLite__
+_ZL17_load_method_name
+_ZL17_load_method_type
+OBJC_METH_VAR_TYPE_.6
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS___ARCLiteKeyedSubscripting__
+l_OBJC_$_PROTOCOL_METHOD_TYPES___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_LABEL_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_REFERENCE_$___ARCLiteKeyedSubscripting__
+.str.7
+.str.8
+_ZL30NSUndoManagerProxy_targetClass
+.str.11
+.str.12
+_ZL29original_NSManagedObject_init
+_ZL40original_NSManagedObject_allocWithEntity
+_ZL35original_NSManagedObject_allocBatch
+_ZL25NSMutableDictionary_class
+.str.19
+_ZL22NSConstantString_class
+.str.20
+_ZL14NSString_class
+.str.21
+_ZL36original_NSKKMS_fastIndexForKnownKey
+_ZL27original_NSKKMS_indexForKey
+.str.26
+OBJC_METH_VAR_NAME_.27
+OBJC_SELECTOR_REFERENCES_.28
+_ZL28original_NSKKsD_objectForKey
+_ZL34original_NSKKsD_removeObjectForKey
+_ZL32original_NSKKsD_setObject_forKey
+OBJC_SELECTOR_REFERENCES_.30
+_ZL40original_NSKKsD_addEntriesFromDictionary
+_ZZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+_ZGVZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+.str.31
+.str.32
+_ZL31original_objc_allocateClassPair
+.str.33
+_ZL31original_object_getIndexedIvars
+.str.34
+_ZL22original_objc_getClass
+.str.35
+_ZL26original_objc_getMetaClass
+.str.36
+_ZL30original_objc_getRequiredClass
+.str.37
+_ZL25original_objc_lookUpClass
+.str.38
+_ZL25original_objc_getProtocol
+.str.39
+_ZL22original_class_getName
+.str.40
+_ZL25original_protocol_getName
+.str.41
+_ZL36original_objc_copyClassNamesForImage
+.str.46
+.str.47
+.str.48
+.str.49
+.str.50
+.str.51
+.str.52
+.str.53
+_ZL12demangleLock
+_ZL9Demangled
+.str.54
+.str.55
+.str.56
+.str.57
+OBJC_SELECTOR_REFERENCES_.59
+OBJC_SELECTOR_REFERENCES_.61
+Apple LLVM version 7.3.0 (clang-703.0.21)
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -Wno-trigraphs -fno-exceptions -fno-rtti -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=4.3 -g -fno-threadsafe-statics -Wno-sign-conversion -fembed-bitcode -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -fgnu-inline-asm -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-65/source/arclite.mm -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~248/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.o -mlinker-version=264.3
+__arclite_NSKKsD_addEntriesFromDictionary
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-65/source/arclite.mm
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-65
+__arclite_NSKKsD_setObject_forKey
+__arclite_NSKKsD_removeObjectForKey
+__arclite_NSKKsD_objectForKey
+__arclite_NSKKMS_indexForKey
+fixStringForCoreData
+__arclite_NSKKMS_fastIndexForKnownKey
+__arclite_NSManagedObject_allocBatch
+__arclite_NSManagedObject_allocWithEntity
+cxxConstruct
+__arclite_NSManagedObject_init
+arclite_uninitialized_function
+replaceMethod
+__arclite_NSUndoManagerProxy_isKindOfClass
+patch_lazy_pointers
+patch_t<const char **(const char *, unsigned int *)>
+__arclite_objc_copyClassNamesForImage
+patch_t<const char *(Protocol *)>
+__arclite_protocol_getName
+patch_t<const char *(Class)>
+__isctype
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.Internal.sdk/usr/include/ctype.h
+isdigit
+scanMangledField
+copySwiftV1DemangledName
+demangledName
+__arclite_class_getName
+patch_t<Protocol *(const char *)>
+__arclite_objc_getProtocol
+__arclite_objc_lookUpClass
+__arclite_objc_getRequiredClass
+__arclite_objc_getMetaClass
+patch_t<Class (const char *)>
+copySwiftV1MangledName
+__arclite_objc_getClass
+patch_t<void *(id)>
+word_align
+__arclite_object_getIndexedIvars
+patch_t<Class (Class, const char *, unsigned long)>
+allocateMaybeSwift
+isSwift
+metaclass
+__arclite_objc_allocateClassPair
+patch_t<Class (Class, const objc_image_info *)>
+initialize_imp
+property_list_nth
+transcribeProperties
+transcribeProtocols
+method_list_nth
+transcribeMethods
+alignment
+max
+ivar_list_nth
+transcribeIvars
+fastFlags
+data
+ro
+__arclite_objc_readClassPair
+add_image_hook_swiftV1
+install_swiftV1
+install_ARC
+objc_collectingEnabled
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.Internal.sdk/usr/include/objc/objc-auto.h
+keyedGetter
+__arclite_NSMutableDictionary__setObject_forKeyedSubscript
+addOrReplaceMethod
+install_dict_nil_value
+install_subscripting
+install_autoreleasepool
+__ARCLite__load

@@ -1,32 +1,20 @@
 # Bike-Compass
 
-Bike Compass is a full-featured city bicycle finder app for iOS and  Watch. Using a bike is enjoyable, that is why our app is fast, beautiful, and designed exclusively for iOS8. Prepare to fall in love with your city again, on a bicycle.
+Bike Compass is a full-featured city bicycle finder app for iOS. Using a bike is enjoyable, that is why our app is fast, beautiful, and designed exclusively for the latests iOS software. Prepare to fall in love with your city again, on a bicycle.
 
-## iPhone (all models)
+## iPhone
 <p align="center">
-	<img src="https://raw.githubusercontent.com/raulriera/Bike-Compass/master/Screenshots/Screenshot.jpg" />
+	<img src="Screenshots/iOS.jpg" />
 </p>
 
-## Today Extension
-<p align="center">
-<img src="https://raw.githubusercontent.com/raulriera/Bike-Compass/master/Screenshots/TodayExtension.jpg" />
-</p>
-
-## Apple Watch
-<p align="center">
-<img src="https://raw.githubusercontent.com/raulriera/Bike-Compass/master/Screenshots/WatchApp.jpg" />
-</p>
 
 ##Features:
 
-- Completely designed for iOS8.
-- Apple Watch Support!.
-- Today Widget support!.
+- Completely designed for iOS9.
 - Hundreds of cities included.
 - Automatically detects the nearest station that has available bikes and tells you how to get there. Nothing to configure.
 - Real live information thanks to the wonderful http://www.citybik.es
 - Change the target destination at any time.
-- Multi language support
 
 ###More than 150 cities, including:
 
@@ -42,6 +30,10 @@ Bike Compass is a full-featured city bicycle finder app for iOS and  Watch. U
 - San Francisco
 - Washington.
 - Many, many more...
+
+## Looking for the old version?
+
+This app was rebuilt completely in Swift, if you are looking for the old version you can grab it from the [objective-c branch](https://github.com/raulriera/Bike-Compass/tree/objective-c)
 
 ##Created by
 Raul Riera, [@raulriera](http://twitter.com/raulriera)  

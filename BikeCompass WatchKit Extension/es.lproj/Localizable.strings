@@ -1,6 +1,0 @@
-/* Number of bikes left in this station */
-"%ld bikes left" = "Quedan %ld bicis";
-
-/* Error instruction */
-"Please allow Location Services on the iPhone app" = "Por favor, activa los servicios de localización en el app del iPhone";
-

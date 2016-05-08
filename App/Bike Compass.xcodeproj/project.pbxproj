@@ -1,0 +1,961 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C00425B1CCE4AE500E41DB3 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C00425A1CCE4AE500E41DB3 /* NetworkServiceTests.swift */; };
+		4C02D2071CE000A100202A40 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C02D2061CE000A100202A40 /* locations.json */; };
+		4C2F51EE1CCBBABE003D9BEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F51ED1CCBBABE003D9BEC /* AppDelegate.swift */; };
+		4C2F51F01CCBBABE003D9BEC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F51EF1CCBBABE003D9BEC /* LocationViewController.swift */; };
+		4C2F51F31CCBBABE003D9BEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2F51F11CCBBABE003D9BEC /* Main.storyboard */; };
+		4C2F51F51CCBBABE003D9BEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2F51F41CCBBABE003D9BEC /* Assets.xcassets */; };
+		4C2F51F81CCBBABE003D9BEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2F51F61CCBBABE003D9BEC /* LaunchScreen.storyboard */; };
+		4C2F52071CCBBB0D003D9BEC /* CityBikesKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C2F52061CCBBB0D003D9BEC /* CityBikesKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C2F520E1CCBBB0D003D9BEC /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2F52041CCBBB0D003D9BEC /* CityBikesKit.framework */; };
+		4C2F52151CCBBB0D003D9BEC /* NetworksEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52141CCBBB0D003D9BEC /* NetworksEndpointTests.swift */; };
+		4C2F52191CCBBB0D003D9BEC /* CityBikesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2F52041CCBBB0D003D9BEC /* CityBikesKit.framework */; };
+		4C2F521A1CCBBB0D003D9BEC /* CityBikesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2F52041CCBBB0D003D9BEC /* CityBikesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C2F52261CCBBB62003D9BEC /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52221CCBBB62003D9BEC /* EndpointType.swift */; };
+		4C2F52281CCBBB62003D9BEC /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52241CCBBB62003D9BEC /* NetworkProvider.swift */; };
+		4C2F52291CCBBB62003D9BEC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52251CCBBB62003D9BEC /* NetworkService.swift */; };
+		4C2F522D1CCBBFF5003D9BEC /* AlamofireNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F522C1CCBBFF5003D9BEC /* AlamofireNetworkProvider.swift */; };
+		4C2F52301CCBC117003D9BEC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2F522F1CCBC117003D9BEC /* Alamofire.framework */; };
+		4C2F52321CCBC1B7003D9BEC /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2F52311CCBC1B7003D9BEC /* Decodable.framework */; };
+		4C2F52351CCBC200003D9BEC /* NetworksEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52341CCBC200003D9BEC /* NetworksEndpoint.swift */; };
+		4C2F52381CCBC255003D9BEC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52371CCBC255003D9BEC /* Network.swift */; };
+		4C2F523A1CCBC368003D9BEC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52391CCBC368003D9BEC /* Location.swift */; };
+		4C2F523C1CCBC3B3003D9BEC /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F523B1CCBC3B3003D9BEC /* Station.swift */; };
+		4C2F52401CCBC939003D9BEC /* StationsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F523F1CCBC939003D9BEC /* StationsEndpoint.swift */; };
+		4C2F52421CCBCA06003D9BEC /* StationsEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52411CCBCA06003D9BEC /* StationsEndpointTests.swift */; };
+		4C2F52441CCBCC0B003D9BEC /* CityBikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F52431CCBCC0B003D9BEC /* CityBikes.swift */; };
+		4C49CD041CDA19BA00597247 /* MKMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49CD031CDA19BA00597247 /* MKMapView+Extensions.swift */; };
+		4C49CD061CDA1B8300597247 /* CollectionType+Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49CD051CDA1B8300597247 /* CollectionType+Station.swift */; };
+		4C4AF3221CD2D0EF00702E07 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AF3211CD2D0EF00702E07 /* ApplicationViewController.swift */; };
+		4C4AF3241CD2D97500702E07 /* StationPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AF3231CD2D97500702E07 /* StationPointAnnotation.swift */; };
+		4C4DAAD61CDFFD3900710596 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DAAD51CDFFD3900710596 /* NetworkTests.swift */; };
+		4C512E531CD82D2800EFB72F /* PSPDFTouchForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C512E521CD82D2800EFB72F /* PSPDFTouchForwardingView.swift */; };
+		4C512E561CD82E5E00EFB72F /* CardTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C512E551CD82E5E00EFB72F /* CardTransitioningDelegate.swift */; };
+		4C66DE0E1CDE321800CA1F81 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66DE0D1CDE321800CA1F81 /* UIColor+Extensions.swift */; };
+		4C66DE101CDE8A5C00CA1F81 /* CardPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66DE0F1CDE8A5C00CA1F81 /* CardPresentationAnimator.swift */; };
+		4C66DE121CDE8F4600CA1F81 /* CardDismissionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66DE111CDE8F4600CA1F81 /* CardDismissionAnimator.swift */; };
+		4C66DE141CDF6FCF00CA1F81 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66DE131CDF6FCF00CA1F81 /* BorderView.swift */; };
+		4C7B03811CD7E92D002388B8 /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B03801CD7E92D002388B8 /* StationsViewController.swift */; };
+		4C7B03831CD7EAAC002388B8 /* CollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B03821CD7EAAC002388B8 /* CollectionType+Extensions.swift */; };
+		4C7B03851CD7F5CD002388B8 /* NSDate+TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B03841CD7F5CD002388B8 /* NSDate+TimeAgo.swift */; };
+		4C7B03881CD81312002388B8 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B03871CD81312002388B8 /* CardPresentationController.swift */; };
+		4C8B6F661CD413BC00F4FE14 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B6F651CD413BC00F4FE14 /* StationViewController.swift */; };
+		4C8B6F691CD416C600F4FE14 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B6F681CD416C600F4FE14 /* Encodable.swift */; };
+		4C8B6F6B1CD41A8C00F4FE14 /* NSDate+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B6F6A1CD41A8C00F4FE14 /* NSDate+Encodable.swift */; };
+		4C8B6F6E1CD4D32C00F4FE14 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B6F6D1CD4D32C00F4FE14 /* UIStoryboard+Extensions.swift */; };
+		4C8B6F711CD4D35C00F4FE14 /* UIViewController+Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B6F701CD4D35C00F4FE14 /* UIViewController+Segue.swift */; };
+		4C8B6F791CD58C3800F4FE14 /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2F52311CCBC1B7003D9BEC /* Decodable.framework */; };
+		4C8B6F7B1CD58DE800F4FE14 /* CollectionTypeNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B6F7A1CD58DE800F4FE14 /* CollectionTypeNetworkTests.swift */; };
+		4C8C427B1CD21C2F00660F68 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C427A1CD21C2F00660F68 /* LocationTests.swift */; };
+		4C933CCF1CCEE4580073DABD /* NetworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C933CCE1CCEE4580073DABD /* NetworksViewController.swift */; };
+		4C9D3B691CCD218200A7F727 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9D3B681CCD218200A7F727 /* MapKit.framework */; };
+		4CA2A7701CCDA4BF004FAA0C /* DecodableExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A76F1CCDA4BF004FAA0C /* DecodableExtensionsTests.swift */; };
+		4CA2A7731CCDA92A004FAA0C /* NSDate+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A7721CCDA92A004FAA0C /* NSDate+Decodable.swift */; };
+		4CC578041CCE428D00112054 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CC578031CCE428D00112054 /* stations.json */; };
+		4CC578061CCE456700112054 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC578051CCE456700112054 /* XCTestCase+Extensions.swift */; };
+		4CC578081CCE46EA00112054 /* networks.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CC578071CCE46EA00112054 /* networks.json */; };
+		4CE4FEEF1CD6419900D7BF33 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4FEEE1CD6419900D7BF33 /* Storage.swift */; };
+		4CE9DC881CCF8ED600F1B491 /* CollectionType+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9DC871CCF8ED600F1B491 /* CollectionType+Network.swift */; };
+		4CE9DC8A1CD20F7100F1B491 /* SequenceType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9DC891CD20F7100F1B491 /* SequenceType+Extensions.swift */; };
+		4CF172F81CCF842000A0710F /* CityBikesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF172F71CCF842000A0710F /* CityBikesTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C2F520F1CCBBB0D003D9BEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C2F51E21CCBBABE003D9BEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C2F52031CCBBB0D003D9BEC;
+			remoteInfo = CityBikesKit;
+		};
+		4C2F52111CCBBB0D003D9BEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C2F51E21CCBBABE003D9BEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C2F51E91CCBBABE003D9BEC;
+			remoteInfo = "Bike Compass";
+		};
+		4C2F52171CCBBB0D003D9BEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C2F51E21CCBBABE003D9BEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C2F52031CCBBB0D003D9BEC;
+			remoteInfo = CityBikesKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4C2F521E1CCBBB0D003D9BEC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4C2F521A1CCBBB0D003D9BEC /* CityBikesKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4C00425A1CCE4AE500E41DB3 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		4C02D2061CE000A100202A40 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		4C2F51EA1CCBBABE003D9BEC /* Bike Compass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bike Compass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2F51ED1CCBBABE003D9BEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C2F51EF1CCBBABE003D9BEC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		4C2F51F21CCBBABE003D9BEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C2F51F41CCBBABE003D9BEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C2F51F71CCBBABE003D9BEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C2F51F91CCBBABE003D9BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2F52041CCBBB0D003D9BEC /* CityBikesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CityBikesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2F52061CCBBB0D003D9BEC /* CityBikesKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityBikesKit.h; sourceTree = "<group>"; };
+		4C2F52081CCBBB0D003D9BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2F520D1CCBBB0D003D9BEC /* CityBikesKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityBikesKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2F52141CCBBB0D003D9BEC /* NetworksEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworksEndpointTests.swift; sourceTree = "<group>"; };
+		4C2F52161CCBBB0D003D9BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2F52221CCBBB62003D9BEC /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		4C2F52241CCBBB62003D9BEC /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		4C2F52251CCBBB62003D9BEC /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4C2F522C1CCBBFF5003D9BEC /* AlamofireNetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkProvider.swift; sourceTree = "<group>"; };
+		4C2F522F1CCBC117003D9BEC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4C2F52311CCBC1B7003D9BEC /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = Carthage/Build/iOS/Decodable.framework; sourceTree = "<group>"; };
+		4C2F52341CCBC200003D9BEC /* NetworksEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworksEndpoint.swift; sourceTree = "<group>"; };
+		4C2F52371CCBC255003D9BEC /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		4C2F52391CCBC368003D9BEC /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4C2F523B1CCBC3B3003D9BEC /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		4C2F523F1CCBC939003D9BEC /* StationsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsEndpoint.swift; sourceTree = "<group>"; };
+		4C2F52411CCBCA06003D9BEC /* StationsEndpointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsEndpointTests.swift; sourceTree = "<group>"; };
+		4C2F52431CCBCC0B003D9BEC /* CityBikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBikes.swift; sourceTree = "<group>"; };
+		4C49CD031CDA19BA00597247 /* MKMapView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extensions.swift"; sourceTree = "<group>"; };
+		4C49CD051CDA1B8300597247 /* CollectionType+Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Station.swift"; sourceTree = "<group>"; };
+		4C4AF3211CD2D0EF00702E07 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		4C4AF3231CD2D97500702E07 /* StationPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationPointAnnotation.swift; sourceTree = "<group>"; };
+		4C4DAAD41CDFFA2200710596 /* Bike Compass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bike Compass.entitlements"; sourceTree = "<group>"; };
+		4C4DAAD51CDFFD3900710596 /* NetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		4C512E521CD82D2800EFB72F /* PSPDFTouchForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSPDFTouchForwardingView.swift; sourceTree = "<group>"; };
+		4C512E551CD82E5E00EFB72F /* CardTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitioningDelegate.swift; sourceTree = "<group>"; };
+		4C66DE0D1CDE321800CA1F81 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		4C66DE0F1CDE8A5C00CA1F81 /* CardPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationAnimator.swift; sourceTree = "<group>"; };
+		4C66DE111CDE8F4600CA1F81 /* CardDismissionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDismissionAnimator.swift; sourceTree = "<group>"; };
+		4C66DE131CDF6FCF00CA1F81 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		4C7B03801CD7E92D002388B8 /* StationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
+		4C7B03821CD7EAAC002388B8 /* CollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Extensions.swift"; sourceTree = "<group>"; };
+		4C7B03841CD7F5CD002388B8 /* NSDate+TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+TimeAgo.swift"; sourceTree = "<group>"; };
+		4C7B03871CD81312002388B8 /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
+		4C8B6F651CD413BC00F4FE14 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		4C8B6F681CD416C600F4FE14 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		4C8B6F6A1CD41A8C00F4FE14 /* NSDate+Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Encodable.swift"; sourceTree = "<group>"; };
+		4C8B6F6D1CD4D32C00F4FE14 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
+		4C8B6F701CD4D35C00F4FE14 /* UIViewController+Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Segue.swift"; sourceTree = "<group>"; };
+		4C8B6F7A1CD58DE800F4FE14 /* CollectionTypeNetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypeNetworkTests.swift; sourceTree = "<group>"; };
+		4C8C427A1CD21C2F00660F68 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		4C933CCE1CCEE4580073DABD /* NetworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworksViewController.swift; sourceTree = "<group>"; };
+		4C9D3B681CCD218200A7F727 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4CA2A76F1CCDA4BF004FAA0C /* DecodableExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableExtensionsTests.swift; sourceTree = "<group>"; };
+		4CA2A7721CCDA92A004FAA0C /* NSDate+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Decodable.swift"; sourceTree = "<group>"; };
+		4CC578031CCE428D00112054 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
+		4CC578051CCE456700112054 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		4CC578071CCE46EA00112054 /* networks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = networks.json; sourceTree = "<group>"; };
+		4CE4FEEE1CD6419900D7BF33 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		4CE9DC871CCF8ED600F1B491 /* CollectionType+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Network.swift"; sourceTree = "<group>"; };
+		4CE9DC891CD20F7100F1B491 /* SequenceType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+Extensions.swift"; sourceTree = "<group>"; };
+		4CF172F71CCF842000A0710F /* CityBikesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBikesTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C2F51E71CCBBABE003D9BEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9D3B691CCD218200A7F727 /* MapKit.framework in Frameworks */,
+				4C2F52191CCBBB0D003D9BEC /* CityBikesKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2F52001CCBBB0D003D9BEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2F52301CCBC117003D9BEC /* Alamofire.framework in Frameworks */,
+				4C2F52321CCBC1B7003D9BEC /* Decodable.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2F520A1CCBBB0D003D9BEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2F520E1CCBBB0D003D9BEC /* CityBikesKit.framework in Frameworks */,
+				4C8B6F791CD58C3800F4FE14 /* Decodable.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C2F51E11CCBBABE003D9BEC = {
+			isa = PBXGroup;
+			children = (
+				4C2F51EC1CCBBABE003D9BEC /* Bike Compass */,
+				4C2F52051CCBBB0D003D9BEC /* CityBikesKit */,
+				4C2F52131CCBBB0D003D9BEC /* CityBikesKitTests */,
+				4C2F51EB1CCBBABE003D9BEC /* Products */,
+				4C2F52331CCBC1C0003D9BEC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4C2F51EB1CCBBABE003D9BEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C2F51EA1CCBBABE003D9BEC /* Bike Compass.app */,
+				4C2F52041CCBBB0D003D9BEC /* CityBikesKit.framework */,
+				4C2F520D1CCBBB0D003D9BEC /* CityBikesKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C2F51EC1CCBBABE003D9BEC /* Bike Compass */ = {
+			isa = PBXGroup;
+			children = (
+				4C4DAAD41CDFFA2200710596 /* Bike Compass.entitlements */,
+				4C8B6F6C1CD4D31D00F4FE14 /* Extensions */,
+				4C2F51ED1CCBBABE003D9BEC /* AppDelegate.swift */,
+				4C4AF3211CD2D0EF00702E07 /* ApplicationViewController.swift */,
+				4C7B03861CD812F8002388B8 /* Presentation Controllers */,
+				4C8B6F6F1CD4D34000F4FE14 /* View Controllers */,
+				4CE4FEED1CD63D5E00D7BF33 /* Views */,
+				4C4AF3231CD2D97500702E07 /* StationPointAnnotation.swift */,
+				4CE4FEEE1CD6419900D7BF33 /* Storage.swift */,
+				4C2F51F11CCBBABE003D9BEC /* Main.storyboard */,
+				4C2F51F61CCBBABE003D9BEC /* LaunchScreen.storyboard */,
+				4C2F51F41CCBBABE003D9BEC /* Assets.xcassets */,
+				4C2F51F91CCBBABE003D9BEC /* Info.plist */,
+			);
+			path = "Bike Compass";
+			sourceTree = "<group>";
+		};
+		4C2F52051CCBBB0D003D9BEC /* CityBikesKit */ = {
+			isa = PBXGroup;
+			children = (
+				4C8B6F671CD416B800F4FE14 /* Encodable */,
+				4C2F52061CCBBB0D003D9BEC /* CityBikesKit.h */,
+				4C2F523D1CCBC4C7003D9BEC /* Network Service */,
+				4C2F523E1CCBC4D3003D9BEC /* Endpoints */,
+				4CA2A7711CCDA90F004FAA0C /* Extensions */,
+				4C2F52361CCBC24A003D9BEC /* Models */,
+				4C2F52081CCBBB0D003D9BEC /* Info.plist */,
+				4C2F52431CCBCC0B003D9BEC /* CityBikes.swift */,
+			);
+			path = CityBikesKit;
+			sourceTree = "<group>";
+		};
+		4C2F52131CCBBB0D003D9BEC /* CityBikesKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CA2A76F1CCDA4BF004FAA0C /* DecodableExtensionsTests.swift */,
+				4C8B6F7A1CD58DE800F4FE14 /* CollectionTypeNetworkTests.swift */,
+				4CF172F71CCF842000A0710F /* CityBikesTests.swift */,
+				4C8B6F721CD56E0B00F4FE14 /* Models */,
+				4C8B6F731CD56E1700F4FE14 /* Network Service */,
+				4C8B6F7C1CD5958100F4FE14 /* Supporting Files */,
+			);
+			path = CityBikesKitTests;
+			sourceTree = "<group>";
+		};
+		4C2F52331CCBC1C0003D9BEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C9D3B681CCD218200A7F727 /* MapKit.framework */,
+				4C2F52311CCBC1B7003D9BEC /* Decodable.framework */,
+				4C2F522F1CCBC117003D9BEC /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C2F52361CCBC24A003D9BEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C2F52371CCBC255003D9BEC /* Network.swift */,
+				4C2F52391CCBC368003D9BEC /* Location.swift */,
+				4C2F523B1CCBC3B3003D9BEC /* Station.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C2F523D1CCBC4C7003D9BEC /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				4C2F52221CCBBB62003D9BEC /* EndpointType.swift */,
+				4C2F522C1CCBBFF5003D9BEC /* AlamofireNetworkProvider.swift */,
+				4C2F52241CCBBB62003D9BEC /* NetworkProvider.swift */,
+				4C2F52251CCBBB62003D9BEC /* NetworkService.swift */,
+			);
+			name = "Network Service";
+			sourceTree = "<group>";
+		};
+		4C2F523E1CCBC4D3003D9BEC /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				4C2F52341CCBC200003D9BEC /* NetworksEndpoint.swift */,
+				4C2F523F1CCBC939003D9BEC /* StationsEndpoint.swift */,
+			);
+			name = Endpoints;
+			sourceTree = "<group>";
+		};
+		4C512E571CD82E7500EFB72F /* Card Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B03871CD81312002388B8 /* CardPresentationController.swift */,
+				4C512E551CD82E5E00EFB72F /* CardTransitioningDelegate.swift */,
+				4C66DE0F1CDE8A5C00CA1F81 /* CardPresentationAnimator.swift */,
+				4C66DE111CDE8F4600CA1F81 /* CardDismissionAnimator.swift */,
+			);
+			name = "Card Presentation";
+			sourceTree = "<group>";
+		};
+		4C7B03861CD812F8002388B8 /* Presentation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C512E571CD82E7500EFB72F /* Card Presentation */,
+			);
+			name = "Presentation Controllers";
+			sourceTree = "<group>";
+		};
+		4C8B6F671CD416B800F4FE14 /* Encodable */ = {
+			isa = PBXGroup;
+			children = (
+				4C8B6F681CD416C600F4FE14 /* Encodable.swift */,
+			);
+			name = Encodable;
+			sourceTree = "<group>";
+		};
+		4C8B6F6C1CD4D31D00F4FE14 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C8B6F6D1CD4D32C00F4FE14 /* UIStoryboard+Extensions.swift */,
+				4C8B6F701CD4D35C00F4FE14 /* UIViewController+Segue.swift */,
+				4C7B03821CD7EAAC002388B8 /* CollectionType+Extensions.swift */,
+				4C7B03841CD7F5CD002388B8 /* NSDate+TimeAgo.swift */,
+				4C49CD031CDA19BA00597247 /* MKMapView+Extensions.swift */,
+				4C66DE0D1CDE321800CA1F81 /* UIColor+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4C8B6F6F1CD4D34000F4FE14 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C2F51EF1CCBBABE003D9BEC /* LocationViewController.swift */,
+				4C933CCE1CCEE4580073DABD /* NetworksViewController.swift */,
+				4C8B6F651CD413BC00F4FE14 /* StationViewController.swift */,
+				4C7B03801CD7E92D002388B8 /* StationsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4C8B6F721CD56E0B00F4FE14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C8C427A1CD21C2F00660F68 /* LocationTests.swift */,
+				4C4DAAD51CDFFD3900710596 /* NetworkTests.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C8B6F731CD56E1700F4FE14 /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				4C00425A1CCE4AE500E41DB3 /* NetworkServiceTests.swift */,
+				4C2F52141CCBBB0D003D9BEC /* NetworksEndpointTests.swift */,
+				4C2F52411CCBCA06003D9BEC /* StationsEndpointTests.swift */,
+			);
+			name = "Network Service";
+			sourceTree = "<group>";
+		};
+		4C8B6F7C1CD5958100F4FE14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CC578051CCE456700112054 /* XCTestCase+Extensions.swift */,
+				4C2F52161CCBBB0D003D9BEC /* Info.plist */,
+				4CC578021CCE426C00112054 /* JSON */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CA2A7711CCDA90F004FAA0C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CA2A7721CCDA92A004FAA0C /* NSDate+Decodable.swift */,
+				4C8B6F6A1CD41A8C00F4FE14 /* NSDate+Encodable.swift */,
+				4CE9DC891CD20F7100F1B491 /* SequenceType+Extensions.swift */,
+				4CE9DC871CCF8ED600F1B491 /* CollectionType+Network.swift */,
+				4C49CD051CDA1B8300597247 /* CollectionType+Station.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4CC578021CCE426C00112054 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				4CC578071CCE46EA00112054 /* networks.json */,
+				4C02D2061CE000A100202A40 /* locations.json */,
+				4CC578031CCE428D00112054 /* stations.json */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		4CE4FEED1CD63D5E00D7BF33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C512E521CD82D2800EFB72F /* PSPDFTouchForwardingView.swift */,
+				4C66DE131CDF6FCF00CA1F81 /* BorderView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4C2F52011CCBBB0D003D9BEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2F52071CCBBB0D003D9BEC /* CityBikesKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4C2F51E91CCBBABE003D9BEC /* Bike Compass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C2F51FC1CCBBABE003D9BEC /* Build configuration list for PBXNativeTarget "Bike Compass" */;
+			buildPhases = (
+				4C2F51E61CCBBABE003D9BEC /* Sources */,
+				4C2F51E71CCBBABE003D9BEC /* Frameworks */,
+				4C2F51E81CCBBABE003D9BEC /* Resources */,
+				4C2F521E1CCBBB0D003D9BEC /* Embed Frameworks */,
+				4C2F522E1CCBC0BC003D9BEC /* Carthage Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C2F52181CCBBB0D003D9BEC /* PBXTargetDependency */,
+			);
+			name = "Bike Compass";
+			productName = "Bike Compass";
+			productReference = 4C2F51EA1CCBBABE003D9BEC /* Bike Compass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C2F52031CCBBB0D003D9BEC /* CityBikesKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C2F521B1CCBBB0D003D9BEC /* Build configuration list for PBXNativeTarget "CityBikesKit" */;
+			buildPhases = (
+				4C2F51FF1CCBBB0D003D9BEC /* Sources */,
+				4C2F52001CCBBB0D003D9BEC /* Frameworks */,
+				4C2F52011CCBBB0D003D9BEC /* Headers */,
+				4C2F52021CCBBB0D003D9BEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CityBikesKit;
+			productName = CityBikesKit;
+			productReference = 4C2F52041CCBBB0D003D9BEC /* CityBikesKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4C2F520C1CCBBB0D003D9BEC /* CityBikesKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C2F521F1CCBBB0D003D9BEC /* Build configuration list for PBXNativeTarget "CityBikesKitTests" */;
+			buildPhases = (
+				4C2F52091CCBBB0D003D9BEC /* Sources */,
+				4C2F520A1CCBBB0D003D9BEC /* Frameworks */,
+				4C2F520B1CCBBB0D003D9BEC /* Resources */,
+				4CE4FEEC1CD63B7400D7BF33 /* Carthage Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C2F52101CCBBB0D003D9BEC /* PBXTargetDependency */,
+				4C2F52121CCBBB0D003D9BEC /* PBXTargetDependency */,
+			);
+			name = CityBikesKitTests;
+			productName = CityBikesKitTests;
+			productReference = 4C2F520D1CCBBB0D003D9BEC /* CityBikesKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C2F51E21CCBBABE003D9BEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Raul Riera";
+				TargetAttributes = {
+					4C2F51E91CCBBABE003D9BEC = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = R64MTWS872;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					4C2F52031CCBBB0D003D9BEC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					4C2F520C1CCBBB0D003D9BEC = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 4C2F51E91CCBBABE003D9BEC;
+					};
+				};
+			};
+			buildConfigurationList = 4C2F51E51CCBBABE003D9BEC /* Build configuration list for PBXProject "Bike Compass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C2F51E11CCBBABE003D9BEC;
+			productRefGroup = 4C2F51EB1CCBBABE003D9BEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C2F51E91CCBBABE003D9BEC /* Bike Compass */,
+				4C2F52031CCBBB0D003D9BEC /* CityBikesKit */,
+				4C2F520C1CCBBB0D003D9BEC /* CityBikesKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C2F51E81CCBBABE003D9BEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2F51F81CCBBABE003D9BEC /* LaunchScreen.storyboard in Resources */,
+				4C2F51F51CCBBABE003D9BEC /* Assets.xcassets in Resources */,
+				4C2F51F31CCBBABE003D9BEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2F52021CCBBB0D003D9BEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2F520B1CCBBB0D003D9BEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC578081CCE46EA00112054 /* networks.json in Resources */,
+				4C02D2071CE000A100202A40 /* locations.json in Resources */,
+				4CC578041CCE428D00112054 /* stations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C2F522E1CCBC0BC003D9BEC /* Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Decodable.framework",
+			);
+			name = "Carthage Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4CE4FEEC1CD63B7400D7BF33 /* Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Decodable.framework",
+			);
+			name = "Carthage Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C2F51E61CCBBABE003D9BEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C8B6F711CD4D35C00F4FE14 /* UIViewController+Segue.swift in Sources */,
+				4C49CD041CDA19BA00597247 /* MKMapView+Extensions.swift in Sources */,
+				4C2F51F01CCBBABE003D9BEC /* LocationViewController.swift in Sources */,
+				4C66DE101CDE8A5C00CA1F81 /* CardPresentationAnimator.swift in Sources */,
+				4CE4FEEF1CD6419900D7BF33 /* Storage.swift in Sources */,
+				4C7B03811CD7E92D002388B8 /* StationsViewController.swift in Sources */,
+				4C7B03831CD7EAAC002388B8 /* CollectionType+Extensions.swift in Sources */,
+				4C4AF3221CD2D0EF00702E07 /* ApplicationViewController.swift in Sources */,
+				4C66DE141CDF6FCF00CA1F81 /* BorderView.swift in Sources */,
+				4C2F51EE1CCBBABE003D9BEC /* AppDelegate.swift in Sources */,
+				4C8B6F661CD413BC00F4FE14 /* StationViewController.swift in Sources */,
+				4C66DE121CDE8F4600CA1F81 /* CardDismissionAnimator.swift in Sources */,
+				4C4AF3241CD2D97500702E07 /* StationPointAnnotation.swift in Sources */,
+				4C933CCF1CCEE4580073DABD /* NetworksViewController.swift in Sources */,
+				4C8B6F6E1CD4D32C00F4FE14 /* UIStoryboard+Extensions.swift in Sources */,
+				4C512E561CD82E5E00EFB72F /* CardTransitioningDelegate.swift in Sources */,
+				4C7B03881CD81312002388B8 /* CardPresentationController.swift in Sources */,
+				4C7B03851CD7F5CD002388B8 /* NSDate+TimeAgo.swift in Sources */,
+				4C66DE0E1CDE321800CA1F81 /* UIColor+Extensions.swift in Sources */,
+				4C512E531CD82D2800EFB72F /* PSPDFTouchForwardingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2F51FF1CCBBB0D003D9BEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2F52261CCBBB62003D9BEC /* EndpointType.swift in Sources */,
+				4C8B6F691CD416C600F4FE14 /* Encodable.swift in Sources */,
+				4C49CD061CDA1B8300597247 /* CollectionType+Station.swift in Sources */,
+				4C2F52351CCBC200003D9BEC /* NetworksEndpoint.swift in Sources */,
+				4C2F523C1CCBC3B3003D9BEC /* Station.swift in Sources */,
+				4C2F52441CCBCC0B003D9BEC /* CityBikes.swift in Sources */,
+				4C2F52381CCBC255003D9BEC /* Network.swift in Sources */,
+				4C8B6F6B1CD41A8C00F4FE14 /* NSDate+Encodable.swift in Sources */,
+				4C2F52291CCBBB62003D9BEC /* NetworkService.swift in Sources */,
+				4C2F52281CCBBB62003D9BEC /* NetworkProvider.swift in Sources */,
+				4CE9DC8A1CD20F7100F1B491 /* SequenceType+Extensions.swift in Sources */,
+				4C2F522D1CCBBFF5003D9BEC /* AlamofireNetworkProvider.swift in Sources */,
+				4CA2A7731CCDA92A004FAA0C /* NSDate+Decodable.swift in Sources */,
+				4C2F523A1CCBC368003D9BEC /* Location.swift in Sources */,
+				4CE9DC881CCF8ED600F1B491 /* CollectionType+Network.swift in Sources */,
+				4C2F52401CCBC939003D9BEC /* StationsEndpoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2F52091CCBBB0D003D9BEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C00425B1CCE4AE500E41DB3 /* NetworkServiceTests.swift in Sources */,
+				4CC578061CCE456700112054 /* XCTestCase+Extensions.swift in Sources */,
+				4CA2A7701CCDA4BF004FAA0C /* DecodableExtensionsTests.swift in Sources */,
+				4CF172F81CCF842000A0710F /* CityBikesTests.swift in Sources */,
+				4C8C427B1CD21C2F00660F68 /* LocationTests.swift in Sources */,
+				4C4DAAD61CDFFD3900710596 /* NetworkTests.swift in Sources */,
+				4C2F52151CCBBB0D003D9BEC /* NetworksEndpointTests.swift in Sources */,
+				4C8B6F7B1CD58DE800F4FE14 /* CollectionTypeNetworkTests.swift in Sources */,
+				4C2F52421CCBCA06003D9BEC /* StationsEndpointTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C2F52101CCBBB0D003D9BEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C2F52031CCBBB0D003D9BEC /* CityBikesKit */;
+			targetProxy = 4C2F520F1CCBBB0D003D9BEC /* PBXContainerItemProxy */;
+		};
+		4C2F52121CCBBB0D003D9BEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C2F51E91CCBBABE003D9BEC /* Bike Compass */;
+			targetProxy = 4C2F52111CCBBB0D003D9BEC /* PBXContainerItemProxy */;
+		};
+		4C2F52181CCBBB0D003D9BEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C2F52031CCBBB0D003D9BEC /* CityBikesKit */;
+			targetProxy = 4C2F52171CCBBB0D003D9BEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C2F51F11CCBBABE003D9BEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C2F51F21CCBBABE003D9BEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C2F51F61CCBBABE003D9BEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C2F51F71CCBBABE003D9BEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C2F51FA1CCBBABE003D9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C2F51FB1CCBBABE003D9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C2F51FD1CCBBABE003D9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bike Compass/Bike Compass.entitlements";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Bike Compass/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulriera.dublinbikes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C2F51FE1CCBBABE003D9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bike Compass/Bike Compass.entitlements";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Bike Compass/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulriera.dublinbikes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4C2F521C1CCBBB0D003D9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CityBikesKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulriera.CityBikesKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4C2F521D1CCBBB0D003D9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CityBikesKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulriera.CityBikesKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4C2F52201CCBBB0D003D9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CityBikesKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulriera.CityBikesKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bike Compass.app/Bike Compass";
+			};
+			name = Debug;
+		};
+		4C2F52211CCBBB0D003D9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CityBikesKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raulriera.CityBikesKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bike Compass.app/Bike Compass";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C2F51E51CCBBABE003D9BEC /* Build configuration list for PBXProject "Bike Compass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2F51FA1CCBBABE003D9BEC /* Debug */,
+				4C2F51FB1CCBBABE003D9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C2F51FC1CCBBABE003D9BEC /* Build configuration list for PBXNativeTarget "Bike Compass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2F51FD1CCBBABE003D9BEC /* Debug */,
+				4C2F51FE1CCBBABE003D9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C2F521B1CCBBB0D003D9BEC /* Build configuration list for PBXNativeTarget "CityBikesKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2F521C1CCBBB0D003D9BEC /* Debug */,
+				4C2F521D1CCBBB0D003D9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C2F521F1CCBBB0D003D9BEC /* Build configuration list for PBXNativeTarget "CityBikesKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2F52201CCBBB0D003D9BEC /* Debug */,
+				4C2F52211CCBBB0D003D9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C2F51E21CCBBABE003D9BEC /* Project object */;
+}
