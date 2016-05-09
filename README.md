@@ -4,17 +4,17 @@ Bike Compass is a full-featured city bicycle finder app for iOS and  Watch. U
 
 ## iPhone (all models)
 <p align="center">
-	<img src="https://raw.githubusercontent.com/raulriera/Bike-Compass/master/Screenshots/Screenshot.jpg" />
+	<img src="Screenshots/Screenshot.jpg" />
 </p>
 
 ## Today Extension
 <p align="center">
-<img src="https://raw.githubusercontent.com/raulriera/Bike-Compass/master/Screenshots/TodayExtension.jpg" />
+<img src="Screenshots/TodayExtension.jpg" />
 </p>
 
 ## Apple Watch
 <p align="center">
-<img src="https://raw.githubusercontent.com/raulriera/Bike-Compass/master/Screenshots/WatchApp.jpg" />
+<img src="Screenshots/WatchApp.jpg" />
 </p>
 
 ##Features:
