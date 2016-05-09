@@ -16,7 +16,7 @@ Bike Compass is a full-featured city bicycle finder app for iOS. Using a bike is
 - Real live information thanks to the wonderful http://www.citybik.es
 - Change the target destination at any time.
 
-###More than 150 cities, including:
+###More than 400 cities, including:
 
 - Dublin
 - London
