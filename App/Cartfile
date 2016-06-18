@@ -1,2 +1,2 @@
-github "Alamofire/Alamofire" ~> 3.3.0
-github "Anviking/Decodable" ~> 0.4.0
+github "Alamofire/Alamofire" "swift3"
+github "Anviking/Decodable" "master"

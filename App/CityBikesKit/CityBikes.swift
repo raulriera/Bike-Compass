@@ -11,8 +11,8 @@ import Alamofire
 import CoreLocation
 
 public enum Response<T> {
-    case Success(T)
-    case Failure(ErrorType)
+    case success(T)
+    case failure(ErrorProtocol)
 }
 
 public class CityBikes {
@@ -20,26 +20,26 @@ public class CityBikes {
     
     // MARK: Networks
     
-    public class func networkClosestToLocation(location: CLLocation, completionHandler: (Response<Network>) -> Void) {
+    public class func networkClosestToLocation(_ location: CLLocation, completionHandler: (Response<Network>) -> Void) {
         networks { response in
             switch response {
-            case .Success(let networks):
+            case .success(let networks):
                 let network = networks.sortByProximityToLocation(location).first!
-                completionHandler(.Success(network))
-            case .Failure(let error):
-                completionHandler(.Failure(error))
+                completionHandler(.success(network))
+            case .failure(let error):
+                completionHandler(.failure(error))
             }
         }
         
     }
     
-    public class func networks(completionHandler: (Response<[Network]>) -> Void) {
+    public class func networks(_ completionHandler: (Response<[Network]>) -> Void) {
         service.request(NetworksEndpoint()) { response in
             switch response {
-            case .Success(let networks):
-                completionHandler(.Success(networks))
-            case .Failure(let error):
-                completionHandler(.Failure(error))
+            case .success(let networks):
+                completionHandler(.success(networks))
+            case .failure(let error):
+                completionHandler(.failure(error))
             }
         }
     }
@@ -50,10 +50,10 @@ public class CityBikes {
         let stationsEndpoint = StationsEndpoint(networkId: network.id)
         service.request(stationsEndpoint) { response in
             switch response {
-            case .Success(let stations):
-                completionHandler(.Success(stations))
-            case .Failure(let error):
-                completionHandler(.Failure(error))
+            case .success(let stations):
+                completionHandler(.success(stations))
+            case .failure(let error):
+                completionHandler(.failure(error))
             }
         }
     }

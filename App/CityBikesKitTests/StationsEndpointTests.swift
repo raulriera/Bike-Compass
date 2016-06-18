@@ -17,10 +17,10 @@ class StationsEndpointTests: XCTestCase {
     }
     
     func testResponseFromObject() {
-        let URLResponse = NSHTTPURLResponse(URL: NSURL(string: "http://api.citybik.es/")!, statusCode: 200, HTTPVersion: nil, headerFields: nil)!
+        let URLResponse = HTTPURLResponse(url: URL(string: "http://api.citybik.es/")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
         let json = loadJSON("stations")!
         
-        let stations = endpoint.responseFromObject(json, URLResponse: URLResponse)
+        let stations = endpoint.responseFrom(json, URLResponse: URLResponse)
         
         XCTAssertEqual(stations?.count, 1)
         XCTAssertEqual(stations?.first?.name, "FENIAN STREET")

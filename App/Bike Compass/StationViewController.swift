@@ -37,20 +37,17 @@ class StationViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.TopLeft, .TopRight], cornerRadii: CGSize(width: 6, height: 6))
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 6, height: 6))
         let mask = CAShapeLayer()
-        mask.path = path.CGPath
+        mask.path = path.cgPath
         view.layer.mask = mask
         
         let shape = CAShapeLayer()
         shape.path = mask.path
-        shape.fillColor = UIColor.clearColor().CGColor
-        shape.strokeColor = UIColor.lightGrayColor().CGColor
+        shape.fillColor = UIColor.clear().cgColor
+        shape.strokeColor = UIColor.lightGray().cgColor
         shape.borderWidth = 0.5
         
         view.layer.addSublayer(shape)
-        
-        //view.layer.cornerRadius = 6
-        //view.layer.
     }
 }

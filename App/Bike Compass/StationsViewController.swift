@@ -17,7 +17,7 @@ class StationsViewController: UIPageViewController {
             guard stations.isNotEmpty else { return }
             let viewController = newStationViewController(stations.first!)
             setViewControllers([viewController],
-                               direction: .Forward,
+                               direction: .forward,
                                animated: true,
                                completion: nil)
         }
@@ -32,7 +32,7 @@ class StationsViewController: UIPageViewController {
     private var currentIndex: Int {
         guard let visibleViewController = viewControllers?.first as? StationViewController,
                 station = visibleViewController.station,
-                index = stations.indexOf({ $0.id == station.id }) else { return 0 }
+                index = stations.index(where: { $0.id == station.id }) else { return 0 }
         
         return index
     }
@@ -47,8 +47,8 @@ class StationsViewController: UIPageViewController {
     
     // MARK: Private
     
-    private func newStationViewController(station: Station) -> StationViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("StationViewController") as! StationViewController
+    private func newStationViewController(_ station: Station) -> StationViewController {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
         viewController.station = station
         
         return viewController
@@ -58,7 +58,7 @@ class StationsViewController: UIPageViewController {
 // MARK: UIPageViewControllerDelegate
 
 extension StationsViewController: UIPageViewControllerDelegate {
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
         guard completed else { return }
         changeStationHandler?(currentStation)
@@ -69,7 +69,7 @@ extension StationsViewController: UIPageViewControllerDelegate {
 
 extension StationsViewController: UIPageViewControllerDataSource {
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let previousIndex = currentIndex - 1
         
         guard previousIndex >= 0 else {
@@ -83,7 +83,7 @@ extension StationsViewController: UIPageViewControllerDataSource {
         return newStationViewController(stations[previousIndex])
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let nextIndex = currentIndex + 1
         let stationsCount = stations.count

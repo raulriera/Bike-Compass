@@ -9,14 +9,14 @@
 import Foundation
 import CoreLocation
 
-public extension CollectionType where Generator.Element == Station {
+public extension Collection where Iterator.Element == Station {
     
-    public func sortByProximityToLocation(location: CLLocation) -> [Station] {
-        return sort { a, b in
+    public func sortByProximityToLocation(_ location: CLLocation) -> [Station] {
+        return sorted { a, b in
             let locationA = CLLocation(latitude: a.coordinates.latitude, longitude: a.coordinates.longitude)
             let locationB = CLLocation(latitude: b.coordinates.latitude, longitude: b.coordinates.longitude)
             
-            return location.distanceFromLocation(locationA) < location.distanceFromLocation(locationB)
+            return location.distance(from: locationA) < location.distance(from: locationB)
         }
     }
     

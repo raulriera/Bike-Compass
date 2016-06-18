@@ -10,18 +10,18 @@ import UIKit
 
 class CardDismissionAnimator : NSObject, UIViewControllerAnimatedTransitioning {
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.4
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+    func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        let fromViewController = transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey)!
         let containerView = transitionContext.containerView()
         
         let animationDuration = transitionDuration(transitionContext)
         
-        UIView.animateWithDuration(animationDuration, animations: {
-            fromViewController.view.transform = CGAffineTransformMakeTranslation(containerView!.bounds.width, 0)
+        UIView.animate(withDuration: animationDuration, animations: {
+            fromViewController.view.transform = CGAffineTransform(translationX: containerView.bounds.width, y: 0)
         }) { finished in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         }

@@ -14,22 +14,22 @@ class Storage<T where T: Decodable, T: Encodable> {
     
     private init() { }
     
-    class func 🔒(value: T) {
-        vault().setObject(value.encode(), forKey: "\(T.self)")
+    class func 🔒(_ value: T) {
+        vault().set(value.encode(), forKey: "\(T.self)")
     }
     
     class func 🔓() -> T? {
-        guard let val = vault().objectForKey("\(T.self)") else { return nil }
+        guard let val = vault().object(forKey: "\(T.self)") else { return nil }
         return try? T.decode(val)
     }
     
     class func 💀() {
-        vault().removeObjectForKey("\(T.self)")
+        vault().removeObject(forKey: "\(T.self)")
     }
     
     // MARK: Private
     
-    private class func vault() -> NSUserDefaults {
-        return NSUserDefaults.standardUserDefaults()
+    private class func vault() -> UserDefaults {
+        return UserDefaults.standard()
     }
 }

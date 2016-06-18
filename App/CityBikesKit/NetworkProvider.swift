@@ -9,5 +9,5 @@
 import Foundation
 
 protocol NetworkProvider {
-    func request<T: EndpointType>(endpoint: T, handler: (EndpointResponse<T.Response>) -> Void)
+    func request<T: EndpointType>(_ endpoint: T, handler: (EndpointResponse<T.Response>) -> Void)
 }

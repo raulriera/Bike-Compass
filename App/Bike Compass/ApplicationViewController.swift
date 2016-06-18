@@ -22,7 +22,7 @@ class ApplicationViewController: UIViewController {
         }
         get {
             let value = Storage<Network>.🔓()
-            networkButton.setTitle(value?.name ?? "", forState: .Normal)
+            networkButton.setTitle(value?.name ?? "", for: UIControlState())
 
             return value
         }
@@ -43,7 +43,7 @@ class ApplicationViewController: UIViewController {
         locationManager.delegate = self
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if shouldPresentLocationViewController() {
@@ -60,11 +60,11 @@ class ApplicationViewController: UIViewController {
     func loadStations(forNetwork network: Network) {
         CityBikes.stations(forNetwork: network) { response in
             switch response {
-            case .Success(let stations):
+            case .success(let stations):
                 self.stations = stations
                 // Request the current user location
                 self.locationManager.requestLocation()
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
         }
@@ -72,7 +72,7 @@ class ApplicationViewController: UIViewController {
     
     // MARK: Segues
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue == .LocationViewControllerSegue, let viewController = segue.destinationViewController.contentViewController as? LocationViewController {
             viewController.delegate = self
         } else if segue == .NetworksViewControllerSegue, let viewController = segue.destinationViewController.contentViewController as? NetworksViewController {
@@ -81,7 +81,7 @@ class ApplicationViewController: UIViewController {
         } else if segue == .StationsViewControllerSegue, let viewController = segue.destinationViewController.contentViewController as? StationsViewController {
             viewController.stations = stations
             viewController.transitioningDelegate = cardTransitioningDelegate
-            viewController.modalPresentationStyle = .Custom
+            viewController.modalPresentationStyle = .custom
             viewController.changeStationHandler = { [weak self] station in
                 guard let annotations = self?.mapView.annotations.filter({ ($0.title ?? "") == station.name }) else { return }
                 
@@ -93,18 +93,15 @@ class ApplicationViewController: UIViewController {
     // MARK:
     
     func shouldPresentLocationViewController() -> Bool {
-        return CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse
+        return CLLocationManager.authorizationStatus() != .authorizedWhenInUse
     }
     
     // MARK: Private
     
-    @IBAction private func didTapNetworkButton(sender: UIButton) {
-        sender.enabled = false
-        presentedViewController?.dismissViewControllerAnimated(true, completion: { 
+    @IBAction private func didTapNetworkButton(_ sender: UIButton) {
+        presentedViewController?.dismiss(animated: true, completion: {
             self.performSegue(.NetworksViewControllerSegue)
-            sender.enabled = true
         })
-        
     }
     
 }
@@ -113,7 +110,7 @@ class ApplicationViewController: UIViewController {
 
 extension ApplicationViewController: MKMapViewDelegate {
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         guard let annotation = view.annotation as? StationPointAnnotation else { return }
         
@@ -123,15 +120,15 @@ extension ApplicationViewController: MKMapViewDelegate {
         
         let launchOptions = NSDictionary(object: MKLaunchOptionsDirectionsModeWalking, forKey: MKLaunchOptionsDirectionsModeKey)
         
-        let currentLocationMapItem = MKMapItem.mapItemForCurrentLocation()
+        let currentLocationMapItem = MKMapItem.forCurrentLocation()
         
-        MKMapItem.openMapsWithItems([currentLocationMapItem, mapItem], launchOptions: launchOptions as? [String : AnyObject])
+        MKMapItem.openMaps(with: [currentLocationMapItem, mapItem], launchOptions: launchOptions as? [String : AnyObject])
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let annotationView: MKAnnotationView
         
-        if let dequeded = mapView.dequeueReusableAnnotationViewWithIdentifier("mapPin") {
+        if let dequeded = mapView.dequeueReusableAnnotationView(withIdentifier: "mapPin") {
             annotationView = dequeded
         } else {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "mapPin")
@@ -141,12 +138,12 @@ extension ApplicationViewController: MKMapViewDelegate {
             annotationView.canShowCallout = true
             annotationView.image = annotation.station.numberOfBikes > 0 ? UIImage(named: "Marker Positive") : UIImage(named: "Marker Negative")
             
-            let walkingIcon = UIImage(named: "Walking Directions Callout")?.imageWithRenderingMode(.AlwaysTemplate)
+            let walkingIcon = UIImage(named: "Walking Directions Callout")?.withRenderingMode(.alwaysTemplate)
             
             let walkingDirections = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 54))
-            walkingDirections.tintColor = .whiteColor()
+            walkingDirections.tintColor = .white()
             walkingDirections.backgroundColor = .darkGreenColor()
-            walkingDirections.setImage(walkingIcon, forState: .Normal)
+            walkingDirections.setImage(walkingIcon, for: UIControlState())
             annotationView.leftCalloutAccessoryView = walkingDirections
             return annotationView
         }
@@ -159,32 +156,35 @@ extension ApplicationViewController: MKMapViewDelegate {
 // MARK: LocationViewControllerDelegate
 
 extension ApplicationViewController: LocationViewControllerDelegate {
-    func locationViewController(viewController: LocationViewController, didFoundClosestNetwork network: Network, toLocation location: CLLocation) {
+    func locationViewController(_ viewController: LocationViewController, didFoundClosestNetwork network: Network, toLocation location: CLLocation) {
         currentNetwork = network
-        viewController.dismissViewControllerAnimated(true, completion: nil)
+        viewController.dismiss(animated: true, completion: nil)
     }
     
-    func locationViewController(viewController: LocationViewController, didFailFindingNetworksCloseToLocation location: CLLocation) {
+    func locationViewController(_ viewController: LocationViewController, didFailFindingNetworksCloseToLocation location: CLLocation) {
         // Dismiss the LocationViewController and do nothing, our viewDidAppear:
         // will catch that the app is not ready and present a solution by itself
-        viewController.dismissViewControllerAnimated(true, completion: nil)
+        viewController.dismiss(animated: true, completion: nil)
     }
 }
 
 // MARK: NetworksViewControllerDelegate
 
 extension ApplicationViewController: NetworksViewControllerDelegate {
-    func networksViewController(viewController: NetworksViewController, didSelectedNetwork network: Network, atIndexPath indexPath: NSIndexPath) {
+    func networksViewController(_ viewController: NetworksViewController, didSelectedNetwork network: Network, atIndexPath indexPath: IndexPath) {
         
         currentNetwork = network
-        viewController.dismissViewControllerAnimated(true, completion: nil)
+        viewController.dismiss(animated: true, completion: nil)
     }
 }
 
+// MARK: CLLocationManagerDelegate
+
 extension ApplicationViewController: CLLocationManagerDelegate {
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    @objc(locationManager:didUpdateLocations:) func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        
         // Update the stations to show the one closest to the user
         stations = stations.sortByProximityToLocation(location)
         
@@ -200,7 +200,7 @@ extension ApplicationViewController: CLLocationManagerDelegate {
         performSegue(.StationsViewControllerSegue)
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError) {
         performSegue(.LocationViewControllerSegue)
     }
     

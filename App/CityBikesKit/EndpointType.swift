@@ -11,7 +11,7 @@ import Foundation
 protocol EndpointType {
     associatedtype Response
     
-    var baseURL: NSURL { get }
+    var baseURL: URL { get }
     var path: String { get }
     var method: HTTPMethod { get }
     var parameters: [String: AnyObject] { get }
@@ -19,14 +19,14 @@ protocol EndpointType {
     var acceptableStatusCodes: Set<Int> { get }
     var encoding: ParameterEncoding { get }
     
-    func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response?
-    func errorFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> ErrorType
+    func responseFrom(_ object: AnyObject, URLResponse: HTTPURLResponse) -> Response?
+    func errorFrom(_ object: AnyObject, URLResponse: HTTPURLResponse) -> ErrorProtocol
 }
 
 extension EndpointType {
     
-    var baseURL: NSURL {
-        return NSURL(string: "http://api.citybik.es/v2")!
+    var baseURL: URL {
+        return URL(string: "http://api.citybik.es/v2")!
     }
     
     var parameters: [String: AnyObject] {
@@ -46,11 +46,11 @@ extension EndpointType {
     }
     
     var encoding: ParameterEncoding {
-        return .URL
+        return .url
     }
     
-    func errorFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> ErrorType {
-        return CityBikesKitError.SomethingWentWrong
+    func errorFrom(_ object: AnyObject, URLResponse: HTTPURLResponse) -> ErrorProtocol {
+        return CityBikesKitError.somethingWentWrong
     }
     
 }

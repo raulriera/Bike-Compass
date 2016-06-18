@@ -20,7 +20,7 @@ struct StationsEndpoint: EndpointType {
         self.networkId = networkId
     }
     
-    func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
+    func responseFrom(_ object: AnyObject, URLResponse: HTTPURLResponse) -> Response? {
         return try? [Station].decode(object => "network" => "stations")
     }
 }

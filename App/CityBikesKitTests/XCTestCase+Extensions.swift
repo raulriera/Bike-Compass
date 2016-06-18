@@ -10,10 +10,10 @@ import XCTest
 
 extension XCTestCase {
     
-    func loadJSON(path: String) -> [String: AnyObject]? {
-        guard let path : String = NSBundle(forClass: self.dynamicType).pathForResource(path, ofType: "json"),
-            data = NSData(contentsOfFile: path),
-            json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject]
+    func loadJSON(_ path: String) -> [String: AnyObject]? {
+        guard let path : String = Bundle(for: self.dynamicType).pathForResource(path, ofType: "json"),
+            data = try? Data(contentsOf: URL(fileURLWithPath: path)),
+            json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject]
         else {
             return nil
         }

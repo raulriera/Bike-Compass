@@ -8,11 +8,11 @@
 
 import Foundation
 
-extension NSDate: Encodable {
+extension Date: Encodable {
     public func encode() -> AnyObject {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        formatter.timeZone = NSTimeZone(name: "UTC")
-        return formatter.stringFromDate(self)
+        formatter.timeZone = TimeZone(name: "UTC")
+        return formatter.string(from: self)
     }
 }

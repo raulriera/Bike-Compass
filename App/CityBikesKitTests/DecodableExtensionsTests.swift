@@ -13,8 +13,8 @@ import Alamofire
 class DecodableExtensionsTests: XCTestCase {
     
     func testDecodingPerformance() {
-        measureBlock { 
-            _ = try? NSDate.decode("2016-04-24T14:15:09.16Z")
+        measure { 
+            _ = try? Date.decode("2016-04-24T14:15:09.16Z")
         }
     }
     
@@ -22,7 +22,7 @@ class DecodableExtensionsTests: XCTestCase {
     func testEncodingDatesToString() {
         let expected = "2016-04-24T14:15:09.160Z"
         
-        guard let date = try? NSDate.decode(expected), decoded = date.encode() as? String else {
+        guard let date = try? Date.decode(expected), decoded = date.encode() as? String else {
             XCTFail("There was a problem parsing or decoding the date")
             return
         }
@@ -31,14 +31,14 @@ class DecodableExtensionsTests: XCTestCase {
     }
     
     func testDecodingDatesFromString() {
-        guard let date = try? NSDate.decode("2016-04-24T14:15:09.16Z") else {
+        guard let date = try? Date.decode("2016-04-24T14:15:09.16Z") else {
             XCTFail("There was a problem parsing the date")
             return
         }
         
-        let calendar = NSCalendar.currentCalendar()
-        calendar.timeZone = NSTimeZone(name: "UTC")!
-        let components = calendar.components([.Day, .Month, .Year, .Hour, .Minute, .Second], fromDate: date)
+        let calendar = Calendar.current()
+        calendar.timeZone = TimeZone(name: "UTC")!
+        let components = calendar.components([.day, .month, .year, .hour, .minute, .second], from: date)
         
         XCTAssertEqual(components.year, 2016)
         XCTAssertEqual(components.month, 4)

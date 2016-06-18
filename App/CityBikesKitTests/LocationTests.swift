@@ -12,8 +12,8 @@ import XCTest
 class LocationTests: XCTestCase {
     
     func testDecodingPerformance() {
-        measureBlock {
-            Location.transformCountryCodeToDisplayName("VEN")
+        measure {
+            _ = Location.transformCountryCodeToDisplayName("VEN")
         }
     }
     

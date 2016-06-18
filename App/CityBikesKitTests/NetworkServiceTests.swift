@@ -12,39 +12,39 @@ import XCTest
 class NetworkServiceTests: XCTestCase {
 
     func testReturnedStationsAreFromDublinBikes() {
-        let expectation = expectationWithDescription("Dublin Bikes Stations are returned")
+        let expectation = self.expectation(withDescription: "Dublin Bikes Stations are returned")
         let endpoint = StationsEndpoint(networkId: "dublinbikes")
         
         NetworkService().request(endpoint) { response in
             switch response {
-            case .Success(let stations):
+            case .success(let stations):
                 expectation.fulfill()
                 XCTAssertEqual(stations.count, 101)
-            case .Failure(let error):
+            case .failure(let error):
                 XCTAssertNil(error)
             }
         }
         
-        waitForExpectationsWithTimeout(5) { error in
+        waitForExpectations(withTimeout: 5) { error in
             XCTAssertNil(error, "The request took too long to complete.")
         }
     }
     
     func testReturnedNetworksAreInTheHundreds() {
-        let expectation = expectationWithDescription("Hundreds networks are returned")
+        let expectation = self.expectation(withDescription: "Hundreds networks are returned")
         let endpoint = NetworksEndpoint()
         
         NetworkService().request(endpoint) { response in
             switch response {
-            case .Success(let networks):
+            case .success(let networks):
                 expectation.fulfill()
                 XCTAssertGreaterThan(networks.count, 400)
-            case .Failure(let error):
+            case .failure(let error):
                 XCTAssertNil(error)
             }
         }
         
-        waitForExpectationsWithTimeout(5) { error in
+        waitForExpectations(withTimeout: 5) { error in
             XCTAssertNil(error, "The request took too long to complete.")
         }
     }

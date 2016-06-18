@@ -1,24 +1,26 @@
-// ResponseTests.swift
 //
-// Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+//  ResponseTests.swift
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 
 import Alamofire
 import Foundation
@@ -28,9 +30,9 @@ class ResponseDataTestCase: BaseTestCase {
     func testThatResponseDataReturnsSuccessResultWithValidData() {
         // Given
         let URLString = "https://httpbin.org/get"
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(withDescription: "request should succeed")
 
-        var response: Response<NSData, NSError>?
+        var response: Response<Data, NSError>?
 
         // When
         Alamofire.request(.GET, URLString, parameters: ["foo": "bar"])
@@ -39,7 +41,7 @@ class ResponseDataTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -55,9 +57,9 @@ class ResponseDataTestCase: BaseTestCase {
     func testThatResponseDataReturnsFailureResultWithOptionalDataAndError() {
         // Given
         let URLString = "https://invalid-url-here.org/this/does/not/exist"
-        let expectation = expectationWithDescription("request should fail with 404")
+        let expectation = self.expectation(withDescription: "request should fail with 404")
 
-        var response: Response<NSData, NSError>?
+        var response: Response<Data, NSError>?
 
         // When
         Alamofire.request(.GET, URLString, parameters: ["foo": "bar"])
@@ -66,7 +68,7 @@ class ResponseDataTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -86,7 +88,7 @@ class ResponseStringTestCase: BaseTestCase {
     func testThatResponseStringReturnsSuccessResultWithValidString() {
         // Given
         let URLString = "https://httpbin.org/get"
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(withDescription: "request should succeed")
 
         var response: Response<String, NSError>?
 
@@ -97,7 +99,7 @@ class ResponseStringTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -113,7 +115,7 @@ class ResponseStringTestCase: BaseTestCase {
     func testThatResponseStringReturnsFailureResultWithOptionalDataAndError() {
         // Given
         let URLString = "https://invalid-url-here.org/this/does/not/exist"
-        let expectation = expectationWithDescription("request should fail with 404")
+        let expectation = self.expectation(withDescription: "request should fail with 404")
 
         var response: Response<String, NSError>?
 
@@ -124,7 +126,7 @@ class ResponseStringTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -144,7 +146,7 @@ class ResponseJSONTestCase: BaseTestCase {
     func testThatResponseJSONReturnsSuccessResultWithValidJSON() {
         // Given
         let URLString = "https://httpbin.org/get"
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(withDescription: "request should succeed")
 
         var response: Response<AnyObject, NSError>?
 
@@ -155,7 +157,7 @@ class ResponseJSONTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -171,7 +173,7 @@ class ResponseJSONTestCase: BaseTestCase {
     func testThatResponseStringReturnsFailureResultWithOptionalDataAndError() {
         // Given
         let URLString = "https://invalid-url-here.org/this/does/not/exist"
-        let expectation = expectationWithDescription("request should fail with 404")
+        let expectation = self.expectation(withDescription: "request should fail with 404")
 
         var response: Response<AnyObject, NSError>?
 
@@ -182,7 +184,7 @@ class ResponseJSONTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -198,7 +200,7 @@ class ResponseJSONTestCase: BaseTestCase {
     func testThatResponseJSONReturnsSuccessResultForGETRequest() {
         // Given
         let URLString = "https://httpbin.org/get"
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(withDescription: "request should succeed")
 
         var response: Response<AnyObject, NSError>?
 
@@ -209,7 +211,7 @@ class ResponseJSONTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -233,7 +235,7 @@ class ResponseJSONTestCase: BaseTestCase {
     func testThatResponseJSONReturnsSuccessResultForPOSTRequest() {
         // Given
         let URLString = "https://httpbin.org/post"
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(withDescription: "request should succeed")
 
         var response: Response<AnyObject, NSError>?
 
@@ -244,7 +246,7 @@ class ResponseJSONTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {

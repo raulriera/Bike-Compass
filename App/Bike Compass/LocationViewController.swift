@@ -11,8 +11,8 @@ import CoreLocation
 import CityBikesKit
 
 protocol LocationViewControllerDelegate: class {
-    func locationViewController(viewController: LocationViewController, didFoundClosestNetwork network: Network, toLocation location: CLLocation)
-    func locationViewController(viewController: LocationViewController, didFailFindingNetworksCloseToLocation location: CLLocation)
+    func locationViewController(_ viewController: LocationViewController, didFoundClosestNetwork network: Network, toLocation location: CLLocation)
+    func locationViewController(_ viewController: LocationViewController, didFailFindingNetworksCloseToLocation location: CLLocation)
 }
 
 class LocationViewController: UIViewController {
@@ -37,7 +37,7 @@ class LocationViewController: UIViewController {
     
     // MARK: IB Actions
     
-    @IBAction func didTapLocateMeButton(sender: UIButton) {
+    @IBAction func didTapLocateMeButton(_ sender: UIButton) {
         // Check that the ripples aren't animating before trying
         // to run the animation loop
         if isAnimationRunning == false {
@@ -46,11 +46,11 @@ class LocationViewController: UIViewController {
         
         switch CLLocationManager.authorizationStatus() {
             
-        case .AuthorizedWhenInUse, .NotDetermined, .AuthorizedAlways:
+        case .authorizedWhenInUse, .notDetermined, .authorizedAlways:
             locationManager.requestWhenInUseAuthorization()
             locationManager.requestLocation()
-        case .Denied, .Restricted:
-            presentViewController(locationAuthorizationErrorViewController(), animated: true, completion: nil)
+        case .denied, .restricted:
+            present(locationAuthorizationErrorViewController(), animated: true, completion: nil)
         }
     }
 
@@ -58,41 +58,41 @@ class LocationViewController: UIViewController {
 
 extension LocationViewController: CLLocationManagerDelegate {
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedWhenInUse {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
             manager.requestLocation()
-        } else if status == .Denied {
-            presentViewController(locationAuthorizationErrorViewController(), animated: true, completion: nil)
+        } else if status == .denied {
+            present(locationAuthorizationErrorViewController(), animated: true, completion: nil)
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    @objc(locationManager:didUpdateLocations:) func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         
         CityBikes.networkClosestToLocation(location) { response in
             switch response {
-            case .Success(let network):
+            case .success(let network):
                 self.delegate?.locationViewController(self, didFoundClosestNetwork: network, toLocation: location)
-            case .Failure(_):
+            case .failure(_):
                 self.delegate?.locationViewController(self, didFailFindingNetworksCloseToLocation: location)
             }
         }
         
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError) {
         // Present the network picker instead of displaying an error to the user
     }
     
     // MARK: 
     
     private func locationAuthorizationErrorViewController() -> UIAlertController {
-        let errorController = UIAlertController(title: "Missing permission", message: "Your location is required for this application to work. Don't worry, we are gently with the battery", preferredStyle: .Alert)
-        errorController.addAction(UIAlertAction(title: "Go to settings", style: .Default, handler: { action in
-            errorController.dismissViewControllerAnimated(true, completion: nil)
+        let errorController = UIAlertController(title: "Missing permission", message: "Your location is required for this application to work. Don't worry, we are gently with the battery", preferredStyle: .alert)
+        errorController.addAction(UIAlertAction(title: "Go to settings", style: .default, handler: { action in
+            errorController.dismiss(animated: true, completion: nil)
          
-            let settingsURL = NSURL(string: UIApplicationOpenSettingsURLString)!
-            UIApplication.sharedApplication().openURL(settingsURL)
+            let settingsURL = URL(string: UIApplicationOpenSettingsURLString)!
+            UIApplication.shared().open(settingsURL, options: [:], completionHandler: nil)
         }))
         
         return errorController
@@ -104,17 +104,17 @@ private extension LocationViewController {
     private func animateViews() {
         prepareViewsForAnimations()
         
-        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.8, options: .BeginFromCurrentState, animations: {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.8, options: .beginFromCurrentState, animations: {
             
             self.walkingIcon.alpha = 1
-            self.walkingIcon.transform = CGAffineTransformIdentity
+            self.walkingIcon.transform = CGAffineTransform.identity
             
             }, completion: nil)
     }
     
     private func prepareViewsForAnimations() {
         walkingIcon.alpha = 0
-        walkingIcon.transform = CGAffineTransformMakeScale(0.2, 0.2)
+        walkingIcon.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         
         prepareRipplesForAnimations()
     }
@@ -124,9 +124,9 @@ private extension LocationViewController {
         rippleMedium.alpha = 0
         rippleSmall.alpha = 0
         
-        rippleLarge.transform = CGAffineTransformMakeScale(0.7, 0.7)
-        rippleMedium.transform = CGAffineTransformMakeScale(0.7, 0.7)
-        rippleSmall.transform = CGAffineTransformMakeScale(0.7, 0.7)
+        rippleLarge.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        rippleMedium.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        rippleSmall.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
     }
     
     private func animateRipples() {
@@ -145,18 +145,18 @@ private extension LocationViewController {
         }
     }
     
-    private func fadeInRipple(rippleView: UIImageView, delay: NSTimeInterval = 0, completionHandler: (Bool->Void)? = nil) {
-        UIView.animateWithDuration(0.4, delay: delay, options: .BeginFromCurrentState, animations: {
+    private func fadeInRipple(_ rippleView: UIImageView, delay: TimeInterval = 0, completionHandler: ((Bool)->Void)? = nil) {
+        UIView.animate(withDuration: 0.4, delay: delay, options: .beginFromCurrentState, animations: {
             rippleView.alpha = 1
-            rippleView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            rippleView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             
             }, completion: completionHandler)
     }
     
-    private func fadeOutRipple(rippleView: UIImageView, delay: NSTimeInterval = 0, completionHandler: (Bool->Void)? = nil) {
-        UIView.animateWithDuration(0.4, delay: delay, options: .BeginFromCurrentState, animations: {
+    private func fadeOutRipple(_ rippleView: UIImageView, delay: TimeInterval = 0, completionHandler: ((Bool)->Void)? = nil) {
+        UIView.animate(withDuration: 0.4, delay: delay, options: .beginFromCurrentState, animations: {
             rippleView.alpha = 0
-            rippleView.transform = CGAffineTransformMakeScale(0.9, 0.9)
+            rippleView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             
             }, completion: completionHandler)
     }

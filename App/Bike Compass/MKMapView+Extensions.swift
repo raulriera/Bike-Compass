@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 /// Apparently, Apple does these things as global functions
-func MKMapRectForCoordinates(coordinates: [CLLocationCoordinate2D]) -> MKMapRect {
+func MKMapRectForCoordinates(_ coordinates: [CLLocationCoordinate2D]) -> MKMapRect {
     var rect = MKMapRectNull
     
     for coordinate in coordinates {

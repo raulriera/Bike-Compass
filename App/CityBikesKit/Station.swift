@@ -16,18 +16,18 @@ public struct Station {
     public let coordinates: CLLocationCoordinate2D
     public let emptySlots: Int
     public let numberOfBikes: Int
-    public let lastUpdated: NSDate?
+    public let lastUpdated: Date?
 }
 
 extension Station: Decodable {
-    public static func decode(j: AnyObject) throws -> Station {
+    public static func decode(_ j: AnyObject) throws -> Station {
         return try Station(
             id: j => "id",
             name: j => "name",
             coordinates: CLLocationCoordinate2D(latitude: j => "latitude", longitude: j => "longitude"),
             emptySlots: j => "empty_slots",
             numberOfBikes: j => "free_bikes",
-            lastUpdated: try? NSDate.decode(j => "timestamp")
+            lastUpdated: try? Date.decode(j => "timestamp")
         )
     }
 }

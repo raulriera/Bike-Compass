@@ -13,13 +13,13 @@ enum HTTPMethod: String {
 }
 
 enum ParameterEncoding {
-    case URL
-    case JSON
+    case url
+    case json
 }
 
 enum EndpointResponse<T> {
-    case Success(T)
-    case Failure(ErrorType)
+    case success(T)
+    case failure(ErrorProtocol)
 }
 
 class NetworkService {
@@ -29,7 +29,7 @@ class NetworkService {
         self.provider = provider
     }
     
-    func request<T: EndpointType>(endpoint: T, handler: (EndpointResponse<T.Response>) -> Void) {
+    func request<T: EndpointType>(_ endpoint: T, handler: (EndpointResponse<T.Response>) -> Void) {
         provider.request(endpoint, handler: handler)
     }
 }

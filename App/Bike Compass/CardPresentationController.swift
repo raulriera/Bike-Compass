@@ -11,10 +11,6 @@ import UIKit
 final class CardPresentationController: UIPresentationController {
     var touchForwardingView: PSPDFTouchForwardingView!
     
-    override init(presentedViewController: UIViewController, presentingViewController: UIViewController) {
-        super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
-    }
-    
     override func frameOfPresentedViewInContainerView() -> CGRect {
         let height: CGFloat = 200
         return CGRect(x: 0, y: containerView!.bounds.height - height, width: containerView!.bounds.width, height: height)
@@ -28,6 +24,6 @@ final class CardPresentationController: UIPresentationController {
         super.presentationTransitionWillBegin()
         touchForwardingView = PSPDFTouchForwardingView(frame: containerView!.bounds)
         touchForwardingView.passthroughViews = [presentingViewController.view];
-        containerView?.insertSubview(touchForwardingView, atIndex: 0)
+        containerView?.insertSubview(touchForwardingView, at: 0)
     }
 }

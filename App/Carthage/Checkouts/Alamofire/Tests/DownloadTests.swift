@@ -1,62 +1,64 @@
-// DownloadTests.swift
 //
-// Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+//  DownloadTests.swift
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 
 import Alamofire
 import Foundation
 import XCTest
 
 class DownloadInitializationTestCase: BaseTestCase {
-    let searchPathDirectory: NSSearchPathDirectory = .CachesDirectory
-    let searchPathDomain: NSSearchPathDomainMask = .UserDomainMask
+    let searchPathDirectory: FileManager.SearchPathDirectory = .cachesDirectory
+    let searchPathDomain: FileManager.SearchPathDomainMask = .userDomainMask
 
     func testDownloadClassMethodWithMethodURLAndDestination() {
         // Given
-        let URLString = "https://httpbin.org/"
+        let urlString = "https://httpbin.org/"
         let destination = Request.suggestedDownloadDestination(directory: searchPathDirectory, domain: searchPathDomain)
 
         // When
-        let request = Alamofire.download(.GET, URLString, destination: destination)
+        let request = Alamofire.download(.GET, urlString, destination: destination)
 
         // Then
         XCTAssertNotNil(request.request, "request should not be nil")
-        XCTAssertEqual(request.request?.HTTPMethod ?? "", "GET", "request HTTP method should be GET")
-        XCTAssertEqual(request.request?.URLString ?? "", URLString, "request URL string should be equal")
+        XCTAssertEqual(request.request?.httpMethod ?? "", "GET", "request HTTP method should be GET")
+        XCTAssertEqual(request.request?.urlString ?? "", urlString, "request URL string should be equal")
         XCTAssertNil(request.response, "response should be nil")
     }
 
     func testDownloadClassMethodWithMethodURLHeadersAndDestination() {
         // Given
-        let URLString = "https://httpbin.org/"
+        let urlString = "https://httpbin.org/"
         let destination = Request.suggestedDownloadDestination(directory: searchPathDirectory, domain: searchPathDomain)
 
         // When
-        let request = Alamofire.download(.GET, URLString, headers: ["Authorization": "123456"], destination: destination)
+        let request = Alamofire.download(.GET, urlString, headers: ["Authorization": "123456"], destination: destination)
 
         // Then
         XCTAssertNotNil(request.request, "request should not be nil")
-        XCTAssertEqual(request.request?.HTTPMethod ?? "", "GET", "request HTTP method should be GET")
-        XCTAssertEqual(request.request?.URLString ?? "", URLString, "request URL string should be equal")
+        XCTAssertEqual(request.request?.httpMethod ?? "", "GET", "request HTTP method should be GET")
+        XCTAssertEqual(request.request?.urlString ?? "", urlString, "request URL string should be equal")
 
-        let authorizationHeader = request.request?.valueForHTTPHeaderField("Authorization") ?? ""
+        let authorizationHeader = request.request?.value(forHTTPHeaderField: "Authorization") ?? ""
         XCTAssertEqual(authorizationHeader, "123456", "Authorization header is incorrect")
 
         XCTAssertNil(request.response, "response should be nil")
@@ -66,38 +68,38 @@ class DownloadInitializationTestCase: BaseTestCase {
 // MARK: -
 
 class DownloadResponseTestCase: BaseTestCase {
-    let searchPathDirectory: NSSearchPathDirectory = .CachesDirectory
-    let searchPathDomain: NSSearchPathDomainMask = .UserDomainMask
+    let searchPathDirectory: FileManager.SearchPathDirectory = .cachesDirectory
+    let searchPathDomain: FileManager.SearchPathDomainMask = .userDomainMask
 
-    let cachesURL: NSURL = {
-        let cachesDirectory = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first!
-        let cachesURL = NSURL(fileURLWithPath: cachesDirectory, isDirectory: true)
+    let cachesURL: URL = {
+        let cachesDirectory = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+        let cachesURL = URL(fileURLWithPath: cachesDirectory, isDirectory: true)
 
         return cachesURL
     }()
 
-    var randomCachesFileURL: NSURL {
-        return cachesURL.URLByAppendingPathComponent("\(NSUUID().UUIDString).json")
+    var randomCachesFileURL: URL {
+        return try! cachesURL.appendingPathComponent("\(UUID().uuidString).json")
     }
 
     func testDownloadRequest() {
         // Given
         let numberOfLines = 100
-        let URLString = "https://httpbin.org/stream/\(numberOfLines)"
+        let urlString = "https://httpbin.org/stream/\(numberOfLines)"
 
         let destination = Alamofire.Request.suggestedDownloadDestination(
             directory: searchPathDirectory,
             domain: searchPathDomain
         )
 
-        let expectation = expectationWithDescription("Download request should download data to file: \(URLString)")
+        let expectation = self.expectation(withDescription: "Download request should download data to file: \(urlString)")
 
-        var request: NSURLRequest?
-        var response: NSHTTPURLResponse?
+        var request: URLRequest?
+        var response: HTTPURLResponse?
         var error: NSError?
 
         // When
-        Alamofire.download(.GET, URLString, destination: destination)
+        Alamofire.download(.GET, urlString, destination: destination)
             .response { responseRequest, responseResponse, _, responseError in
                 request = responseRequest
                 response = responseResponse
@@ -106,21 +108,21 @@ class DownloadResponseTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(request, "request should not be nil")
         XCTAssertNotNil(response, "response should not be nil")
         XCTAssertNil(error, "error should be nil")
 
-        let fileManager = NSFileManager.defaultManager()
-        let directory = fileManager.URLsForDirectory(searchPathDirectory, inDomains: self.searchPathDomain)[0]
+        let fileManager = FileManager.default()
+        let directory = fileManager.urlsForDirectory(searchPathDirectory, inDomains: self.searchPathDomain)[0]
 
         do {
-            let contents = try fileManager.contentsOfDirectoryAtURL(
-                directory,
+            let contents = try fileManager.contentsOfDirectory(
+                at: directory,
                 includingPropertiesForKeys: nil,
-                options: .SkipsHiddenFiles
+                options: .skipsHiddenFiles
             )
 
             #if os(iOS) || os(tvOS)
@@ -129,25 +131,25 @@ class DownloadResponseTestCase: BaseTestCase {
             let suggestedFilename = "\(numberOfLines).json"
             #endif
 
-            let predicate = NSPredicate(format: "lastPathComponent = '\(suggestedFilename)'")
-            let filteredContents = (contents as NSArray).filteredArrayUsingPredicate(predicate)
+            let predicate = Predicate(format: "lastPathComponent = '\(suggestedFilename)'")
+            let filteredContents = (contents as NSArray).filtered(using: predicate)
             XCTAssertEqual(filteredContents.count, 1, "should have one file in Documents")
 
-            if let file = filteredContents.first as? NSURL {
+            if let file = filteredContents.first as? URL {
                 XCTAssertEqual(
                     file.lastPathComponent ?? "",
                     "\(suggestedFilename)",
                     "filename should be \(suggestedFilename)"
                 )
 
-                if let data = NSData(contentsOfURL: file) {
-                    XCTAssertGreaterThan(data.length, 0, "data length should be non-zero")
+                if let data = try? Data(contentsOf: file) {
+                    XCTAssertGreaterThan(data.count, 0, "data length should be non-zero")
                 } else {
                     XCTFail("data should exist for contents of URL")
                 }
 
                 do {
-                    try fileManager.removeItemAtURL(file)
+                    try fileManager.removeItem(at: file)
                 } catch {
                     XCTFail("file manager should remove item at URL: \(file)")
                 }
@@ -162,24 +164,24 @@ class DownloadResponseTestCase: BaseTestCase {
     func testDownloadRequestWithProgress() {
         // Given
         let randomBytes = 4 * 1024 * 1024
-        let URLString = "https://httpbin.org/bytes/\(randomBytes)"
+        let urlString = "https://httpbin.org/bytes/\(randomBytes)"
 
-        let fileManager = NSFileManager.defaultManager()
-        let directory = fileManager.URLsForDirectory(searchPathDirectory, inDomains: self.searchPathDomain)[0]
+        let fileManager = FileManager.default()
+        let directory = fileManager.urlsForDirectory(searchPathDirectory, inDomains: self.searchPathDomain)[0]
         let filename = "test_download_data"
-        let fileURL = directory.URLByAppendingPathComponent(filename)
+        let fileURL = try! directory.appendingPathComponent(filename)
 
-        let expectation = expectationWithDescription("Bytes download progress should be reported: \(URLString)")
+        let expectation = self.expectation(withDescription: "Bytes download progress should be reported: \(urlString)")
 
         var byteValues: [(bytes: Int64, totalBytes: Int64, totalBytesExpected: Int64)] = []
         var progressValues: [(completedUnitCount: Int64, totalUnitCount: Int64)] = []
-        var responseRequest: NSURLRequest?
-        var responseResponse: NSHTTPURLResponse?
-        var responseData: NSData?
-        var responseError: ErrorType?
+        var responseRequest: URLRequest?
+        var responseResponse: HTTPURLResponse?
+        var responseData: Data?
+        var responseError: ErrorProtocol?
 
         // When
-        let download = Alamofire.download(.GET, URLString) { _, _ in
+        let download = Alamofire.download(.GET, urlString) { _, _ in
             return fileURL
         }
         download.progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
@@ -201,7 +203,7 @@ class DownloadResponseTestCase: BaseTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(responseRequest, "response request should not be nil")
@@ -248,7 +250,7 @@ class DownloadResponseTestCase: BaseTestCase {
         }
 
         do {
-            try fileManager.removeItemAtURL(fileURL)
+            try fileManager.removeItem(at: fileURL)
         } catch {
             XCTFail("file manager should remove item at URL: \(fileURL)")
         }
@@ -257,18 +259,18 @@ class DownloadResponseTestCase: BaseTestCase {
     func testDownloadRequestWithParameters() {
         // Given
         let fileURL = randomCachesFileURL
-        let URLString = "https://httpbin.org/get"
+        let urlString = "https://httpbin.org/get"
         let parameters = ["foo": "bar"]
         let destination: Request.DownloadFileDestination = { _, _ in fileURL }
 
-        let expectation = expectationWithDescription("Download request should download data to file: \(fileURL)")
+        let expectation = self.expectation(withDescription: "Download request should download data to file: \(fileURL)")
 
-        var request: NSURLRequest?
-        var response: NSHTTPURLResponse?
+        var request: URLRequest?
+        var response: HTTPURLResponse?
         var error: NSError?
 
         // When
-        Alamofire.download(.GET, URLString, parameters: parameters, destination: destination)
+        Alamofire.download(.GET, urlString, parameters: parameters, destination: destination)
             .response { responseRequest, responseResponse, _, responseError in
                 request = responseRequest
                 response = responseResponse
@@ -277,7 +279,7 @@ class DownloadResponseTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(request, "request should not be nil")
@@ -285,8 +287,8 @@ class DownloadResponseTestCase: BaseTestCase {
         XCTAssertNil(error, "error should be nil")
 
         if let
-            data = NSData(contentsOfURL: fileURL),
-            JSONObject = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)),
+            data = try? Data(contentsOf: fileURL),
+            JSONObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)),
             JSON = JSONObject as? [String: AnyObject],
             args = JSON["args"] as? [String: String]
         {
@@ -299,18 +301,18 @@ class DownloadResponseTestCase: BaseTestCase {
     func testDownloadRequestWithHeaders() {
         // Given
         let fileURL = randomCachesFileURL
-        let URLString = "https://httpbin.org/get"
+        let urlString = "https://httpbin.org/get"
         let headers = ["Authorization": "123456"]
         let destination: Request.DownloadFileDestination = { _, _ in fileURL }
 
-        let expectation = expectationWithDescription("Download request should download data to file: \(fileURL)")
+        let expectation = self.expectation(withDescription: "Download request should download data to file: \(fileURL)")
 
-        var request: NSURLRequest?
-        var response: NSHTTPURLResponse?
+        var request: URLRequest?
+        var response: HTTPURLResponse?
         var error: NSError?
 
         // When
-        Alamofire.download(.GET, URLString, headers: headers, destination: destination)
+        Alamofire.download(.GET, urlString, headers: headers, destination: destination)
             .response { responseRequest, responseResponse, _, responseError in
                 request = responseRequest
                 response = responseResponse
@@ -319,7 +321,7 @@ class DownloadResponseTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(request, "request should not be nil")
@@ -327,8 +329,8 @@ class DownloadResponseTestCase: BaseTestCase {
         XCTAssertNil(error, "error should be nil")
 
         if let
-            data = NSData(contentsOfURL: fileURL),
-            JSONObject = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)),
+            data = try? Data(contentsOf: fileURL),
+            JSONObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)),
             JSON = JSONObject as? [String: AnyObject],
             headers = JSON["headers"] as? [String: String]
         {
@@ -342,25 +344,25 @@ class DownloadResponseTestCase: BaseTestCase {
 // MARK: -
 
 class DownloadResumeDataTestCase: BaseTestCase {
-    let URLString = "https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg"
+    let urlString = "https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg"
     let destination: Request.DownloadFileDestination = {
-        let searchPathDirectory: NSSearchPathDirectory = .CachesDirectory
-        let searchPathDomain: NSSearchPathDomainMask = .UserDomainMask
+        let searchPathDirectory: FileManager.SearchPathDirectory = .cachesDirectory
+        let searchPathDomain: FileManager.SearchPathDomainMask = .userDomainMask
 
         return Request.suggestedDownloadDestination(directory: searchPathDirectory, domain: searchPathDomain)
     }()
 
     func testThatImmediatelyCancelledDownloadDoesNotHaveResumeDataAvailable() {
         // Given
-        let expectation = expectationWithDescription("Download should be cancelled")
+        let expectation = self.expectation(withDescription: "Download should be cancelled")
 
-        var request: NSURLRequest?
-        var response: NSHTTPURLResponse?
+        var request: URLRequest?
+        var response: HTTPURLResponse?
         var data: AnyObject?
         var error: NSError?
 
         // When
-        let download = Alamofire.download(.GET, URLString, destination: destination)
+        let download = Alamofire.download(.GET, urlString, destination: destination)
             .response { responseRequest, responseResponse, responseData, responseError in
                 request = responseRequest
                 response = responseResponse
@@ -372,7 +374,7 @@ class DownloadResumeDataTestCase: BaseTestCase {
 
         download.cancel()
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(request, "request should not be nil")
@@ -385,15 +387,15 @@ class DownloadResumeDataTestCase: BaseTestCase {
 
     func testThatCancelledDownloadResponseDataMatchesResumeData() {
         // Given
-        let expectation = expectationWithDescription("Download should be cancelled")
+        let expectation = self.expectation(withDescription: "Download should be cancelled")
 
-        var request: NSURLRequest?
-        var response: NSHTTPURLResponse?
+        var request: URLRequest?
+        var response: HTTPURLResponse?
         var data: AnyObject?
         var error: NSError?
 
         // When
-        let download = Alamofire.download(.GET, URLString, destination: destination)
+        let download = Alamofire.download(.GET, urlString, destination: destination)
         download.progress { _, _, _ in
             download.cancel()
         }
@@ -406,7 +408,7 @@ class DownloadResumeDataTestCase: BaseTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(request, "request should not be nil")
@@ -417,7 +419,7 @@ class DownloadResumeDataTestCase: BaseTestCase {
         XCTAssertNotNil(download.resumeData, "resume data should not be nil")
 
         if let
-            responseData = data as? NSData,
+            responseData = data as? Data,
             resumeData = download.resumeData
         {
             XCTAssertEqual(responseData, resumeData, "response data should equal resume data")
@@ -428,11 +430,11 @@ class DownloadResumeDataTestCase: BaseTestCase {
 
     func testThatCancelledDownloadResumeDataIsAvailableWithJSONResponseSerializer() {
         // Given
-        let expectation = expectationWithDescription("Download should be cancelled")
+        let expectation = self.expectation(withDescription: "Download should be cancelled")
         var response: Response<AnyObject, NSError>?
 
         // When
-        let download = Alamofire.download(.GET, URLString, destination: destination)
+        let download = Alamofire.download(.GET, urlString, destination: destination)
         download.progress { _, _, _ in
             download.cancel()
         }
@@ -441,7 +443,7 @@ class DownloadResumeDataTestCase: BaseTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {

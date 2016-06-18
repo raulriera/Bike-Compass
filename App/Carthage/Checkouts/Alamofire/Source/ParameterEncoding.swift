@@ -1,24 +1,26 @@
-// ParameterEncoding.swift
 //
-// Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+//  ParameterEncoding.swift
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 
 import Foundation
 
@@ -60,11 +62,11 @@ public enum Method: String {
                          parameters.
 */
 public enum ParameterEncoding {
-    case URL
-    case URLEncodedInURL
-    case JSON
-    case PropertyList(NSPropertyListFormat, NSPropertyListWriteOptions)
-    case Custom((URLRequestConvertible, [String: AnyObject]?) -> (NSMutableURLRequest, NSError?))
+    case url
+    case urlEncodedInURL
+    case json
+    case propertyList(PropertyListSerialization.PropertyListFormat, PropertyListSerialization.WriteOptions)
+    case custom((URLRequestConvertible, [String: AnyObject]?) -> (URLRequest, NSError?))
 
     /**
         Creates a URL request by encoding parameters and applying them onto an existing request.
@@ -76,32 +78,32 @@ public enum ParameterEncoding {
                    if any.
     */
     public func encode(
-        URLRequest: URLRequestConvertible,
+        _ URLRequest: URLRequestConvertible,
         parameters: [String: AnyObject]?)
-        -> (NSMutableURLRequest, NSError?)
+        -> (Foundation.URLRequest, NSError?)
     {
-        var mutableURLRequest = URLRequest.URLRequest
+        var urlRequest = URLRequest.urlRequest
 
-        guard let parameters = parameters else { return (mutableURLRequest, nil) }
+        guard let parameters = parameters else { return (urlRequest, nil) }
 
         var encodingError: NSError? = nil
 
         switch self {
-        case .URL, .URLEncodedInURL:
-            func query(parameters: [String: AnyObject]) -> String {
+        case .url, .urlEncodedInURL:
+            func query(_ parameters: [String: AnyObject]) -> String {
                 var components: [(String, String)] = []
 
-                for key in parameters.keys.sort(<) {
+                for key in parameters.keys.sorted(isOrderedBefore: <) {
                     let value = parameters[key]!
                     components += queryComponents(key, value)
                 }
 
-                return (components.map { "\($0)=\($1)" } as [String]).joinWithSeparator("&")
+                return (components.map { "\($0)=\($1)" } as [String]).joined(separator: "&")
             }
 
-            func encodesParametersInURL(method: Method) -> Bool {
+            func encodesParametersInURL(_ method: Method) -> Bool {
                 switch self {
-                case .URLEncodedInURL:
+                case .urlEncodedInURL:
                     return true
                 default:
                     break
@@ -115,62 +117,62 @@ public enum ParameterEncoding {
                 }
             }
 
-            if let method = Method(rawValue: mutableURLRequest.HTTPMethod) where encodesParametersInURL(method) {
-                if let
-                    URLComponents = NSURLComponents(URL: mutableURLRequest.URL!, resolvingAgainstBaseURL: false)
+            if let method = Method(rawValue: urlRequest.httpMethod!) where encodesParametersInURL(method) {
+                if var
+                    URLComponents = URLComponents(url: urlRequest.url!, resolvingAgainstBaseURL: false)
                     where !parameters.isEmpty
                 {
                     let percentEncodedQuery = (URLComponents.percentEncodedQuery.map { $0 + "&" } ?? "") + query(parameters)
                     URLComponents.percentEncodedQuery = percentEncodedQuery
-                    mutableURLRequest.URL = URLComponents.URL
+                    urlRequest.url = URLComponents.url
                 }
             } else {
-                if mutableURLRequest.valueForHTTPHeaderField("Content-Type") == nil {
-                    mutableURLRequest.setValue(
+                if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
+                    urlRequest.setValue(
                         "application/x-www-form-urlencoded; charset=utf-8",
                         forHTTPHeaderField: "Content-Type"
                     )
                 }
 
-                mutableURLRequest.HTTPBody = query(parameters).dataUsingEncoding(
-                    NSUTF8StringEncoding,
+                urlRequest.httpBody = query(parameters).data(
+                    using: String.Encoding.utf8,
                     allowLossyConversion: false
                 )
             }
-        case .JSON:
+        case .json:
             do {
-                let options = NSJSONWritingOptions()
-                let data = try NSJSONSerialization.dataWithJSONObject(parameters, options: options)
+                let options = JSONSerialization.WritingOptions()
+                let data = try JSONSerialization.data(withJSONObject: parameters, options: options)
 
-                if mutableURLRequest.valueForHTTPHeaderField("Content-Type") == nil {
-                    mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
+                    urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 }
 
-                mutableURLRequest.HTTPBody = data
+                urlRequest.httpBody = data
             } catch {
                 encodingError = error as NSError
             }
-        case .PropertyList(let format, let options):
+        case .propertyList(let format, let options):
             do {
-                let data = try NSPropertyListSerialization.dataWithPropertyList(
-                    parameters,
+                let data = try PropertyListSerialization.data(
+                    fromPropertyList: parameters,
                     format: format,
                     options: options
                 )
 
-                if mutableURLRequest.valueForHTTPHeaderField("Content-Type") == nil {
-                    mutableURLRequest.setValue("application/x-plist", forHTTPHeaderField: "Content-Type")
+                if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
+                    urlRequest.setValue("application/x-plist", forHTTPHeaderField: "Content-Type")
                 }
 
-                mutableURLRequest.HTTPBody = data
+                urlRequest.httpBody = data
             } catch {
                 encodingError = error as NSError
             }
-        case .Custom(let closure):
-            (mutableURLRequest, encodingError) = closure(mutableURLRequest, parameters)
+        case .custom(let closure):
+            (urlRequest, encodingError) = closure(urlRequest, parameters)
         }
 
-        return (mutableURLRequest, encodingError)
+        return (urlRequest, encodingError)
     }
 
     /**
@@ -181,7 +183,7 @@ public enum ParameterEncoding {
 
         - returns: The percent-escaped, URL encoded query string components.
     */
-    public func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
+    public func queryComponents(_ key: String, _ value: AnyObject) -> [(String, String)] {
         var components: [(String, String)] = []
 
         if let dictionary = value as? [String: AnyObject] {
@@ -215,19 +217,21 @@ public enum ParameterEncoding {
 
         - returns: The percent-escaped string.
     */
-    public func escape(string: String) -> String {
+    public func escape(_ string: String) -> String {
         let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
         let subDelimitersToEncode = "!$&'()*+,;="
 
-        let allowedCharacterSet = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
-        allowedCharacterSet.removeCharactersInString(generalDelimitersToEncode + subDelimitersToEncode)
+        // rdar://26850776
+        // Crash in Xcode 8 Seed 1 when trying to mutate a CharacterSet with remove
+        var allowedCharacterSet = NSMutableCharacterSet.urlQueryAllowed()
+        allowedCharacterSet.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
 
         var escaped = ""
 
         //==========================================================================================================
         //
         //  Batching is required for escaping due to an internal bug in iOS 8.1 and 8.2. Encoding more than a few
-        //  hundred Chinense characters causes various malloc error crashes. To avoid this issue until iOS 8 is no
+        //  hundred Chinese characters causes various malloc error crashes. To avoid this issue until iOS 8 is no
         //  longer supported, batching MUST be used for encoding. This introduces roughly a 20% overhead. For more
         //  info, please refer to:
         //
@@ -236,21 +240,21 @@ public enum ParameterEncoding {
         //==========================================================================================================
 
         if #available(iOS 8.3, OSX 10.10, *) {
-            escaped = string.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacterSet) ?? string
+            escaped = string.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) ?? string
         } else {
             let batchSize = 50
             var index = string.startIndex
 
             while index != string.endIndex {
                 let startIndex = index
-                let endIndex = index.advancedBy(batchSize, limit: string.endIndex)
-                let range = startIndex..<endIndex
+                let endIndex = string.index(index, offsetBy: batchSize, limitedBy: string.endIndex)
+                let range = startIndex..<(endIndex ?? string.endIndex)
 
-                let substring = string.substringWithRange(range)
+                let substring = string.substring(with: range)
 
-                escaped += substring.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacterSet) ?? substring
+                escaped += substring.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) ?? substring
 
-                index = endIndex
+                index = endIndex ?? string.endIndex
             }
         }
 

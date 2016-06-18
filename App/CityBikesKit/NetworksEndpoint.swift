@@ -13,7 +13,7 @@ struct NetworksEndpoint: EndpointType {
     typealias Response = [Network]
     let path = "/networks"
     
-    func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
+    func responseFrom(_ object: AnyObject, URLResponse: HTTPURLResponse) -> Response? {
         return try? [Network].decode(object => "networks")
     }
 }

@@ -17,10 +17,10 @@ class NetworksEndpointTests: XCTestCase {
     }
     
     func testResponseFromObject() {
-        let URLResponse = NSHTTPURLResponse(URL: NSURL(string: "http://api.citybik.es/")!, statusCode: 200, HTTPVersion: nil, headerFields: nil)!
+        let URLResponse = HTTPURLResponse(url: URL(string: "http://api.citybik.es/")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
         let json = loadJSON("networks")!
         
-        let networks = endpoint.responseFromObject(json, URLResponse: URLResponse)
+        let networks = endpoint.responseFrom(json, URLResponse: URLResponse)
         
         XCTAssertEqual(networks?.count, 5)
         XCTAssertEqual(networks?.last?.name, "Bay Area Bike Share")

@@ -16,8 +16,8 @@ enum SegueIdentifier: String {
 
 extension UIViewController {
     
-    func performSegue(identifier: SegueIdentifier) {
-        performSegueWithIdentifier(identifier.rawValue, sender: self)
+    func performSegue(_ identifier: SegueIdentifier) {
+        self.performSegue(withIdentifier: identifier.rawValue, sender: self)
     }
     
     // If a navigation controller it will return the first visible view controller, otherwise

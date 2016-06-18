@@ -9,19 +9,19 @@
 import Foundation
 import Decodable
 
-enum NSDateDecodingError: ErrorType {
-    case InvalidStringFormat(String)
+enum NSDateDecodingError: ErrorProtocol {
+    case invalidStringFormat(String)
 }
 
-extension NSDate {
-    class func decode(json: AnyObject) throws -> Self {
+extension Date {
+    static func decode(_ json: AnyObject) throws -> Date {
         let string = try String.decode(json)
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        formatter.timeZone = NSTimeZone(name: "UTC")
+        formatter.timeZone = TimeZone(name: "UTC")
         
-        guard let date = formatter.dateFromString(string) else {
-            throw NSDateDecodingError.InvalidStringFormat(string)
+        guard let date = formatter.date(from: string) else {
+            throw NSDateDecodingError.invalidStringFormat(string)
         }
         
         return self.init(timeIntervalSince1970: date.timeIntervalSince1970)

@@ -9,19 +9,19 @@
 import UIKit
 
 class CardTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
-    func presentationControllerForPresentedViewController(presented: UIViewController,
-                                                          presentingViewController presenting: UIViewController,
+    func presentationController(forPresentedViewController presented: UIViewController,
+                                                          presenting: UIViewController?,
                                                                                    sourceViewController source: UIViewController) -> UIPresentationController? {
         
         return CardPresentationController(presentedViewController: presented,
-                                          presentingViewController: presenting)
+                                          presenting: presenting)
     }
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CardPresentationAnimator()
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissedController dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CardDismissionAnimator()
     }
 }

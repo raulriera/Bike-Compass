@@ -1,37 +1,39 @@
-// Response.swift
 //
-// Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+//  Response.swift
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 
 import Foundation
 
 /// Used to store all response data returned from a completed `Request`.
-public struct Response<Value, Error: ErrorType> {
+public struct Response<Value, Error: ErrorProtocol> {
     /// The URL request sent to the server.
-    public let request: NSURLRequest?
+    public let request: Foundation.URLRequest?
 
     /// The server's response to the URL request.
-    public let response: NSHTTPURLResponse?
+    public let response: HTTPURLResponse?
 
     /// The data returned by the server.
-    public let data: NSData?
+    public let data: Data?
 
     /// The result of response serialization.
     public let result: Result<Value, Error>
@@ -52,9 +54,9 @@ public struct Response<Value, Error: ErrorType> {
         - returns: the new `Response` instance.
     */
     public init(
-        request: NSURLRequest?,
-        response: NSHTTPURLResponse?,
-        data: NSData?,
+        request: Foundation.URLRequest?,
+        response: HTTPURLResponse?,
+        data: Data?,
         result: Result<Value, Error>,
         timeline: Timeline = Timeline())
     {
@@ -86,10 +88,10 @@ extension Response: CustomDebugStringConvertible {
 
         output.append(request != nil ? "[Request]: \(request!)" : "[Request]: nil")
         output.append(response != nil ? "[Response]: \(response!)" : "[Response]: nil")
-        output.append("[Data]: \(data?.length ?? 0) bytes")
+        output.append("[Data]: \(data?.count ?? 0) bytes")
         output.append("[Result]: \(result.debugDescription)")
         output.append("[Timeline]: \(timeline.debugDescription)")
 
-        return output.joinWithSeparator("\n")
+        return output.joined(separator: "\n")
     }
 }

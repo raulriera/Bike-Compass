@@ -1,3 +1,2 @@
-github "Alamofire/Alamofire" "3.3.1"
-github "choefele/CCHMapClusterController" "1.7.0"
-github "Anviking/Decodable" "v0.4.2"
+github "Alamofire/Alamofire" "e891699312a5215ad0da9f8322c5da949f90db35"
+github "Anviking/Decodable" "41941e811504dae22e350fab520df90d25023b99"

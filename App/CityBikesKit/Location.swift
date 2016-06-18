@@ -18,7 +18,7 @@ public struct Location {
 }
 
 extension Location: Decodable {
-    public static func decode(j: AnyObject) throws -> Location {
+    public static func decode(_ j: AnyObject) throws -> Location {
         return try Location(
             coordinates: CLLocationCoordinate2D(latitude: j => "latitude", longitude: j => "longitude"),
             city: j => "city",
@@ -27,8 +27,8 @@ extension Location: Decodable {
         )        
     }
     
-    static func transformCountryCodeToDisplayName(code: String) -> String {
-        return NSLocale.systemLocale().displayNameForKey(NSLocaleCountryCode, value: code) ?? code
+    static func transformCountryCodeToDisplayName(_ code: String) -> String {
+        return Locale.system().displayName(forKey: Locale.Key.countryCode, value: code) ?? code
     }
 }
 

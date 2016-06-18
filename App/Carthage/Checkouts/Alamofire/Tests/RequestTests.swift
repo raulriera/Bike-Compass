@@ -1,24 +1,26 @@
-// RequestTests.swift
 //
-// Copyright (c) 2014-2015 Alamofire Software Foundation (http://alamofire.org)
+//  RequestTests.swift
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 
 import Alamofire
 import Foundation
@@ -34,8 +36,8 @@ class RequestInitializationTestCase: BaseTestCase {
 
         // Then
         XCTAssertNotNil(request.request, "request URL request should not be nil")
-        XCTAssertEqual(request.request?.HTTPMethod ?? "", "GET", "request HTTP method should match expected value")
-        XCTAssertEqual(request.request?.URLString ?? "", URLString, "request URL string should be equal")
+        XCTAssertEqual(request.request?.httpMethod ?? "", "GET", "request HTTP method should match expected value")
+        XCTAssertEqual(request.request?.urlString ?? "", URLString, "request URL string should be equal")
         XCTAssertNil(request.response, "request response should be nil")
     }
 
@@ -48,9 +50,9 @@ class RequestInitializationTestCase: BaseTestCase {
 
         // Then
         XCTAssertNotNil(request.request, "request URL request should not be nil")
-        XCTAssertEqual(request.request?.HTTPMethod ?? "", "GET", "request HTTP method should match expected value")
-        XCTAssertNotEqual(request.request?.URLString ?? "", URLString, "request URL string should be equal")
-        XCTAssertEqual(request.request?.URL?.query ?? "", "foo=bar", "query is incorrect")
+        XCTAssertEqual(request.request?.httpMethod ?? "", "GET", "request HTTP method should match expected value")
+        XCTAssertNotEqual(request.request?.urlString ?? "", URLString, "request URL string should be equal")
+        XCTAssertEqual(request.request?.url?.query ?? "", "foo=bar", "query is incorrect")
         XCTAssertNil(request.response, "request response should be nil")
     }
 
@@ -64,11 +66,11 @@ class RequestInitializationTestCase: BaseTestCase {
 
         // Then
         XCTAssertNotNil(request.request, "request should not be nil")
-        XCTAssertEqual(request.request?.HTTPMethod ?? "", "GET", "request HTTP method should match expected value")
-        XCTAssertNotEqual(request.request?.URLString ?? "", URLString, "request URL string should be equal")
-        XCTAssertEqual(request.request?.URL?.query ?? "", "foo=bar", "query is incorrect")
+        XCTAssertEqual(request.request?.httpMethod ?? "", "GET", "request HTTP method should match expected value")
+        XCTAssertNotEqual(request.request?.urlString ?? "", URLString, "request URL string should be equal")
+        XCTAssertEqual(request.request?.url?.query ?? "", "foo=bar", "query is incorrect")
 
-        let authorizationHeader = request.request?.valueForHTTPHeaderField("Authorization") ?? ""
+        let authorizationHeader = request.request?.value(forHTTPHeaderField: "Authorization") ?? ""
         XCTAssertEqual(authorizationHeader, "123456", "Authorization header is incorrect")
 
         XCTAssertNil(request.response, "response should be nil")
@@ -82,11 +84,11 @@ class RequestResponseTestCase: BaseTestCase {
         // Given
         let URLString = "https://httpbin.org/get"
 
-        let expectation = expectationWithDescription("GET request should succeed: \(URLString)")
+        let expectation = self.expectation(withDescription: "GET request should succeed: \(URLString)")
 
-        var request: NSURLRequest?
-        var response: NSHTTPURLResponse?
-        var data: NSData?
+        var request: URLRequest?
+        var response: HTTPURLResponse?
+        var data: Data?
         var error: NSError?
 
         // When
@@ -100,7 +102,7 @@ class RequestResponseTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(request, "request should not be nil")
@@ -114,14 +116,14 @@ class RequestResponseTestCase: BaseTestCase {
         let randomBytes = 4 * 1024 * 1024
         let URLString = "https://httpbin.org/bytes/\(randomBytes)"
 
-        let expectation = expectationWithDescription("Bytes download progress should be reported: \(URLString)")
+        let expectation = self.expectation(withDescription: "Bytes download progress should be reported: \(URLString)")
 
         var byteValues: [(bytes: Int64, totalBytes: Int64, totalBytesExpected: Int64)] = []
         var progressValues: [(completedUnitCount: Int64, totalUnitCount: Int64)] = []
-        var responseRequest: NSURLRequest?
-        var responseResponse: NSHTTPURLResponse?
-        var responseData: NSData?
-        var responseError: ErrorType?
+        var responseRequest: URLRequest?
+        var responseResponse: HTTPURLResponse?
+        var responseData: Data?
+        var responseError: ErrorProtocol?
 
         // When
         let request = Alamofire.request(.GET, URLString)
@@ -144,7 +146,7 @@ class RequestResponseTestCase: BaseTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(responseRequest, "response request should not be nil")
@@ -192,16 +194,16 @@ class RequestResponseTestCase: BaseTestCase {
         let randomBytes = 4 * 1024 * 1024
         let URLString = "https://httpbin.org/bytes/\(randomBytes)"
 
-        let expectation = expectationWithDescription("Bytes download progress should be reported: \(URLString)")
+        let expectation = self.expectation(withDescription: "Bytes download progress should be reported: \(URLString)")
 
         var byteValues: [(bytes: Int64, totalBytes: Int64, totalBytesExpected: Int64)] = []
         var progressValues: [(completedUnitCount: Int64, totalUnitCount: Int64)] = []
-        var accumulatedData = [NSData]()
+        var accumulatedData = [Data]()
 
-        var responseRequest: NSURLRequest?
-        var responseResponse: NSHTTPURLResponse?
-        var responseData: NSData?
-        var responseError: ErrorType?
+        var responseRequest: URLRequest?
+        var responseResponse: HTTPURLResponse?
+        var responseData: Data?
+        var responseError: ErrorProtocol?
 
         // When
         let request = Alamofire.request(.GET, URLString)
@@ -225,7 +227,7 @@ class RequestResponseTestCase: BaseTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertNotNil(responseRequest, "response request should not be nil")
@@ -269,7 +271,7 @@ class RequestResponseTestCase: BaseTestCase {
                 "progress value fractional completion should equal 1.0"
             )
             XCTAssertEqual(
-                accumulatedData.reduce(Int64(0)) { $0 + $1.length },
+                accumulatedData.reduce(Int64(0)) { $0 + $1.count },
                 lastByteValue.totalBytes,
                 "accumulated data length should match byte count"
             )
@@ -288,7 +290,7 @@ class RequestResponseTestCase: BaseTestCase {
             "emoji": "😃"
         ]
 
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(withDescription: "request should succeed")
 
         var response: Response<AnyObject, NSError>?
 
@@ -299,7 +301,7 @@ class RequestResponseTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -329,16 +331,16 @@ class RequestResponseTestCase: BaseTestCase {
 
         let pngBase64EncodedString: String = {
             let URL = URLForResource("unicorn", withExtension: "png")
-            let data = NSData(contentsOfURL: URL)!
+            let data = try! Data(contentsOf: URL)
 
-            return data.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+            return data.base64EncodedString(.encoding64CharacterLineLength)
         }()
 
         let jpegBase64EncodedString: String = {
             let URL = URLForResource("rainbow", withExtension: "jpg")
-            let data = NSData(contentsOfURL: URL)!
+            let data = try! Data(contentsOf: URL)
 
-            return data.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+            return data.base64EncodedString(.encoding64CharacterLineLength)
         }()
 
         let parameters = [
@@ -347,7 +349,7 @@ class RequestResponseTestCase: BaseTestCase {
             "jpeg_image": jpegBase64EncodedString
         ]
 
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(withDescription: "request should succeed")
 
         var response: Response<AnyObject, NSError>?
 
@@ -358,7 +360,7 @@ class RequestResponseTestCase: BaseTestCase {
                 expectation.fulfill()
             }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if let response = response {
@@ -386,16 +388,16 @@ class RequestResponseTestCase: BaseTestCase {
 // MARK: -
 
 extension Request {
-    private func preValidate(operation: Void -> Void) -> Self {
-        delegate.queue.addOperationWithBlock {
+    private func preValidate(_ operation: (Void) -> Void) -> Self {
+        delegate.queue.addOperation {
             operation()
         }
 
         return self
     }
 
-    private func postValidate(operation: Void -> Void) -> Self {
-        delegate.queue.addOperationWithBlock {
+    private func postValidate(_ operation: (Void) -> Void) -> Self {
+        delegate.queue.addOperation {
             operation()
         }
 
@@ -409,7 +411,7 @@ class RequestExtensionTestCase: BaseTestCase {
     func testThatRequestExtensionHasAccessToTaskDelegateQueue() {
         // Given
         let URLString = "https://httpbin.org/get"
-        let expectation = expectationWithDescription("GET request should succeed: \(URLString)")
+        let expectation = self.expectation(withDescription: "GET request should succeed: \(URLString)")
 
         var responses: [String] = []
 
@@ -427,7 +429,7 @@ class RequestExtensionTestCase: BaseTestCase {
                 expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         if responses.count == 3 {
@@ -449,10 +451,10 @@ class RequestDescriptionTestCase: BaseTestCase {
         let request = Alamofire.request(.GET, URLString)
         let initialRequestDescription = request.description
 
-        let expectation = expectationWithDescription("Request description should update: \(URLString)")
+        let expectation = self.expectation(withDescription: "Request description should update: \(URLString)")
 
         var finalRequestDescription: String?
-        var response: NSHTTPURLResponse?
+        var response: HTTPURLResponse?
 
         // When
         request.response { _, responseResponse, _, _ in
@@ -462,7 +464,7 @@ class RequestDescriptionTestCase: BaseTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(withTimeout: timeout, handler: nil)
 
         // Then
         XCTAssertEqual(initialRequestDescription, "GET https://httpbin.org/get", "incorrect request description")
@@ -480,14 +482,38 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
     // MARK: Properties
 
     let manager: Manager = {
-        let manager = Manager(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let manager = Manager(configuration: URLSessionConfiguration.default())
+        manager.startRequestsImmediately = false
+        return manager
+    }()
+
+    let managerWithAcceptLanguageHeader: Manager = {
+        var headers = Alamofire.Manager.sharedInstance.session.configuration.httpAdditionalHeaders ?? [:]
+        headers["Accept-Language"] = "en-US"
+        
+        let configuration = URLSessionConfiguration.default()
+        configuration.httpAdditionalHeaders = headers
+        
+        let manager = Manager(configuration: configuration)
+        manager.startRequestsImmediately = false
+        return manager
+    }()
+
+    let managerWithContentTypeHeader: Manager = {
+        var headers = Alamofire.Manager.sharedInstance.session.configuration.httpAdditionalHeaders ?? [:]
+        headers["Content-Type"] = "application/json"
+
+        let configuration = URLSessionConfiguration.default()
+        configuration.httpAdditionalHeaders = headers
+
+        let manager = Manager(configuration: configuration)
         manager.startRequestsImmediately = false
         return manager
     }()
 
     let managerDisallowingCookies: Manager = {
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.HTTPShouldSetCookies = false
+        let configuration = URLSessionConfiguration.default()
+        configuration.httpShouldSetCookies = false
 
         let manager = Manager(configuration: configuration)
         manager.startRequestsImmediately = false
@@ -511,6 +537,29 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         XCTAssertEqual(components.last ?? "", "\"\(URLString)\"", "URL component should be equal")
     }
 
+    func testGETRequestWithDuplicateHeadersDebugDescription() {
+        // Given
+        let URLString = "https://httpbin.org/get"
+
+        // When
+        let headers = [ "Accept-Language": "en-GB" ]
+        let request = managerWithAcceptLanguageHeader.request(.GET, URLString, headers: headers)
+        let components = cURLCommandComponents(request)
+
+        // Then
+        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"], "components should be equal")
+        XCTAssertFalse(components.contains("-X"), "command should not contain explicit -X flag")
+        XCTAssertEqual(components.last ?? "", "\"\(URLString)\"", "URL component should be equal")
+
+        let tokens = request.debugDescription.components(separatedBy: "Accept-Language:")
+        XCTAssertTrue(tokens.count == 2, "command should contain a single Accept-Language header")
+
+        XCTAssertTrue(
+            request.debugDescription.range(of: "-H \"Accept-Language: en-GB\"") != nil,
+            "command should Accept-Language set to 'en-GB'"
+        )
+    }
+
     func testPOSTRequestDebugDescription() {
         // Given
         let URLString = "https://httpbin.org/post"
@@ -529,21 +578,31 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         // Given
         let URLString = "https://httpbin.org/post"
 
+        let parameters = [
+            "foo": "bar",
+            "fo\"o": "b\"ar",
+            "f'oo": "ba'r"
+        ]
+
         // When
-        let request = manager.request(.POST, URLString, parameters: ["foo": "bar"], encoding: .JSON)
+        let request = manager.request(.POST, URLString, parameters: parameters, encoding: .json)
         let components = cURLCommandComponents(request)
 
         // Then
         XCTAssertEqual(components[0..<3], ["$", "curl", "-i"], "components should be equal")
         XCTAssertEqual(components[3..<5], ["-X", "POST"], "command should contain explicit -X flag")
+
         XCTAssertTrue(
-            request.debugDescription.rangeOfString("-H \"Content-Type: application/json\"") != nil,
+            request.debugDescription.range(of: "-H \"Content-Type: application/json\"") != nil,
             "command should contain 'application/json' Content-Type"
         )
+
+        let expectedBody = "-d \"{\\\"f'oo\\\":\\\"ba'r\\\",\\\"foo\\\":\\\"bar\\\",\\\"fo\\\\\\\"o\\\":\\\"b\\\\\\\"ar\\\"}\""        
         XCTAssertTrue(
-            request.debugDescription.rangeOfString("-d \"{\\\"foo\\\":\\\"bar\\\"}\"") != nil,
+            request.debugDescription.range(of: expectedBody) != nil,
             "command data should contain JSON encoded parameters"
         )
+
         XCTAssertEqual(components.last ?? "", "\"\(URLString)\"", "URL component should be equal")
     }
 
@@ -552,14 +611,14 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let URLString = "https://httpbin.org/post"
 
         let properties = [
-            NSHTTPCookieDomain: "httpbin.org",
-            NSHTTPCookiePath: "/post",
-            NSHTTPCookieName: "foo",
-            NSHTTPCookieValue: "bar",
+            HTTPCookiePropertyKey.domain: "httpbin.org",
+            HTTPCookiePropertyKey.path: "/post",
+            HTTPCookiePropertyKey.name: "foo",
+            HTTPCookiePropertyKey.value: "bar",
         ]
 
-        let cookie = NSHTTPCookie(properties: properties)!
-        manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
+        let cookie = HTTPCookie(properties: properties)!
+        manager.session.configuration.httpCookieStorage?.setCookie(cookie)
 
         // When
         let request = manager.request(.POST, URLString)
@@ -577,14 +636,14 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let URLString = "https://httpbin.org/post"
 
         let properties = [
-            NSHTTPCookieDomain: "httpbin.org",
-            NSHTTPCookiePath: "/post",
-            NSHTTPCookieName: "foo",
-            NSHTTPCookieValue: "bar",
+            HTTPCookiePropertyKey.domain: "httpbin.org",
+            HTTPCookiePropertyKey.path: "/post",
+            HTTPCookiePropertyKey.name: "foo",
+            HTTPCookiePropertyKey.value: "bar",
         ]
 
-        let cookie = NSHTTPCookie(properties: properties)!
-        managerDisallowingCookies.session.configuration.HTTPCookieStorage?.setCookie(cookie)
+        let cookie = HTTPCookie(properties: properties)!
+        managerDisallowingCookies.session.configuration.httpCookieStorage?.setCookie(cookie)
 
         // When
         let request = managerDisallowingCookies.request(.POST, URLString)
@@ -593,6 +652,53 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         // Then
         let cookieComponents = components.filter { $0 == "-b" }
         XCTAssertTrue(cookieComponents.isEmpty, "command should not contain -b flag")
+    }
+
+    func testMultipartFormDataRequestWithDuplicateHeadersDebugDescription() {
+        // Given
+        let URLString = "https://httpbin.org/post"
+        let japanese = "日本語".data(using: String.Encoding.utf8, allowLossyConversion: false)!
+        let expectation = self.expectation(withDescription: "multipart form data encoding should succeed")
+
+        var request: Request?
+        var components: [String] = []
+
+        // When
+        managerWithContentTypeHeader.upload(
+            .POST,
+            URLString,
+            multipartFormData: { multipartFormData in
+                multipartFormData.appendBodyPart(data: japanese, name: "japanese")
+            },
+            encodingCompletion: { result in
+                switch result {
+                case .success(let upload, _, _):
+                    request = upload
+                    components = self.cURLCommandComponents(upload)
+
+                    expectation.fulfill()
+                case .failure:
+                    expectation.fulfill()
+                }
+            }
+        )
+
+        waitForExpectations(withTimeout: timeout, handler: nil)
+
+        debugPrint(request!)
+
+        // Then
+        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"], "components should be equal")
+        XCTAssertTrue(components.contains("-X"), "command should contain explicit -X flag")
+        XCTAssertEqual(components.last ?? "", "\"\(URLString)\"", "URL component should be equal")
+
+        let tokens = request.debugDescription.components(separatedBy: "Content-Type:")
+        XCTAssertTrue(tokens.count == 2, "command should contain a single Content-Type header")
+
+        XCTAssertTrue(
+            request.debugDescription.range(of: "-H \"Content-Type: multipart/form-data;") != nil,
+            "command should contain Content-Type header starting with 'multipart/form-data;'"
+        )
     }
 
     func testThatRequestWithInvalidURLDebugDescription() {
@@ -609,9 +715,9 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
 
     // MARK: Test Helper Methods
 
-    private func cURLCommandComponents(request: Request) -> [String] {
-        let whitespaceCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()
-        return request.debugDescription.componentsSeparatedByCharactersInSet(whitespaceCharacterSet)
+    private func cURLCommandComponents(_ request: Request) -> [String] {
+        let whitespaceCharacterSet = CharacterSet.whitespacesAndNewlines
+        return request.debugDescription.components(separatedBy: whitespaceCharacterSet)
                                        .filter { $0 != "" && $0 != "\\" }
     }
 }

@@ -17,7 +17,7 @@ class BorderView: UIView {
     }
     
     private func applyStyle() {
-        layer.borderColor = UIColor.lightGrayColor().CGColor
+        layer.borderColor = UIColor.lightGray().cgColor
         layer.borderWidth = 0.5
     }
     

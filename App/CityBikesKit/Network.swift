@@ -17,7 +17,7 @@ public struct Network {
 }
 
 extension Network: Decodable {
-    public static func decode(j: AnyObject) throws -> Network {
+    public static func decode(_ j: AnyObject) throws -> Network {
         return try Network(
             id: j => "id",
             name: j => "name",
