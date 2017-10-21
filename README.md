@@ -8,7 +8,7 @@ Bike Compass is a full-featured city bicycle finder app for iOS. Using a bike is
 </p>
 
 
-##Features:
+## Features:
 
 - Completely designed for iOS9.
 - Hundreds of cities included.
@@ -16,7 +16,7 @@ Bike Compass is a full-featured city bicycle finder app for iOS. Using a bike is
 - Real live information thanks to the wonderful http://www.citybik.es
 - Change the target destination at any time.
 
-###More than 400 cities, including:
+### More than 400 cities, including:
 
 - Dublin
 - London
@@ -35,6 +35,6 @@ Bike Compass is a full-featured city bicycle finder app for iOS. Using a bike is
 
 This app was rebuilt completely in Swift, if you are looking for the old version you can grab it from the [objective-c branch](https://github.com/raulriera/Bike-Compass/tree/objective-c)
 
-##Created by
+## Created by
 Raul Riera, [@raulriera](http://twitter.com/raulriera)  
 Carlos Garcia [@carlitoxway](http://twitter.com/carlitoxway)
